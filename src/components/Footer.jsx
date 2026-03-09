@@ -2,17 +2,19 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-inner">
-          <a href="/" className="logo">Plexus <span>Dental</span></a>
-          <div className="footer-links">
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+    <footer className="py-12 bg-surface border-t border-border">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
+          <a href="/" className="font-serif text-xl text-text">
+            Plexus <span className="text-primary font-bold">Dental</span>
+          </a>
+          <div className="flex gap-8">
+            <a href="#services" className="text-text-muted hover:text-primary transition-colors text-sm font-medium">Services</a>
+            <a href="#about" className="text-text-muted hover:text-primary transition-colors text-sm font-medium">About</a>
+            <a href="#contact" className="text-text-muted hover:text-primary transition-colors text-sm font-medium">Contact</a>
           </div>
         </div>
-        <div className="footer-bottom">
+        <div className="pt-8 border-t border-border text-center text-text-muted text-sm">
           © {new Date().getFullYear()} Plexus Dental. All rights reserved.
         </div>
       </div>
