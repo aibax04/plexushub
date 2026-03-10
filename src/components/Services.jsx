@@ -4,12 +4,16 @@ import { services } from '../data/services'
 
 function Services() {
   return (
-    <section id="services" className="py-24 bg-surface">
+    <section id="services" className="py-32 bg-surface relative overflow-hidden">
+      {/* Decorative accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-primary/20 blur-sm rounded-full" />
+      
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif text-text mb-4 tracking-tight">What we offer</h2>
-          <p className="text-text-muted text-lg max-w-lg mx-auto leading-relaxed">
-            Comprehensive dental care tailored for the whole family, from prevention to aesthetics.
+        <div className="text-center mb-24 max-w-2xl mx-auto">
+          <div className="text-primary font-bold text-xs uppercase tracking-widest mb-4">The Portfolio</div>
+          <h2 className="text-4xl md:text-6xl font-serif text-text mb-6 tracking-tight">Bespoke Dental <span className="italic text-primary">Artistry</span></h2>
+          <p className="text-text-muted text-xl leading-relaxed">
+            From subtle refinements to complete transformations. Experience the intersection of advanced technology and master clinical skill.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
