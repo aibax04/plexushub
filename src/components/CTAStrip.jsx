@@ -55,7 +55,7 @@ function CTAStrip() {
                 Book Free Consultation
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="tel:+919999999999" className="inline-flex items-center gap-2 px-6 py-4 border border-white/10 rounded-full text-white/80 hover:text-white hover:border-white/30 transition-all text-sm font-medium">
+              <a href="tel:+916307114437" className="inline-flex items-center gap-2 px-6 py-4 border border-white/10 rounded-full text-white/80 hover:text-white hover:border-white/30 transition-all text-sm font-medium">
                 <Phone className="w-4 h-4" />
                 Call Now
               </a>

@@ -14,7 +14,11 @@ function Footer() {
             </div>
             <div>
               <p className="text-dark-text text-sm font-medium mb-1">Visit Us</p>
-              <p className="text-dark-text-muted text-xs leading-relaxed">Ashiyana, Lucknow<br />Uttar Pradesh 226012</p>
+              <p className="text-dark-text-muted text-xs leading-relaxed">
+                Shop no 9, SJS Pratham Complex,<br />
+                Chungi-Parag Rd, Opp. Shivalik School, Ashiyana, Lucknow 226012<br />
+                
+              </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -23,7 +27,7 @@ function Footer() {
             </div>
             <div>
               <p className="text-dark-text text-sm font-medium mb-1">Call / WhatsApp</p>
-              <a href="tel:+919999999999" className="text-dark-text-muted text-xs hover:text-primary transition-colors">+91 99999 99999</a>
+              <a href="tel:+916307114437" className="text-dark-text-muted text-xs hover:text-primary transition-colors">+91 63071 14437</a>
             </div>
           </div>
           <div className="flex items-start gap-3">
@@ -41,7 +45,7 @@ function Footer() {
             </div>
             <div>
               <p className="text-dark-text text-sm font-medium mb-1">Email</p>
-              <a href="mailto:hello@plexusdental.in" className="text-dark-text-muted text-xs hover:text-primary transition-colors">hello@plexusdental.in</a>
+              <a href="mailto:plexusdentalhub@gmail.com" className="text-dark-text-muted text-xs hover:text-primary transition-colors">hello@plexusdental.in</a>
             </div>
           </div>
         </div>
