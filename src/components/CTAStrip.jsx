@@ -1,5 +1,4 @@
-import React from 'react'
-import { ChevronRight, Phone } from 'lucide-react'
+import { ChevronRight, Phone, CalendarClock, Stethoscope, Smile } from 'lucide-react'
 
 function CTAStrip() {
   return (
@@ -17,17 +16,23 @@ function CTAStrip() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
           <div className="flex flex-col text-center md:text-left">
-            <div className="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-bold mb-6 text-lg mx-auto md:mx-0">1</div>
+            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-primary flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-inner">
+              <CalendarClock strokeWidth={1.2} className="w-7 h-7" />
+            </div>
             <h3 className="text-xl font-medium mb-3">Book in 30 seconds</h3>
             <p className="text-dark-text-muted text-sm leading-relaxed">Call, WhatsApp, or book online. Pick a slot that works for you - evenings and weekends available. Zero paperwork on arrival.</p>
           </div>
           <div className="flex flex-col text-center md:text-left">
-            <div className="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-bold mb-6 text-lg mx-auto md:mx-0">2</div>
+            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-primary flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-inner">
+              <Stethoscope strokeWidth={1.2} className="w-7 h-7" />
+            </div>
             <h3 className="text-xl font-medium mb-3">Free consultation & diagnosis</h3>
             <p className="text-dark-text-muted text-sm leading-relaxed">We take digital X-rays, show them to you on-screen, explain everything in plain Hindi or English, and give you an honest opinion. No pressure. No upselling.</p>
           </div>
           <div className="flex flex-col text-center md:text-left">
-            <div className="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-bold mb-6 text-lg mx-auto md:mx-0">3</div>
+            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-primary flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-inner">
+              <Smile strokeWidth={1.2} className="w-7 h-7" />
+            </div>
             <h3 className="text-xl font-medium mb-3">Walk out smiling</h3>
             <p className="text-dark-text-muted text-sm leading-relaxed">Whether it's a same-day cleaning or a multi-visit smile makeover, every step is painless, transparent, and designed around your comfort.</p>
           </div>

@@ -1,46 +1,54 @@
 import React from 'react'
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, Zap, ShieldCheck, Smile, Sparkles, Heart, Stethoscope, Sun, Target } from 'lucide-react'
 
 const treatments = [
   {
     title: "Painless Root Canal (RCT)",
     desc: "Single-sitting, microscope-assisted root canals. You won't feel a thing - we guarantee it. Save your natural tooth instead of pulling it.",
     tag: "Most Popular",
+    icon: Zap,
   },
   {
     title: "Dental Implants",
     desc: "Missing a tooth? Our titanium implants look, feel, and function exactly like real teeth. Permanent. No adhesives. No compromise.",
     tag: "Permanent Fix",
+    icon: ShieldCheck,
   },
   {
     title: "Clear Aligners & Braces",
     desc: "Straighten your teeth invisibly. Custom-moulded clear aligners for adults, or colour braces that kids actually love wearing.",
     tag: "Adults & Kids",
+    icon: Smile,
   },
   {
     title: "Smile Makeover",
     desc: "Veneers, bonding, whitening, and gum contouring - combined into one comprehensive plan that delivers a red-carpet smile.",
     tag: "Cosmetic",
+    icon: Sparkles,
   },
   {
     title: "Kids Dentistry",
     desc: "We turn scary dentist visits into fun adventures. Fluoride treatments, sealants, and cavity care designed for tiny humans.",
     tag: "Child-Friendly",
+    icon: Heart,
   },
   {
     title: "Gum Disease Treatment",
     desc: "Bleeding when you brush? Don't ignore it. Our laser-assisted deep cleaning halts gum disease before it causes tooth loss.",
     tag: "Preventive",
+    icon: Stethoscope,
   },
   {
     title: "Teeth Whitening",
     desc: "Professional in-office whitening that's 8x stronger than strips. Visibly whiter teeth in a single 45-minute session.",
     tag: "Quick Results",
+    icon: Sun,
   },
   {
     title: "Wisdom Tooth Extraction",
     desc: "Impacted or painful wisdom teeth? We remove them with surgical precision under local anaesthesia. Minimal swelling, fast recovery.",
     tag: "Same-Day",
+    icon: Target,
   }
 ]
 
@@ -77,9 +85,15 @@ function Membership() {
               {treatments.map((treatment, idx) => (
                 <div key={idx} className="flex flex-col group bg-[#f8f8f9] rounded-2xl p-6 border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   {/* Tag */}
-                  <span className="inline-block self-start px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wide mb-4">
-                    {treatment.tag}
-                  </span>
+                  {/* Icon & Tag */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-border/50 flex items-center justify-center text-primary/80 shadow-sm group-hover:bg-primary/5 group-hover:border-primary/20 transition-colors">
+                      <treatment.icon strokeWidth={1.2} className="w-5 h-5" />
+                    </div>
+                    <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wide">
+                      {treatment.tag}
+                    </span>
+                  </div>
                   
                   {/* Content */}
                   <h3 className="text-lg font-medium text-text mb-2 tracking-tight">{treatment.title}</h3>
