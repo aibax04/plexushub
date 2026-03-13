@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { CheckCircle, ChevronRight, ChevronDown } from 'lucide-react'
 
 function Hero() {
+  const [scrollOpacity, setScrollOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY;
+      const newOpacity = Math.max(0, 1 - scrollPos / 300);
+      setScrollOpacity(newOpacity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center">
+    <section className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center -z-10">
       {/* Background Image with Dark Gradient Overlays */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -65,7 +78,10 @@ function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-dark-text-muted/30 animate-bounce">
+      <div 
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-dark-text-muted/30 animate-bounce transition-opacity duration-300"
+        style={{ opacity: scrollOpacity }}
+      >
         <span className="text-[9px] uppercase tracking-[0.3em] font-medium">Scroll</span>
         <ChevronDown className="w-4 h-4" />
       </div>
