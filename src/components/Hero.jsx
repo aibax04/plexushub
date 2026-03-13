@@ -64,11 +64,16 @@ function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-dark-text-muted/50 animate-bounce">
-        <span className="text-[9px] sm:text-[10px] uppercase tracking-widest font-medium">Scroll</span>
-        <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4" />
-      </div>
+      {/* Scroll indicator button */}
+      <a 
+        href="#features" 
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 group transition-all duration-300 hover:translate-y-1"
+      >
+        <div className="w-[26px] h-[42px] rounded-full border-2 border-white/20 flex justify-center p-1.5 backdrop-blur-sm group-hover:border-primary/50 transition-colors">
+          <div className="w-1 h-2 bg-white/60 rounded-full animate-bounce"></div>
+        </div>
+        <span className="text-[9px] sm:text-[10px] uppercase tracking-widest font-bold text-white/40 group-hover:text-primary transition-colors">Scroll to explore</span>
+      </a>
     </section>
   )
 }
