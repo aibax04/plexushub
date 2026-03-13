@@ -45,7 +45,7 @@ function Footer() {
             </div>
             <div>
               <p className="text-dark-text text-sm font-medium mb-1">Email</p>
-              <a href="mailto:plexusdentalhub@gmail.com" className="text-dark-text-muted text-xs hover:text-primary transition-colors">hello@plexusdental.in</a>
+              <a href="mailto:plexusdentalhub@gmail.com" className="text-dark-text-muted text-xs hover:text-primary transition-colors">plexusdentalhub@gmail.com</a>
             </div>
           </div>
         </div>
@@ -68,8 +68,12 @@ function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-dark-text-muted text-xs">
-          <div>© {new Date().getFullYear()} Plexus Dental, Ashiyana Lucknow. All rights reserved.</div>
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-dark-text-muted text-[11px]">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+            <span>© {new Date().getFullYear()} Plexus Dental Hub, Ashiyana Lucknow. All rights reserved.</span>
+            <span className="hidden md:block w-px h-3 bg-white/10"></span>
+            <span>Developed by human hands at <a href="https://www.uptrail.io" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">uptrail.io</a></span>
+          </div>
           <div className="flex gap-4">
             <a href="#" className="hover:text-dark-text transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-dark-text transition-colors">Terms of Service</a>
