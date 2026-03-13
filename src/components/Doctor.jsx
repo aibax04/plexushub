@@ -67,7 +67,7 @@ function Doctor() {
 
         {/* Philosophy Block */}
         <div className="mt-20 p-8 sm:p-12 bg-[#f8f8f9] rounded-[2.5rem] border border-border/50 text-center max-w-4xl mx-auto">
-          <p className="text-lg sm:text-xl text-text-muted leading-relaxed italic font-light">
+          <p className="text-lg sm:text-xl text-text-muted leading-relaxed font-light">
             &ldquo;We don&rsquo;t just fix teeth. We listen to your fears, understand your goals, and build a treatment plan that respects both. No upselling. No rush. Just honest, exceptional dentistry by experts who care.&rdquo;
           </p>
           <div className="flex items-center justify-center gap-8 mt-10 opacity-60">

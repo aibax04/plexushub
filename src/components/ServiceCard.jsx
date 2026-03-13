@@ -10,7 +10,7 @@ function ServiceCard({ icon, title, description }) {
         {icon}
       </div>
       <h3 className="text-2xl font-serif text-text mb-4 group-hover:text-primary transition-colors">{title}</h3>
-      <p className="text-text-muted leading-relaxed text-sm lg:text-base font-light italic">{description}</p>
+      <p className="text-text-muted leading-relaxed text-sm lg:text-base font-light">{description}</p>
     </div>
   )
 }
