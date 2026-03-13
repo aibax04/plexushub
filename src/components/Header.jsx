@@ -16,26 +16,42 @@ function Header() {
               plexus<span className="font-light">dental</span>
             </a>
             
-            <nav className="hidden lg:flex items-center justify-center space-x-7 flex-1">
-              <a href="#features" className="text-[14px] font-medium text-white/90 hover:text-white transition-colors">Why Us</a>
-              <a href="#treatments" className="text-[14px] font-medium text-white/90 hover:text-white transition-colors">Treatments</a>
-              <a href="#reviews" className="text-[14px] font-medium text-white/90 hover:text-white transition-colors">Reviews</a>
-              <div className="w-px h-4 bg-white/20 mx-1"></div>
-              <a href="#how-it-works" className="text-[14px] font-medium text-white/90 hover:text-white transition-colors">Patient Journey</a>
+            <nav className="hidden lg:flex items-center justify-center gap-8 flex-1">
+              <a href="#features" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group">
+                Why Us
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#treatments" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group">
+                Treatments
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#reviews" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group">
+                Reviews
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <div className="w-px h-3 bg-white/10 mx-1"></div>
+              <a href="#how-it-works" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group">
+                Patient Journey
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </a>
             </nav>
             
-            <div className="hidden lg:flex items-center gap-6 flex-shrink-0">
-              <a href="#book" className="px-6 py-2.5 bg-primary text-white text-[14px] font-bold rounded-full hover:scale-105 transition-all shadow-md">
+            <div className="hidden lg:flex items-center flex-shrink-0">
+              <a href="#book" className="px-6 py-2.5 bg-primary text-white text-[14px] font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-primary/40 active:scale-95">
                 Book Visit
               </a>
             </div>
 
             {/* Mobile Menu Button - Show only below lg */}
             <div className="flex lg:hidden items-center gap-4">
-              <a href="#book" className="px-4 py-2 bg-primary text-white text-[13px] font-bold rounded-full hover:scale-105 transition-all">
+              <a href="#book" className="px-4 py-2 bg-primary text-white text-[13px] font-bold rounded-full active:scale-95 transition-all">
                 Book
               </a>
-              <button onClick={toggleMenu} className="text-white focus:outline-hidden p-1">
+              <button 
+                onClick={toggleMenu} 
+                className="text-white hover:text-primary transition-colors focus:outline-none p-1"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+              >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
