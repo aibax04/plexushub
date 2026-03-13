@@ -9,7 +9,7 @@ function Header() {
   return (
     <>
       <div className="fixed top-4 md:top-6 left-0 right-0 z-50 px-4 flex justify-center w-full">
-        <header className="w-full max-w-6xl bg-[#4b4b4b]/95 backdrop-blur-md text-white rounded-full shadow-2xl border border-white/10">
+        <header className="w-full max-w-6xl bg-[#4b4b4b]/95 backdrop-blur-md text-white rounded-full shadow-2xl border border-white/10 transition-all">
           <div className="px-6 md:px-8 h-[64px] flex items-center justify-between">
             
             <a href="/" className="font-sans font-bold text-2xl tracking-tight hover:opacity-80 transition-opacity flex-shrink-0">

@@ -3,7 +3,7 @@ import { CheckCircle, ChevronRight, ChevronDown } from 'lucide-react'
 
 function Hero() {
   return (
-    <section className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center -z-10">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center">
       {/* Background Image with Dark Gradient Overlays */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -16,12 +16,12 @@ function Hero() {
         <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/30 rounded-full blur-[140px] pointer-events-none"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-28">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
+      <div className="container mx-auto px-6 relative z-10 pt-20">
+        <div className="max-w-4xl mx-auto flex flex-col items-center animate-reveal">
           
           {/* Micro-badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-medium tracking-wide mb-8 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-green-400"></span>
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
             Now Accepting New Patients
           </div>
 
@@ -64,8 +64,8 @@ function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator - static */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-dark-text-muted/30">
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-dark-text-muted/30 animate-bounce">
         <span className="text-[9px] uppercase tracking-[0.3em] font-medium">Scroll</span>
         <ChevronDown className="w-4 h-4" />
       </div>
