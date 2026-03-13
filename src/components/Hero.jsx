@@ -16,7 +16,7 @@ function Hero() {
         <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/30 rounded-full blur-[140px] pointer-events-none"></div>
       </div>
 
-      <div className="container mx-auto px-5 relative z-10 pt-24 sm:pt-20">
+      <div className="container mx-auto px-5 relative z-10 sm:pt-20">
         <div className="max-w-4xl mx-auto flex flex-col items-center animate-reveal">
           
           {/* Micro-badge */}
@@ -25,12 +25,12 @@ function Hero() {
             Now Accepting New Patients
           </div>
 
-          <h1 className="text-[2.2rem] xs:text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium text-dark-text leading-[1.1] tracking-tight mb-4 sm:mb-6">
+          <h1 className="text-[2rem] xs:text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium text-dark-text leading-[1.1] tracking-tight mb-4 sm:mb-6">
             Your smile deserves <br className="hidden md:block" />
             nothing but the best
           </h1>
           
-          <p className="text-sm sm:text-lg md:text-xl text-dark-text-muted mb-6 sm:mb-10 leading-relaxed max-w-2xl font-light px-2 sm:px-4">
+          <p className="text-[15px] sm:text-lg md:text-xl text-dark-text-muted mb-6 sm:mb-10 leading-relaxed max-w-2xl font-light px-2 sm:px-4">
             Ashiyana's most trusted dental clinic. Painless root canals, invisible braces, implants, and smile makeovers - all backed by 15+ years of expertise and the latest technology.
           </p>
           
