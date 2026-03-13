@@ -3,50 +3,50 @@ import { ChevronRight } from 'lucide-react'
 
 const features = [
   {
-    title: "Your personalized oral plan",
-    desc: "Lifestyle, diet, and precision cleaning recommendations tailored to your microbiome and genetics.",
+    title: "Painless Root Canal Treatment (RCT)",
+    desc: "Single-sitting microscopic RCT designed to save your natural tooth with zero discomfort.",
   },
   {
-    title: "Unlimited concierge messaging",
-    desc: "Ask unlimited questions and get answers within 24 hours on weekdays from our clinical team.",
+    title: "Dental Implants & Prosthetics",
+    desc: "Permanent, natural-looking tooth replacements to complete your smile and restore full chewing function.",
   },
   {
-    title: "At-home diagnostic kits",
-    desc: "Advanced saliva microbiome testing and pH monitoring delivered directly to your door.",
+    title: "Orthodontics & Invisible Braces",
+    desc: "Straighten your teeth seamlessly with clear aligners or traditional braces customized for adults and children.",
   },
   {
-    title: "Access to Plexus Clinics",
-    desc: "Curated, ultra-premium preventative treatments available globally after your digital evaluation.",
+    title: "Aesthetic Smile Designing",
+    desc: "Veneers, professional teeth whitening, and cosmetic procedures crafted to give you a flawless, radiant smile.",
   },
   {
-    title: "Continuous monitoring",
-    desc: "24/7 access to your 3D oral-twin and historical scan data via the Plexus mobile app.",
+    title: "Pediatric Dentistry (Kids Care)",
+    desc: "Gentle, child-friendly care creating positive dental experiences and building life-long healthy habits.",
   },
   {
-    title: "Priority booking",
-    desc: "Skip the waitlist for urgent care or aesthetic enhancements at any flagship studio.",
+    title: "Periodontal (Gum) Therapy",
+    desc: "Advanced laser treatments and deep scaling to treat bleeding gums, bad breath, and prevent tooth loss.",
   }
 ]
 
 function Membership() {
   return (
-    <section id="membership" className="bg-bg py-24 sm:py-32 relative z-10 border-t border-border/50">
+    <section id="treatments" className="bg-bg py-24 sm:py-32 relative z-10 border-t border-border/50">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative items-start">
           
           {/* Left Sticky Sidebar */}
           <div className="lg:w-[35%] lg:sticky lg:top-32 self-start">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 text-text">
-              What’s included in your membership
+              Comprehensive dental care, all under one roof
             </h2>
             <p className="text-lg font-medium text-text mb-2 tracking-tight">
-              Plexus is more than a dental checkup.
+              Your smile deserves the best.
             </p>
             <p className="text-text-muted mb-8 text-[15px] leading-relaxed">
-              Access an ecosystem of diagnostics and doctor-trusted solutions personalized to your oral profile.
+              From routine cleanings to advanced dental implants, our Ashiyana clinic is equipped to handle your family's complete oral health needs with precision and care.
             </p>
             <a href="#book" className="inline-flex items-center justify-center px-6 py-3 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-lg hover:scale-105">
-              <span className="text-[15px]">Join Today</span>
+              <span className="text-[15px]">Book a Consultation</span>
               <ChevronRight className="w-4 h-4 ml-1" />
             </a>
           </div>

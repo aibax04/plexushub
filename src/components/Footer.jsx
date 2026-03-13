@@ -9,9 +9,9 @@ function Footer() {
             plexus<span className="font-light">dental</span>
           </a>
           <div className="flex flex-wrap justify-center md:justify-end gap-8">
-            <a href="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">How It Works</a>
-            <a href="#what-we-test" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">What We Scan</a>
-            <a href="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Reviews</a>
+            <a href="#features" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Why Us</a>
+            <a href="#treatments" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Treatments</a>
+            <a href="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Patient Journey</a>
             <a href="#contact" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Contact</a>
           </div>
         </div>

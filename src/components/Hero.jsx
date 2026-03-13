@@ -21,25 +21,25 @@ function Hero() {
         <div className="max-w-4xl mx-auto flex flex-col items-center animate-reveal">
           
           <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium text-dark-text leading-[1.05] tracking-tight mb-6">
-            Unlock your new <br className="hidden md:block" />
-            oral intelligence
+            The Premier Dentist <br className="hidden md:block" />
+            in Ashiyana, Lucknow
           </h1>
           
           <p className="text-lg md:text-xl text-dark-text-muted mb-10 leading-relaxed max-w-2xl font-light">
-            Comprehensive AI-driven scanning. Detect early signs of decay, gum disease, and micro-fractures. Proactive precision care for the ultimate smile.
+            Advanced dental care combining precision technology with gentle expertise. From painless root canals to perfect smile makeovers, we deliver world-class dentistry locally.
           </p>
           
           <div className="flex flex-col items-center gap-4 mb-16">
             <a href="#book" className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-[1.02] shadow-lg hover:shadow-primary/25">
               <span className="flex items-center gap-2 text-[17px]">
-                Join Plexus
+                Book an Appointment
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </a>
             
             <div className="flex items-center gap-2 text-dark-text-muted text-sm font-medium">
               <CheckCircle className="w-4 h-4 text-dark-text" />
-              <span>HSA/FSA eligible</span>
+              <span>Highest rated clinic in Ashiyana</span>
             </div>
           </div>
         </div>
