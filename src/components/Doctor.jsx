@@ -19,7 +19,7 @@ function Doctor() {
               {/* Credentials overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
                 <h4 className="text-2xl font-medium text-white mb-1">Dr. [Your Name]</h4>
-                <p className="text-white/70 text-sm">BDS, MDS — Chief Dental Surgeon</p>
+                <p className="text-white/70 text-sm">BDS, MDS - Chief Dental Surgeon</p>
                 <p className="text-white/50 text-xs mt-1">15+ Years · 10,000+ Procedures</p>
               </div>
             </div>

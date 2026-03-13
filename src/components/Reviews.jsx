@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: "Sneha Agarwal",
     role: "IT Professional, Gomti Nagar",
-    text: "The clear aligners changed my life. They showed me a 3D simulation of my final smile before I even started. 8 months later — exactly as promised. Worth every rupee.",
+    text: "The clear aligners changed my life. They showed me a 3D simulation of my final smile before I even started. 8 months later - exactly as promised. Worth every rupee.",
     rating: 5,
   },
   {
@@ -29,7 +29,7 @@ const testimonials = [
   {
     name: "Neha Srivastava",
     role: "Homemaker, Indira Nagar",
-    text: "My 5-year-old daughter actually asks to go to the dentist now. The kids' area, the gentle handling, the stickers afterwards — they've thought of everything. Can't recommend enough.",
+    text: "My 5-year-old daughter actually asks to go to the dentist now. The kids' area, the gentle handling, the stickers afterwards - they've thought of everything. Can't recommend enough.",
     rating: 5,
   },
   {

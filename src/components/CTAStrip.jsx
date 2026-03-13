@@ -11,7 +11,7 @@ function CTAStrip() {
             Patient Journey
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.1]">
-            From booking to <br className="hidden sm:block" />beautiful — in 3 simple steps
+            From booking to <br className="hidden sm:block" />beautiful - in 3 simple steps
           </h2>
         </div>
 
@@ -19,7 +19,7 @@ function CTAStrip() {
           <div className="flex flex-col text-center md:text-left">
             <div className="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-bold mb-6 text-lg mx-auto md:mx-0">1</div>
             <h3 className="text-xl font-medium mb-3">Book in 30 seconds</h3>
-            <p className="text-dark-text-muted text-sm leading-relaxed">Call, WhatsApp, or book online. Pick a slot that works for you — evenings and weekends available. Zero paperwork on arrival.</p>
+            <p className="text-dark-text-muted text-sm leading-relaxed">Call, WhatsApp, or book online. Pick a slot that works for you - evenings and weekends available. Zero paperwork on arrival.</p>
           </div>
           <div className="flex flex-col text-center md:text-left">
             <div className="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center font-bold mb-6 text-lg mx-auto md:mx-0">2</div>
@@ -43,7 +43,7 @@ function CTAStrip() {
               Stop putting it off. <br className="hidden sm:block" />Your smile is worth it.
             </h3>
             <p className="text-dark-text-muted mb-10 max-w-xl mx-auto text-[15px] leading-relaxed">
-              The longer you wait, the more complex (and expensive) dental problems become. Book your free consultation today and get peace of mind — it takes less than 30 seconds.
+              The longer you wait, the more complex (and expensive) dental problems become. Book your free consultation today and get peace of mind - it takes less than 30 seconds.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="#book" className="group inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 shadow-lg">

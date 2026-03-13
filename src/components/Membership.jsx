@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react'
 const treatments = [
   {
     title: "Painless Root Canal (RCT)",
-    desc: "Single-sitting, microscope-assisted root canals. You won't feel a thing — we guarantee it. Save your natural tooth instead of pulling it.",
+    desc: "Single-sitting, microscope-assisted root canals. You won't feel a thing - we guarantee it. Save your natural tooth instead of pulling it.",
     tag: "Most Popular",
   },
   {
@@ -19,7 +19,7 @@ const treatments = [
   },
   {
     title: "Smile Makeover",
-    desc: "Veneers, bonding, whitening, and gum contouring — combined into one comprehensive plan that delivers a red-carpet smile.",
+    desc: "Veneers, bonding, whitening, and gum contouring - combined into one comprehensive plan that delivers a red-carpet smile.",
     tag: "Cosmetic",
   },
   {
@@ -60,7 +60,7 @@ function Membership() {
               Everything your smile needs. Under one roof.
             </h2>
             <p className="text-text-muted mb-4 text-[15px] leading-relaxed">
-              From a simple cleaning to a complete smile transformation — our Ashiyana clinic handles it all. No referrals needed. No running between specialists.
+              From a simple cleaning to a complete smile transformation - our Ashiyana clinic handles it all. No referrals needed. No running between specialists.
             </p>
             <p className="text-text font-medium text-[15px] mb-8">
               Every treatment includes a free consultation and transparent pricing. No surprises.
