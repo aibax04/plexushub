@@ -3,7 +3,6 @@ import { CheckCircle, ChevronRight, ChevronDown } from 'lucide-react'
 
 function Hero() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,48 +12,31 @@ function Hero() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
-    // Simulate video load for the fallback fade
-    const timer = setTimeout(() => setIsVideoLoaded(true), 2500);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearTimeout(timer);
-    }
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <section className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center -z-10">
-      {/* Background Video with Premium Blending */}
-      <div className="absolute inset-0 z-0 overflow-hidden animate-page-intro bg-dark-bg">
-        
-        {/* Dynamic Video Player */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none opacity-40 animate-slow-zoom flex items-center justify-center">
-          {/* Fallback Poster */}
-          <img 
-            src="/hero-dental-treatment.jpg" 
-            alt="Dental Background" 
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}
-          />
-          <div className="absolute w-[300vw] h-[300vh] md:w-[150vw] md:h-[150vh]">
-            <iframe
-              src="https://www.youtube.com/embed/SaE67yF0tic?autoplay=1&mute=1&loop=1&playlist=SaE67yF0tic&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&playsinline=1"
-              allow="autoplay; encrypted-media"
-              className="w-full h-full border-0"
-              onLoad={() => setIsVideoLoaded(true)}
-            ></iframe>
-          </div>
-        </div>
+      {/* Initial Page Load Transition */}
+      <div className="fixed inset-0 z-50 bg-dark-bg pointer-events-none animate-curtain-reveal"></div>
 
-        {/* Advanced Gradient Overlays for Perfect Blending */}
-        <div className="absolute inset-0 bg-dark-bg/40 mix-blend-multiply border-none pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/40 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-bg/50 via-transparent to-dark-bg/50"></div>
+      {/* Background Image with Premium Blending */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-dark-bg">
+        <img 
+          src="/hero-model-teeth.jpg" 
+          alt="Precision Dental Care" 
+          className="w-full h-full object-cover opacity-85 animate-slow-zoom"
+        />
         
-        {/* Dynamic Light Blobs for Depth */}
-        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
-        <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+        {/* Advanced Gradient Overlays for Perfect Blending */}
+        <div className="absolute inset-0 bg-dark-bg/30 mix-blend-multiply pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-dark-bg/10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/30 via-transparent to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-bg/50 via-transparent to-dark-bg/50 pointer-events-none"></div>
+        
+        {/* Dynamic Light Blobs for Depth (Premium glassmorphism touch) */}
+        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/30 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
+        <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 pt-20">
