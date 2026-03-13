@@ -12,25 +12,25 @@ function Services() {
             <div className="flex flex-col items-center md:items-start pt-8 md:pt-0 px-0 md:px-8 first:pl-0">
               <div className="flex items-center gap-2 mb-3">
                 <Activity className="w-5 h-5 text-text" />
-                <h3 className="font-semibold text-text text-lg tracking-tight">Painless Treatments</h3>
+                <h3 className="font-semibold text-text text-lg tracking-tight">Zero Pain, Zero Anxiety</h3>
               </div>
-              <p className="text-text-muted text-sm leading-relaxed">State-of-the-art technology ensuring pain-free root canals, extractions, and implants.</p>
+              <p className="text-text-muted text-sm leading-relaxed">Modern anaesthesia and microscopic precision mean you feel nothing. Even during root canals.</p>
             </div>
             
             <div className="flex flex-col items-center md:items-start pt-8 md:pt-0 px-0 md:px-8">
               <div className="flex items-center gap-2 mb-3">
                 <Zap className="w-5 h-5 text-text" />
-                <h3 className="font-semibold text-text text-lg tracking-tight">Expert Diagnosis</h3>
+                <h3 className="font-semibold text-text text-lg tracking-tight">See Before You Decide</h3>
               </div>
-              <p className="text-text-muted text-sm leading-relaxed">Advanced digital imaging and AI analysis for precise, transparent treatment planning.</p>
+              <p className="text-text-muted text-sm leading-relaxed">Digital X-rays on your screen. We show you exactly what we see, so you make informed choices.</p>
             </div>
             
             <div className="flex flex-col items-center md:items-start pt-8 md:pt-0 px-0 md:px-8 last:pr-0">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="w-5 h-5 text-text" />
-                <h3 className="font-semibold text-text text-lg tracking-tight">Prime Location</h3>
+                <h3 className="font-semibold text-text text-lg tracking-tight">Your Neighbourhood Clinic</h3>
               </div>
-              <p className="text-text-muted text-sm leading-relaxed">Conveniently located in the heart of Ashiyana, Lucknow with flexible family scheduling.</p>
+              <p className="text-text-muted text-sm leading-relaxed">5 minutes from Ashiyana crossing. Ample parking. Evening &amp; weekend slots for working professionals.</p>
             </div>
 
           </div>
@@ -41,12 +41,13 @@ function Services() {
       <section className="bg-bg-alt py-32 rounded-t-[3rem] -mt-8 relative z-10">
         <div className="container mx-auto px-6 max-w-5xl text-center">
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-text tracking-tight leading-tight max-w-4xl mx-auto mb-8">
-            “Finally found a dentist in Ashiyana who actually listens. The painless root canal and transparent pricing completely transformed my view on dental visits.”
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-text tracking-tight leading-tight max-w-4xl mx-auto mb-4">
+            &ldquo;I walked in terrified of dentists. I walked out wondering why I ever waited. The most comfortable medical experience of my life &mdash; and my teeth look incredible.&rdquo;
           </h2>
+          <p className="text-text-muted text-sm mb-6">&mdash; Priya M., Gomti Nagar</p>
           
           <a href="#reviews" className="inline-flex items-center gap-2 text-sm font-medium text-text hover:text-primary transition-colors mb-16">
-            Read patient stories <ArrowRight className="w-4 h-4" />
+            See 200+ reviews on Google <ArrowRight className="w-4 h-4" />
           </a>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -57,7 +58,7 @@ function Services() {
                 <span className="text-xl font-medium text-text">+</span>
               </div>
               <p className="text-text-muted text-sm leading-relaxed">
-                Beautiful smiles <strong className="text-text font-medium">successfully restored</strong> across Lucknow and surrounding areas
+                patients who left with a <strong className="text-text font-medium">healthier, more confident smile</strong>
               </p>
             </div>
             
@@ -65,21 +66,21 @@ function Services() {
             <div className="bg-white p-8 rounded-2xl shadow-sm text-left flex flex-col justify-between min-h-[160px]">
               <div className="flex items-baseline gap-1 mb-4">
                 <span className="text-5xl font-light text-text tracking-tighter">15</span>
-                <span className="text-xl font-medium text-text">+</span>
+                <span className="text-xl font-medium text-text">yrs</span>
               </div>
               <p className="text-text-muted text-sm leading-relaxed">
-                Years of <strong className="text-text font-medium">clinical experience</strong> performing advanced restorative dentistry
+                of <strong className="text-text font-medium">hands-on surgical expertise</strong> across every dental specialisation
               </p>
             </div>
 
             {/* Stat Card 3 */}
             <div className="bg-white p-8 rounded-2xl shadow-sm text-left flex flex-col justify-between min-h-[160px]">
               <div className="flex items-baseline gap-1 mb-4">
-                <span className="text-5xl font-light text-text tracking-tighter">100</span>
-                <span className="text-xl font-medium text-text">%</span>
+                <span className="text-5xl font-light text-text tracking-tighter">4.9</span>
+                <span className="text-xl font-medium text-text">★</span>
               </div>
               <p className="text-text-muted text-sm leading-relaxed">
-                Commitment to a <strong className="text-text font-medium">sterile, hygienic, and painless</strong> clinical environment
+                average <strong className="text-text font-medium">Google rating</strong> from 200+ verified patient reviews
               </p>
             </div>
           </div>

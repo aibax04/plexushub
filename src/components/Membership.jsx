@@ -1,30 +1,46 @@
 import React from 'react'
 import { ChevronRight } from 'lucide-react'
 
-const features = [
+const treatments = [
   {
-    title: "Painless Root Canal Treatment (RCT)",
-    desc: "Single-sitting microscopic RCT designed to save your natural tooth with zero discomfort.",
+    title: "Painless Root Canal (RCT)",
+    desc: "Single-sitting, microscope-assisted root canals. You won't feel a thing — we guarantee it. Save your natural tooth instead of pulling it.",
+    tag: "Most Popular",
   },
   {
-    title: "Dental Implants & Prosthetics",
-    desc: "Permanent, natural-looking tooth replacements to complete your smile and restore full chewing function.",
+    title: "Dental Implants",
+    desc: "Missing a tooth? Our titanium implants look, feel, and function exactly like real teeth. Permanent. No adhesives. No compromise.",
+    tag: "Permanent Fix",
   },
   {
-    title: "Orthodontics & Invisible Braces",
-    desc: "Straighten your teeth seamlessly with clear aligners or traditional braces customized for adults and children.",
+    title: "Clear Aligners & Braces",
+    desc: "Straighten your teeth invisibly. Custom-moulded clear aligners for adults, or colour braces that kids actually love wearing.",
+    tag: "Adults & Kids",
   },
   {
-    title: "Aesthetic Smile Designing",
-    desc: "Veneers, professional teeth whitening, and cosmetic procedures crafted to give you a flawless, radiant smile.",
+    title: "Smile Makeover",
+    desc: "Veneers, bonding, whitening, and gum contouring — combined into one comprehensive plan that delivers a red-carpet smile.",
+    tag: "Cosmetic",
   },
   {
-    title: "Pediatric Dentistry (Kids Care)",
-    desc: "Gentle, child-friendly care creating positive dental experiences and building life-long healthy habits.",
+    title: "Kids Dentistry",
+    desc: "We turn scary dentist visits into fun adventures. Fluoride treatments, sealants, and cavity care designed for tiny humans.",
+    tag: "Child-Friendly",
   },
   {
-    title: "Periodontal (Gum) Therapy",
-    desc: "Advanced laser treatments and deep scaling to treat bleeding gums, bad breath, and prevent tooth loss.",
+    title: "Gum Disease Treatment",
+    desc: "Bleeding when you brush? Don't ignore it. Our laser-assisted deep cleaning halts gum disease before it causes tooth loss.",
+    tag: "Preventive",
+  },
+  {
+    title: "Teeth Whitening",
+    desc: "Professional in-office whitening that's 8x stronger than strips. Visibly whiter teeth in a single 45-minute session.",
+    tag: "Quick Results",
+  },
+  {
+    title: "Wisdom Tooth Extraction",
+    desc: "Impacted or painful wisdom teeth? We remove them with surgical precision under local anaesthesia. Minimal swelling, fast recovery.",
+    tag: "Same-Day",
   }
 ]
 
@@ -36,41 +52,42 @@ function Membership() {
           
           {/* Left Sticky Sidebar */}
           <div className="lg:w-[35%] lg:sticky lg:top-32 self-start">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 text-text">
-              Comprehensive dental care, all under one roof
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 border border-primary/20">
+              Our Treatments
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-6 text-text leading-[1.1]">
+              Everything your smile needs. Under one roof.
             </h2>
-            <p className="text-lg font-medium text-text mb-2 tracking-tight">
-              Your smile deserves the best.
+            <p className="text-text-muted mb-4 text-[15px] leading-relaxed">
+              From a simple cleaning to a complete smile transformation — our Ashiyana clinic handles it all. No referrals needed. No running between specialists.
             </p>
-            <p className="text-text-muted mb-8 text-[15px] leading-relaxed">
-              From routine cleanings to advanced dental implants, our Ashiyana clinic is equipped to handle your family's complete oral health needs with precision and care.
+            <p className="text-text font-medium text-[15px] mb-8">
+              Every treatment includes a free consultation and transparent pricing. No surprises.
             </p>
-            <a href="#book" className="inline-flex items-center justify-center px-6 py-3 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-lg hover:scale-105">
-              <span className="text-[15px]">Book a Consultation</span>
+            <a href="#book" className="inline-flex items-center justify-center px-6 py-3 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 shadow-md">
+              <span className="text-[15px]">Book a Free Consultation</span>
               <ChevronRight className="w-4 h-4 ml-1" />
             </a>
           </div>
 
           {/* Right Scrolling Content */}
           <div className="lg:w-[65%]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16">
-              {features.map((feature, idx) => (
-                <div key={idx} className="flex flex-col group">
-                  {/* Image Placeholder mimicking physical product / UI */}
-                  <div className="w-full aspect-[4/3] sm:aspect-square rounded-[2rem] bg-[#f8f8f9] mb-6 relative overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] border border-border/60 shadow-sm flex items-center justify-center">
-                    {/* Abstract design element */}
-                    <div className="w-3/4 h-3/4 rounded-xl bg-white shadow-xl border border-white/50 flex flex-col justify-between p-6 opacity-90 transition-transform duration-700 group-hover:-translate-y-2">
-                      <div className="w-1/3 h-2 bg-border rounded-full"></div>
-                      <div className="flex justify-between items-end">
-                        <div className="w-8 h-8 rounded-full bg-primary/10"></div>
-                        <div className="w-1/2 h-20 bg-gradient-to-br from-bg-alt to-border/30 rounded-lg"></div>
-                      </div>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {treatments.map((treatment, idx) => (
+                <div key={idx} className="flex flex-col group bg-[#f8f8f9] rounded-2xl p-6 border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  {/* Tag */}
+                  <span className="inline-block self-start px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wide mb-4">
+                    {treatment.tag}
+                  </span>
                   
                   {/* Content */}
-                  <h3 className="text-lg font-medium text-text mb-2 tracking-tight">{feature.title}</h3>
-                  <p className="text-text-muted text-[15px] leading-relaxed">{feature.desc}</p>
+                  <h3 className="text-lg font-medium text-text mb-2 tracking-tight">{treatment.title}</h3>
+                  <p className="text-text-muted text-[14px] leading-relaxed flex-1">{treatment.desc}</p>
+                  
+                  <a href="#book" className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 group-hover:gap-2 transition-all">
+                    Book this treatment <ChevronRight className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               ))}
             </div>

@@ -1,45 +1,79 @@
 import React from 'react'
-import { Star } from 'lucide-react'
+import { Star, ArrowRight } from 'lucide-react'
 
 const testimonials = [
   {
     name: "Ravi Kumar",
-    role: "Local Resident, ALiganj",
-    text: "Plexus Dental transformed my smile exactly how I always dreamt. I used to be terrified of the dentist—they did a full root canal and I literally felt zero pain. Insane precision.",
+    role: "Business Owner, Aliganj",
+    text: "I had been avoiding a root canal for 2 years out of fear. Plexus did it in one sitting and I genuinely felt zero pain. Genuinely shocked. I've sent my entire family here since.",
+    rating: 5,
   },
   {
-    name: "Sneha Singh",
+    name: "Sneha Agarwal",
     role: "IT Professional, Gomti Nagar",
-    text: "The technology here is unlike any other clinic in Lucknow. They showed me my 3D scan on an iPad and explained every step of my clear aligner treatment. Highly recommended.",
+    text: "The clear aligners changed my life. They showed me a 3D simulation of my final smile before I even started. 8 months later — exactly as promised. Worth every rupee.",
+    rating: 5,
   },
   {
-    name: "Dr. Ananya V.",
-    role: "Medical Practitioner",
-    text: "As a doctor myself, I am very critical of hygiene protocols. The sterilization here is absolutely impeccable. A world-class dental facility right here in Ashiyana.",
+    name: "Dr. Ananya Verma",
+    role: "Medical Practitioner, Lucknow",
+    text: "As a doctor, I judge clinics on hygiene and ethics. Plexus is genuinely world-class on both. No unnecessary treatments, no scare tactics. Just honest, excellent dentistry.",
+    rating: 5,
+  },
+  {
+    name: "Mohd. Arif",
+    role: "College Student, Ashiyana",
+    text: "Got my wisdom tooth removed here. Was terrified. The doctor was so calm and gentle, it was done before I even realised. The aftercare instructions were super detailed too.",
+    rating: 5,
+  },
+  {
+    name: "Neha Srivastava",
+    role: "Homemaker, Indira Nagar",
+    text: "My 5-year-old daughter actually asks to go to the dentist now. The kids' area, the gentle handling, the stickers afterwards — they've thought of everything. Can't recommend enough.",
+    rating: 5,
+  },
+  {
+    name: "Vikram Singh",
+    role: "Retired Officer, Ashiyana",
+    text: "Got dental implants for two missing teeth. The whole process was explained step by step. After 3 months, I can eat everything again. Feels completely natural. Life-changing.",
+    rating: 5,
   }
 ]
 
 function Reviews() {
   return (
     <section id="reviews" className="bg-[#f4f4f5] py-24 sm:py-32 border-t border-border/50">
-      <div className="container mx-auto px-6 max-w-6xl text-center">
-        <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-16 text-text max-w-2xl mx-auto">
-          Don't just take our word for it
-        </h2>
+      <div className="container mx-auto px-6 max-w-6xl">
+        
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="max-w-xl">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 border border-primary/20">
+              Patient Stories
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-text leading-[1.1]">
+              Real patients. <br className="hidden sm:block" />Real transformations.
+            </h2>
+          </div>
+          <a href="https://g.co/kgs/yourlink" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline whitespace-nowrap">
+            See all reviews on Google <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((review, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-[2rem] shadow-sm text-left flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 border border-border/50">
-              <div className="flex mb-6">
-                {[1, 2, 3, 4, 5].map((s) => (
-                  <Star key={s} className="w-5 h-5 fill-primary text-primary" />
-                ))}
+            <div key={idx} className="bg-white p-7 rounded-2xl shadow-sm text-left flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300 border border-border/50">
+              <div>
+                <div className="flex mb-4">
+                  {Array.from({ length: review.rating }).map((_, s) => (
+                    <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-text leading-relaxed text-[15px] mb-6">
+                  &ldquo;{review.text}&rdquo;
+                </p>
               </div>
-              <p className="text-text leading-relaxed font-medium text-[16px] mb-8">
-                “{review.text}”
-              </p>
-              <div className="flex items-center gap-4 border-t border-border pt-6">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-border/30 flex items-center justify-center font-bold text-primary">
+              <div className="flex items-center gap-3 border-t border-border pt-5">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-border/30 flex items-center justify-center font-bold text-primary text-sm">
                   {review.name.charAt(0)}
                 </div>
                 <div>
