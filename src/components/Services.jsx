@@ -3,9 +3,9 @@ import { Activity, Zap, MapPin, ArrowRight } from 'lucide-react'
 
 function Services() {
   return (
-    <div id="features" className="w-full">
+    <div id="features" className="w-full relative z-10">
       {/* Mini Features row (White Bg) */}
-      <section className="bg-bg py-24 sm:py-32">
+      <section className="py-24 sm:py-32">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-border">
             
