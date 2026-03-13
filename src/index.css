@@ -23,10 +23,28 @@
   --shadow-lg-custom: 0 12px 48px rgba(0, 0, 0, 0.12);
   
   --animate-reveal: reveal 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  --animate-slow-zoom: slow-zoom 20s ease-in-out infinite alternate;
+  --animate-pulse-slow: pulse-slow 8s ease-in-out infinite;
+  --animate-page-intro: page-intro 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 
   @keyframes reveal {
     0% { opacity: 0; transform: translateY(30px) scale(0.95); }
     100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes slow-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.3; transform: translate(-50%, -50%) scale(1.1); }
+  }
+
+  @keyframes page-intro {
+    0% { opacity: 0; transform: scale(1.05); filter: blur(10px); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
   }
 }
 

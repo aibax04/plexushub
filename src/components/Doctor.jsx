@@ -58,7 +58,7 @@ function Doctor() {
                 ))}
               </div>
 
-              <a href="#book" className="inline-flex items-center justify-center px-6 py-3 bg-white border border-border text-text font-medium rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm text-sm group-hover:shadow-md">
+              <a href="#book" className="inline-flex items-center justify-center px-6 py-3 bg-white border border-border text-text font-medium rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm text-sm group-hover:scale-105 group-hover:shadow-primary/30 active:scale-95">
                 Book Consultation with {doc.name.split(' ')[1]} →
               </a>
             </div>

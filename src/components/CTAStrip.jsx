@@ -51,11 +51,11 @@ function CTAStrip() {
               The longer you wait, the more complex (and expensive) dental problems become. Book your free consultation today and get peace of mind - it takes less than 30 seconds.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#book" className="group inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 shadow-lg">
+              <a href="#book" className="group inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95">
                 Book Free Consultation
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="tel:+916307114437" className="inline-flex items-center gap-2 px-6 py-4 border border-white/10 rounded-full text-white/80 hover:text-white hover:border-white/30 transition-all text-sm font-medium">
+              <a href="tel:+916307114437" className="inline-flex items-center gap-2 px-6 py-4 border border-white/10 rounded-full text-white/80 hover:text-white hover:border-white/30 hover:scale-[1.02] transition-all text-sm font-medium active:scale-95">
                 <Phone className="w-4 h-4" />
                 Call Now
               </a>

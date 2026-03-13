@@ -73,9 +73,9 @@ function Membership() {
             <p className="text-text font-medium text-[15px] mb-8">
               Every treatment includes a free consultation and transparent pricing. No surprises.
             </p>
-            <a href="#book" className="inline-flex items-center justify-center px-6 py-3 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 shadow-md">
-              <span className="text-[15px]">Book a Free Consultation</span>
-              <ChevronRight className="w-4 h-4 ml-1" />
+            <a href="#book" className="inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95">
+              <span className="text-[17px]">Book a Free Consultation</span>
+              <ChevronRight className="w-5 h-5 ml-2" />
             </a>
           </div>
 
@@ -99,7 +99,7 @@ function Membership() {
                   <h3 className="text-lg font-medium text-text mb-2 tracking-tight">{treatment.title}</h3>
                   <p className="text-text-muted text-[14px] leading-relaxed flex-1">{treatment.desc}</p>
                   
-                  <a href="#book" className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 group-hover:gap-2 transition-all">
+                  <a href="#book" className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 group-hover:gap-2 transition-all hover:text-primary-dark">
                     Book this treatment <ChevronRight className="w-3.5 h-3.5" />
                   </a>
                 </div>

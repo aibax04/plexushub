@@ -3,6 +3,7 @@ import { CheckCircle, ChevronRight, ChevronDown } from 'lucide-react'
 
 function Hero() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,21 +13,48 @@ function Hero() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Simulate video load for the fallback fade
+    const timer = setTimeout(() => setIsVideoLoaded(true), 2500);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    }
   }, []);
 
   return (
     <section className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center -z-10">
-      {/* Background Image with Dark Gradient Overlays */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/hero-luxury.png" 
-          alt="Best Dental Clinic in Ashiyana Lucknow" 
-          className="w-full h-full object-cover opacity-50"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/80 to-dark-bg/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-bg/50 to-dark-bg/50"></div>
-        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/30 rounded-full blur-[140px] pointer-events-none"></div>
+      {/* Background Video with Premium Blending */}
+      <div className="absolute inset-0 z-0 overflow-hidden animate-page-intro bg-dark-bg">
+        
+        {/* Dynamic Video Player */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none opacity-40 animate-slow-zoom flex items-center justify-center">
+          {/* Fallback Poster */}
+          <img 
+            src="/hero-dental-treatment.jpg" 
+            alt="Dental Background" 
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}
+          />
+          <div className="absolute w-[300vw] h-[300vh] md:w-[150vw] md:h-[150vh]">
+            <iframe
+              src="https://www.youtube.com/embed/SaE67yF0tic?autoplay=1&mute=1&loop=1&playlist=SaE67yF0tic&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1&playsinline=1"
+              allow="autoplay; encrypted-media"
+              className="w-full h-full border-0"
+              onLoad={() => setIsVideoLoaded(true)}
+            ></iframe>
+          </div>
+        </div>
+
+        {/* Advanced Gradient Overlays for Perfect Blending */}
+        <div className="absolute inset-0 bg-dark-bg/40 mix-blend-multiply border-none pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/40 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-bg/50 via-transparent to-dark-bg/50"></div>
+        
+        {/* Dynamic Light Blobs for Depth */}
+        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
+        <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 pt-20">
@@ -48,13 +76,13 @@ function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
-            <a href="#book" className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-[1.02] shadow-lg hover:shadow-primary/25">
+            <a href="#book" className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95">
               <span className="flex items-center gap-2 text-[15px] sm:text-[17px]">
                 Book Your Free Consultation
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </a>
-            <a href="tel:+916307114437" className="text-dark-text-muted text-sm font-medium hover:text-dark-text transition-colors">
+            <a href="tel:+916307114437" className="text-dark-text-muted text-sm font-medium hover:text-white transition-all duration-300 hover:translate-x-1">
               or call us directly →
             </a>
           </div>
@@ -79,7 +107,7 @@ function Hero() {
 
       {/* Scroll indicator */}
       <div 
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-dark-text-muted/30 animate-bounce transition-opacity duration-300"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-dark-text-muted/30 transition-opacity duration-300"
         style={{ opacity: scrollOpacity }}
       >
         <span className="text-[9px] uppercase tracking-[0.3em] font-medium">Scroll</span>

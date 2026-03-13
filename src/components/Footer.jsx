@@ -56,7 +56,8 @@ function Footer() {
             <a href="/" className="font-sans font-bold text-2xl text-dark-text tracking-tight hover:opacity-80 transition-opacity">
               plexus<span className="font-light">dental</span>
             </a>
-            <p className="text-dark-text-muted text-xs mt-2 max-w-xs">The most trusted dental clinic in Ashiyana, Lucknow. Painless treatments. Honest pricing. Beautiful smiles.</p>
+            <p className="text-dark-text-muted text-xs mt-2 max-w-xs">The most trusted dental clinic in Ashiyana, Lucknow. 
+              <br />Painless treatments. Honest pricing. Beautiful smiles.</p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-8">
             <a href="#features" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Why Us</a>
