@@ -2,20 +2,25 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className="py-12 bg-surface border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
-          <a href="/" className="font-serif text-xl text-text">
-            Plexus <span className="text-primary font-bold">Dental</span>
+    <footer className="py-16 bg-dark-bg border-t border-white/5">
+      <div className="container mx-auto px-6 max-w-5xl">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-16">
+          <a href="/" className="font-sans font-bold text-2xl text-dark-text tracking-tight hover:opacity-80 transition-opacity">
+            plexus<span className="font-light">dental</span>
           </a>
-          <div className="flex gap-8">
-            <a href="#services" className="text-text-muted hover:text-primary transition-colors text-sm font-medium">Services</a>
-            <a href="#about" className="text-text-muted hover:text-primary transition-colors text-sm font-medium">About</a>
-            <a href="#contact" className="text-text-muted hover:text-primary transition-colors text-sm font-medium">Contact</a>
+          <div className="flex flex-wrap justify-center md:justify-end gap-8">
+            <a href="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">How It Works</a>
+            <a href="#what-we-test" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">What We Scan</a>
+            <a href="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Reviews</a>
+            <a href="#contact" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Contact</a>
           </div>
         </div>
-        <div className="pt-8 border-t border-border text-center text-text-muted text-sm">
-          © {new Date().getFullYear()} Plexus Dental. All rights reserved.
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-dark-text-muted text-xs">
+          <div>© {new Date().getFullYear()} Plexus Dental. All rights reserved.</div>
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-dark-text transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-dark-text transition-colors">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
