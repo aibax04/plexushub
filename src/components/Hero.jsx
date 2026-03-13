@@ -17,15 +17,23 @@ function Hero() {
 
   return (
     <section className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center -z-10">
-      {/* Initial Page Load Transition */}
-      <div className="fixed inset-0 z-50 bg-dark-bg pointer-events-none animate-curtain-reveal"></div>
+      {/* Innovative Pre-loader / Transition */}
+      <div className="fixed inset-0 z-50 flex pointer-events-none overflow-hidden">
+        <div className="w-1/2 h-full bg-[#030303] animate-shutter-left"></div>
+        <div className="w-1/2 h-full bg-[#030303] animate-shutter-right"></div>
+        
+        {/* Laser Line Center */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -ml-[1px] pointer-events-none origin-top animate-laser-drop">
+           <div className="absolute inset-0 bg-primary/80 animate-laser-fade origin-center"></div>
+        </div>
+      </div>
 
       {/* Background Image with Premium Blending */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-dark-bg">
         <img 
           src="/hero-model-teeth.jpg" 
           alt="Precision Dental Care" 
-          className="w-full h-full object-cover opacity-85 animate-slow-zoom"
+          className="w-full h-full object-cover opacity-50 animate-slow-zoom"
         />
         
         {/* Advanced Gradient Overlays for Perfect Blending */}
