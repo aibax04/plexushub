@@ -1,9 +1,148 @@
-import { Zap, ShieldCheck, Smile, Sparkles, Heart, Stethoscope, Sun, Target, ScanLine, Brush } from 'lucide-react'
+import { Zap, ShieldCheck, Smile, Sparkles, Heart, Stethoscope, Sun, Target, ScanLine, Brush, Crown, Layers, PenTool as Tool } from 'lucide-react'
 
 const treatments = [
   {
+    id: "invisalign",
+    title: "Invisalign Aligners",
+    shortDesc: "The world's most advanced clear aligner system. Straighten your teeth invisibly with custom-moulded removable trays.",
+    tag: "Premium",
+    icon: Smile,
+    duration: "6–12 months",
+    sessions: "Monthly check-ups",
+    heroLine: "The clear alternative to braces — designed for your comfort.",
+    fullDescription: "Invisalign is the gold standard in clear aligner technology. Using proprietary SmartTrack material and 3D digital planning, we create a series of custom, nearly invisible aligners that gradually shift your teeth into place. No metal, no wires, and completely removable for eating and cleaning.",
+    indications: [
+      "Crowded or overlapping teeth",
+      "Wide gaps (diastema) between teeth",
+      "Mild to moderate overbite or underbite",
+      "Crooked teeth causing difficulty in cleaning",
+      "Adults and teens seeking a discreet solution"
+    ],
+    whyChooseUs: [
+      "iTero 3D Digital Scanners (No messy impressions)",
+      "Smile Simulation: See your final result before you start",
+      "Diamond-level Invisalign provider expertise",
+      "Proprietary SmartTrack material for faster, predictable results"
+    ],
+    process: [
+      {
+        step: "3D Digital Scan",
+        detail: "We use an iTero scanner to create a precise 3D model of your teeth. No messy putty involved."
+      },
+      {
+        step: "Custom ClinCheck Plan",
+        detail: "Our doctors map out every tooth movement digitally, showing you the transformation timeline."
+      },
+      {
+        step: "Aliger Fabrication",
+        detail: "Your custom sets of Invisalign aligners are manufactured using medical-grade thermoplastic."
+      },
+      {
+        step: "Daily Wear & Progress",
+        detail: "You wear each set for 1-2 weeks, removing them only to eat, drink, and brush."
+      }
+    ],
+    faqs: [
+      { q: "How many hours a day must I wear them?", a: "For best results, wear them for 20–22 hours per day." },
+      { q: "Is it painful?", a: "You'll feel slight pressure with each new set — a sign that your teeth are moving." },
+      { q: "Can I eat anything?", a: "Yes! Since you remove them to eat, there are no food restrictions." }
+    ]
+  },
+  {
+    id: "laser-dentistry",
+    title: "Laser Dentistry",
+    shortDesc: "No drills, no needles, no pain. Advanced laser technology for gum treatments, painless fillings, and instant whitening.",
+    tag: "High-Tech",
+    icon: Zap,
+    duration: "20–60 min",
+    sessions: "1 visit",
+    heroLine: "The future of dentistry — faster, safer, and completely pain-free.",
+    fullDescription: "Laser dentistry utilizes concentrated beams of light energy to treat various dental conditions. At Plexus Dental, we use the Waterlase iPlus system, which allows us to perform many procedures without the need for traditional drills or even local anaesthesia. Lasers provide unmatched precision, minimal bleeding, and significantly faster healing times.",
+    indications: [
+      "Gummy smile or uneven gum line",
+      "Tooth decay (filling preparation without drills)",
+      "Canker sores or cold sore treatment",
+      "Teeth whitening for faster results",
+      "Sensitive teeth (desensitization)"
+    ],
+    whyChooseUs: [
+      "Waterlase iPlus: The world's most advanced dental laser",
+      "Expertise in minimally invasive laser surgery",
+      "Reduced need for shots and anaesthesia",
+      "Faster recovery and minimal post-op discomfort"
+    ],
+    process: [
+      {
+        step: "Laser Analysis",
+        detail: "We determine the optimal laser wavelength and power settings for your specific clinical needs."
+      },
+      {
+        step: "Precise Treatment",
+        detail: "The laser beam gently removes decayed tissue or reshapes gums without heat, vibration, or friction."
+      },
+      {
+        step: "Instant Sterilization",
+        detail: "As the laser works, it kills bacteria and seals blood vessels, leading to a sterile and bloodless environment."
+      },
+      {
+        step: "Rapid Healing",
+        detail: "Laser energy stimulates the body's natural healing response (biostimulation) for a faster recovery."
+      }
+    ],
+    faqs: [
+      { q: "Does it hurt?", a: "No. Most laser procedures are so gentle they don't even require numbing shots." },
+      { q: "Is it safe?", a: "Extremely. When performed by trained professionals with protective eyewear, it is safer than traditional methods." }
+    ]
+  },
+  {
+    id: "fillings",
+    title: "Dental Fillings / Teeth Fillings",
+    shortDesc: "Mercury-free, tooth-colored composite restorations. We restore cavities invisibly and restore tooth strength.",
+    tag: "Essential",
+    icon: Tool,
+    duration: "20–40 min",
+    sessions: "1 visit",
+    heroLine: "Strong, invisible restorations for a healthy smile.",
+    fullDescription: "Dental fillings are used to repair teeth damaged by decay or minor fractures. We use advanced composite resins that bond directly to your tooth structure, allowing us to preserve more of your natural enamel. These fillings are meticulously shade-matched to your teeth, making them completely invisible to the eye.",
+    indications: [
+      "Sensitivity to sweets or temperature",
+      "Visible dark spots or 'holes' on teeth",
+      "Food trapping between teeth",
+      "Rough or jagged edges felt with the tongue",
+      "Replacing old, silver (amalgam) fillings"
+    ],
+    whyChooseUs: [
+      "Ultra-strong, nanohybrid composite materials",
+      "Moisture-controlled bonding for maximum longevity",
+      "Anatomically contoured to restore perfect bite function",
+      "100% Mercury-free and biocompatible"
+    ],
+    process: [
+      {
+        step: "Painless Preparation",
+        detail: "We remove the decayed portion of the tooth gently. For small cavities, we often use lasers instead of drills."
+      },
+      {
+        step: "Conditioning & Bonding",
+        detail: "The tooth surface is conditioned to create a strong micromechanical bond with the resin."
+      },
+      {
+        step: "Layered Reconstruction",
+        detail: "The filling is applied in thin layers, each 'cured' with a special UV light to ensure maximum strength."
+      },
+      {
+        step: "Final Sculpting & Polish",
+        detail: "We carve the final layer to match your natural tooth anatomy and polish it to a diamond-like shine."
+      }
+    ],
+    faqs: [
+      { q: "How long do they last?", a: "With good hygiene, modern composite fillings typically last 7–10 years or more." },
+      { q: "Can I eat right after?", a: "Since we use light-curing technology, the filling is at 100% strength immediately. You can eat as soon as the numbness wears off." }
+    ]
+  },
+  {
     id: "root-canal",
-    title: "Painless Root Canal (RCT)",
+    title: "Root Canal Treatment (RCT)",
     shortDesc: "Single-sitting, microscope-assisted root canals. You won't feel a thing — we guarantee it. Save your natural tooth instead of pulling it.",
     tag: "Most Popular",
     icon: Zap,
@@ -68,8 +207,162 @@ const treatments = [
     ]
   },
   {
+    id: "wisdom-tooth",
+    title: "Wisdom Teeth Removal",
+    shortDesc: "Impacted or painful wisdom teeth? We remove them with surgical precision under local anaesthesia. Minimal swelling, fast recovery.",
+    tag: "Same-Day",
+    icon: Target,
+    duration: "30–60 min",
+    sessions: "1 visit + follow-up",
+    heroLine: "Quick, precise extraction — so you heal faster and hurt less.",
+    fullDescription: "Wisdom teeth often stay hidden below the gumline (impacted) or grow at awkward angles, pushing against your other teeth. This causes chronic pain, jaw stiffness, and even cysts. Our surgical approach utilizes Piezo-Bone surgery—which uses ultrasonic vibrations rather than traditional drills—leading to significantly less swelling and a much faster healing time.",
+    indications: [
+      "Persistent pain or pressure at the back of the jaw",
+      "Stiffness or difficulty opening your mouth",
+      "Food trapping leading to decay in neighbouring molars",
+      "Visible crowding or pushing of your front teeth",
+      "Recurring infection (pericoronitis) around the wisdom tooth"
+    ],
+    whyChooseUs: [
+      "Piezo-Ultrasonic Surgery for zero-vibration, atraumatic extractions",
+      "PRF (Platelet Rich Fibrin) therapy for 50% faster socket healing",
+      "IV Sedation available for a 'sleep-through' experience",
+      "Direct Surgeon Access via WhatsApp for all recovery questions"
+    ],
+    process: [
+      {
+        step: "Nerve Projection Mapping",
+        detail: "We use high-res imaging to see exactly where the alveolar nerve is. This ensures we can remove the tooth without any risk of numbness."
+      },
+      {
+        step: "Atraumatic Anaesthesia",
+        detail: "We numb the specific nerve branch. Most patients feel 'heavy' or 'puffy' but absolutely zero sharp sensations throughout the surgery."
+      },
+      {
+        step: "Piezo-Ultrasonic Access",
+        detail: "Instead of a traditional drill, we use ultrasonic waves to gently sculpt the bone if needed. This preserves blood supply and reduces healing time."
+      },
+      {
+        step: "Tooth Sectioning",
+        detail: "For impacted teeth, we section the tooth into 2-3 small pieces. This allows for a smaller incision and a гораздо gentler removal process."
+      },
+      {
+        step: "Socket Bio-Debridement",
+        detail: "The empty socket is cleaned and any inflammatory tissue is removed to prevent the development of 'Dry Socket' after treatment."
+      },
+      {
+        step: "Advanced Wound Closure",
+        detail: "We use premium dissolvable sutures that stay for 7 days then disappear. No need for a stressful 'stitch removal' appointment."
+      },
+      {
+        step: "The Recovery Protocol",
+        detail: "We provide frozen gel packs and a specific medication schedule that starts before your numbness wears off, keeping you ahead of any pain."
+      }
+    ],
+    faqs: [
+      { q: "Is it better to remove all 4 at once?", a: "Yes, for most patients. It means one surgery, one round of antibiotics, and one recovery period instead of four." },
+      { q: "What is a 'Dry Socket'?", a: "It's when the blood clot is lost too soon. We use PRF technology to virtually eliminate the risk of this happening." },
+      { q: "When can I return to work/school?", a: "Most patients take 24–48 hours of rest and return to non-strenuous activities on the third day." },
+      { q: "Will my face swell up like a balloon?", a: "With our ultrasonic technique and proper icing, swelling is usually minimal and peaks at 48 hours before disappearing." },
+      { q: "What can I eat after surgery?", a: "Soft foods like yoghurt, smoothies, mashed potatoes, and lukewarm soups for the first 3 days. Avoid anything spicy or crunchy." },
+      { q: "Can I use a straw after extraction?", a: "No! The suction from a straw can dislodge the blood clot. Stick to drinking directly from a cup for 7 days." }
+    ]
+  },
+  {
+    id: "braces",
+    title: "Dental Braces & Aligners",
+    shortDesc: "From traditional metal to modern ceramic braces. Effective solutions for complex bite corrections and perfect alignment.",
+    tag: "Ortho Specialists",
+    icon: Smile,
+    duration: "12–24 months",
+    sessions: "Monthly check-ups",
+    heroLine: "Total control for the most complex smiles.",
+    fullDescription: "While aligners are great for many, traditional or aesthetic braces remain the gold standard for complex bite issues and significant tooth rotations. We offer the latest low-friction 'Self-Ligating' braces, ceramic (tooth-colored) options, and traditional metal braces with fun colors for kids.",
+    indications: [
+      "Severe crowding or complex bite issues",
+      "Impacting or severely rotated teeth",
+      "Skeletal jaw discrepancies",
+      "Children and teens who need 'fixed' appliances",
+      "When maximum control over tooth roots is required"
+    ],
+    whyChooseUs: [
+      "Specialist Orthodontic care for all ages",
+      "Low-friction braces for faster movement and less discomfort",
+      "High-aesthetic ceramic options for a more discreet look",
+      "Comprehensive retention plan included"
+    ],
+    process: [
+      {
+        step: "Comprehensive Ortho Exam",
+        detail: "We take X-rays, photos, and scans to build a biological blueprint of your jaw and teeth."
+      },
+      {
+        step: "Braces Placement",
+        detail: "Brackets are bonded to your teeth and the first 'memory-wire' is connected."
+      },
+      {
+        step: "Regular Adjustments",
+        detail: "Every 4-6 weeks, we adjust the wires to continue the gentle shifting process."
+      },
+      {
+        step: "The Big Reveal",
+        detail: "Once teeth are perfectly aligned, braces are removed and we move to the retention phase."
+      }
+    ],
+    faqs: [
+      { q: "Are traditional braces faster?", a: "In many complex cases, yes. They offer 24/7 force application and better control over three-dimensional movements." },
+      { q: "Do they hurt?", a: "You may feel some soreness for 2-3 days after an adjustment, easily managed with soft food." }
+    ]
+  },
+  {
+    id: "clear-aligners",
+    title: "Clear Aligners",
+    shortDesc: "Invisible, comfortable, and removable. Straighten your teeth without anyone noticing using our advanced clear aligner systems.",
+    tag: "Popular",
+    icon: Smile,
+    duration: "4–12 months",
+    sessions: "Monthly check-ups",
+    heroLine: "Your dream smile, made invisible.",
+    fullDescription: "Clear aligners are custom-made, transparent trays that fit snugly over your teeth. We offer various high-quality aligner systems that provide an effective and aesthetic alternative to traditional braces. Each plan is digitally designed to ensure precise movement and optimal comfort throughout your journey.",
+    indications: [
+      "Gaps between teeth",
+      "Mild crowding or overlapping",
+      "Minor bite corrections",
+      "Relapse after previous orthodontic work",
+      "Seeking a more affordable invisible option"
+    ],
+    whyChooseUs: [
+      "Fully digital workflow for maximum precision",
+      "Comfortable, BPA-free medical grade plastic",
+      "Regular progress tracking with our orthodontic team",
+      "Flexible payment plans for all budgets"
+    ],
+    process: [
+      {
+        step: "Initial Consultation",
+        detail: "We assess your smile and take digital scans to determine if clear aligners are right for you."
+      },
+      {
+        step: "Digital Design",
+        detail: "Your treatment is planned tooth-by-tooth using advanced orthodontic software."
+      },
+      {
+        step: "Aligner Delivery",
+        detail: "You receive your first few sets of aligners and instructions on how to wear them."
+      },
+      {
+        step: "Monitoring",
+        detail: "Short check-ups every few weeks ensure your teeth are moving according to plan."
+      }
+    ],
+    faqs: [
+      { q: "How are they different from Invisalign?", a: "While Invisalign is the most well-known brand, we offer other high-quality aligner systems that may be more suitable for certain cases or budgets." },
+      { q: "Can kids wear them?", a: "They are generally recommended for teenagers and adults once all permanent teeth have erupted." }
+    ]
+  },
+  {
     id: "dental-implants",
-    title: "Dental Implants",
+    title: "Dental Implants / Teeth Implants",
     shortDesc: "Missing a tooth? Our titanium implants look, feel, and function exactly like real teeth. Permanent. No adhesives. No compromise.",
     tag: "Permanent Fix",
     icon: ShieldCheck,
@@ -134,127 +427,141 @@ const treatments = [
     ]
   },
   {
-    id: "clear-aligners",
-    title: "Clear Aligners & Braces",
-    shortDesc: "Straighten your teeth invisibly. Custom-moulded clear aligners for adults, or colour braces that kids actually love wearing.",
-    tag: "Adults & Kids",
-    icon: Smile,
-    duration: "6–18 months",
-    sessions: "Monthly check-ups",
-    heroLine: "Straight teeth without the metal mouth — at any age.",
-    fullDescription: "Modern orthodontics is no longer just for teenagers. We use virtually invisible clear aligners (like Invisalign) to straighten teeth discreetly. For younger patients or complex cases, we offer modern low-friction aesthetic braces that are faster and more comfortable than traditional metal ones. Every case starts with a 3D digital scan — no more gagging on gooey putty impressions.",
+    id: "dentures",
+    title: "Dentures",
+    shortDesc: "Premium removable prosthetics that restore your ability to eat, speak, and smile with confidence. Natural-looking and comfortable.",
+    tag: "Restorative",
+    icon: Brush,
+    duration: "1–2 weeks",
+    sessions: "3–4 visits",
+    heroLine: "Restore your smile and function — tailored for comfort.",
+    fullDescription: "Modern dentures are far from the 'false teeth' of the past. We offer lightweight, high-impact resins and flexible materials that mimic the look of natural gums and teeth. Whether you need partial dentures to fill a few gaps or full dentures for an entire arch, we ensure a precise fit that provides stability and confidence.",
     indications: [
-      "Crowded or overlapping teeth",
-      "Wide gaps (diastema) between teeth",
-      "Overbite, underbite, or crossbite issues",
-      "Crooked teeth causing difficulty in cleaning",
-      "Jaw pain or clicking related to a misaligned bite"
+      "Loss of multiple teeth in different areas",
+      "Total tooth loss in one or both arches",
+      "Sunken facial appearance due to lack of tooth support",
+      "Seeking a more affordable alternative to implants",
+      "Difficulty eating certain foods or speaking clearly"
     ],
     whyChooseUs: [
-      "iTero 3D Digital Scanners (No messy impressions)",
-      "Smile Simulation: See your final result before you start",
-      "Diamond-level Invisalign provider expertise",
-      "Self-ligating braces for shorter treatment times and fewer visits"
+      "BPS (Biofunctional Prosthetic System) for superior suction and fit",
+      "Flexible Valplast dentures with no visible metal clips",
+      "Custom shade-matching for a truly natural appearance",
+      "Fast repair and re-lining services"
     ],
     process: [
       {
-        step: "3D Intra-oral Scan",
-        detail: "We use a digital scanner to create a 100% accurate 3D model of your mouth in under 5 minutes. It's clean, fast, and replaces the old 'putty' method."
+        step: "Impression Phase",
+        detail: "We take detailed scans or impressions of your jaw to ensure the base fits perfectly."
       },
       {
-        step: "Outcome Simulator",
-        detail: "Our software calculates exactly how your teeth need to move. You can watch a video simulation of your teeth shifting into their final, perfect positions."
+        step: "Bite Registration",
+        detail: "We measure how your jaws meet to ensure comfortable chewing and a balanced smile."
       },
       {
-        step: "Custom ClinCheck Planning",
-        detail: "Our orthodontists meticulously design each movement step-by-step to ensure the roots move safely and the final bite is functionally perfect."
+        step: "Wax Try-In",
+        detail: "You get to 'test-drive' your teeth in wax to approve the look, shape, and color."
       },
       {
-        step: "Aligner/Braces Fitting",
-        detail: "You receive your custom aligner sets or have your aesthetic braces fitted. We show you exactly how to wear, remove, and clean them."
-      },
-      {
-        step: "Progress Monitoring",
-        detail: "You visit us every 4–8 weeks so we can track progress. For aligner patients, some check-ups can even be done virtually via photo updates."
-      },
-      {
-        step: "Refinement Phase",
-        detail: "Near the end, we perform 'refinements' to fine-tune the position of individual teeth for a truly flawless, red-carpet result."
-      },
-      {
-        step: "Retention & Stabilization",
-        detail: "Once finished, we provide custom retainers. This is the most important step to ensure your teeth stay in their new positions forever."
+        step: "Final Delivery",
+        detail: "Your finished denture is fitted and adjusted for maximum comfort and function."
       }
     ],
     faqs: [
-      { q: "Will clear aligners affect my speech?", a: "You might have a very slight lisp for the first 2-3 days as your tongue adjusts, but it disappears quickly." },
-      { q: "How many hours a day must I wear them?", a: "For best results, aligners must be worn for 20–22 hours per day, removing them only for eating and cleaning." },
-      { q: "Is the treatment painful?", a: "You'll feel 'pressure' for the first 24 hours after switching to a new aligner or having braces tightened. It's a sign that your teeth are moving!" },
-      { q: "Can I eat anything with aligners?", a: "Yes! Since you remove them to eat, there are no food restrictions like there are with traditional metal braces." },
-      { q: "What is the age limit for aligners?", a: "There is no age limit. We have successfully treated patients in their 60s and 70s!" },
-      { q: "How do I clean my aligners?", a: "Rinse them with lukewarm water and brush them gently with a soft toothbrush and non-abrasive soap or cleaning crystals." }
+      { q: "Will they fall out when I talk?", a: "Properly fitted dentures use natural suction and muscle control. For extra stability, we can also offer 'Implant-Supported' dentures." },
+      { q: "How do I clean them?", a: "Use a special denture brush and mild soap; avoid toothpaste as it can be abrasive to the resin." }
     ]
   },
   {
-    id: "smile-makeover",
-    title: "Smile Makeover",
-    shortDesc: "Veneers, bonding, whitening, and gum contouring — combined into one comprehensive plan that delivers a red-carpet smile.",
-    tag: "Cosmetic",
-    icon: Sparkles,
-    duration: "1–3 weeks",
-    sessions: "2–5 visits",
-    heroLine: "A complete transformation — designed for your face, your personality, your confidence.",
-    fullDescription: "A smile makeover is the ultimate blend of art and science. It's not just about 'white teeth'; it's about facial harmony. We analyse your lip line, skin tone, gum symmetry, and facial proportions to design a smile that looks naturally beautiful. We use a combination of ultra-thin veneers, laser gum contouring, and advanced bonding to create your masterpiece.",
+    id: "crowns",
+    title: "Dental Crowns",
+    shortDesc: "High-strength 'caps' that protect and restore damaged teeth. Custom-designed in zirconia or porcelain for a 100% natural look.",
+    tag: "Full Protection",
+    icon: Crown,
+    duration: "1 week",
+    sessions: "2 visits",
+    heroLine: "360-degree protection for your most valuable teeth.",
+    fullDescription: "A dental crown is a custom-made cover that encases the entire visible portion of a tooth. Crowns are used to restore the shape, size, and strength of teeth that are broken, heavily filled, or have undergone root canal treatment. We use premium materials like Zirconia and E-max porcelain to ensure your crown is both beautiful and virtually indestructible.",
     indications: [
-      "Stained or discoloured teeth that don't respond to whitening",
-      "Chipped, cracked, or worn down teeth",
-      "Small or 'peg' teeth that look out of proportion",
-      "Gummy smile or uneven gum line",
-      "Slightly crooked teeth that don't require full orthodontics"
+      "Broken or severely cracked teeth",
+      "Teeth with very large, failing fillings",
+      "Following a root canal treatment",
+      "Discolored or misshapen teeth (cosmetic)",
+      "Protecting weak teeth from fracturing"
     ],
     whyChooseUs: [
-      "Digital Smile Design (DSD) Certified Clinic",
-      "Master Ceramist lab partnership for lifelike veneers",
-      "Minimal-prep techniques to preserve your natural tooth structure",
-      "In-house photography studio for precise facial analysis"
+      "Digital scanning for perfect, 'no-goo' impressions",
+      "High-translucency Zirconia for lifelike aesthetics",
+      "Precision-milled CAD/CAM technology",
+      "Guaranteed fit and bite alignment"
     ],
     process: [
       {
-        step: "Esthetic Facial Analysis",
-        detail: "We take high-definition photos and videos of you talking and smiling. This helps us ensure your new smile matches your unique facial expressions."
+        step: "Tooth Preparation",
+        detail: "We gently reshape the tooth to create space for the crown material."
       },
       {
-        step: "3D Wax-Up & Design",
-        detail: "Our lab creates a 3D physical model of your proposed new smile. You can see the exact shape and length of every tooth before we touch your teeth."
+        step: "Digital Scanning",
+        detail: "An intra-oral scanner captures every detail of the prep for the lab."
       },
       {
-        step: "The 'Test Drive' Smile",
-        detail: "We place a temporary version of your new smile over your existing teeth. You get to wear it for a few days to get feedback from family and friends."
+        step: "Temporary Crown",
+        detail: "You receive a temporary crown to protect the tooth while your final one is crafted."
       },
       {
-        step: "Precision Micropreparation",
-        detail: "Using a microscope, we remove a paper-thin layer (0.3mm to 0.5mm) of enamel only where necessary to make room for the porcelain."
-      },
-      {
-        step: "Biolase Gum Contouring",
-        detail: "If you have an uneven or 'gummy' smile, we use a painless laser to reshape the gum line for perfect symmetry and aesthetics."
-      },
-      {
-        step: "Artisan Lab Fabrication",
-        detail: "Our master ceramists hand-layer each porcelain veneer, adding translucency, texture, and 'mamelons' to mimic a natural, youthful tooth."
-      },
-      {
-        step: "Microscopic Bonding",
-        detail: "Each veneer is bonded using high-strength adhesive under moisture-controlled conditions, ensuring a bond that is virtually inseparable from the tooth."
+        step: "Bonding & Fitting",
+        detail: "The final crown is bonded using high-strength adhesive and checked for a perfect bite."
       }
     ],
     faqs: [
-      { q: "How long do veneers last?", a: "High-quality porcelain veneers typically last 15–20 years or more with routine dental care and good hygiene." },
-      { q: "Will they stain from coffee or wine?", a: "No. High-grade dental porcelain is non-porous and highly resistant to stains — even better than natural enamel." },
-      { q: "Is the procedure painful?", a: "No. We utilize local anaesthesia for preparation, and the post-op period involves very little to no discomfort." },
-      { q: "How many veneers will I need?", a: "It depends on your 'smile width' — usually between 6 to 10 veneers per arch to create a full, harmonious transformation." },
-      { q: "Can I choose how white they are?", a: "Yes, but we recommend shades that look natural. We guide you using shade tabs and your 'test drive' results." },
-      { q: "What if one veneer chips or breaks?", a: "It's rare, but if it happens, a single veneer can be replaced independently without affecting the others." }
+      { q: "How long do they last?", a: "With good care, a high-quality crown can last 15–20 years." },
+      { q: "Will it look different from my other teeth?", a: "No. We use digital shade matching to ensure it blends seamlessly with your natural smile." }
+    ]
+  },
+  {
+    id: "bridges",
+    title: "Dental Bridges",
+    shortDesc: "A permanent, fixed solution for missing teeth. We 'bridge the gap' using high-strength ceramic that anchors to your natural teeth.",
+    tag: "Fixed Gap-Fill",
+    icon: Layers,
+    duration: "1–2 weeks",
+    sessions: "2 visits",
+    heroLine: "Restore your bite and prevent shifting with a seamless bridge.",
+    fullDescription: "A dental bridge consists of two or more crowns for the teeth on either side of a gap, with a false tooth (or teeth) in between. Unlike dentures, bridges are fixed in place and don't need to be removed. They prevent your remaining teeth from shifting, restore your ability to chew properly, and maintain the natural shape of your face.",
+    indications: [
+      "Filling a gap left by 1–3 missing teeth",
+      "Preventing surrounding teeth from tilting or shifting",
+      "Restoring full chewing and speaking ability",
+      "Seeking a non-surgical alternative to dental implants",
+      "Replacing old, ill-fitting bridges"
+    ],
+    whyChooseUs: [
+      "Bio-compatible materials for healthy gum integration",
+      "CAD/CAM precision for a gap-free fit",
+      "Artisan lab craftsmanship for superior aesthetics",
+      "Strong enough for back-tooth function"
+    ],
+    process: [
+      {
+        step: "Anchor Preparation",
+        detail: "The teeth on either side of the gap (abutments) are prepared to receive the crowns."
+      },
+      {
+        step: "3D Digital Impressions",
+        detail: "We scan the site to ensure the bridge spans the gap with micrometer precision."
+      },
+      {
+        step: "Interim Bridge",
+        detail: "A temporary bridge is fitted to maintain function and aesthetics while the lab works."
+      },
+      {
+        step: "Final Cementation",
+        detail: "The final bridge is permanently fixed, instantly restoring your full smile."
+      }
+    ],
+    faqs: [
+      { q: "Is a bridge better than an implant?", a: "Bridges are faster and don't require surgery, while implants protect the jawbone. We'll help you choose the best option for your case." },
+      { q: "Is it hard to clean under a bridge?", a: "No, we'll show you how to use simple tools like 'Superfloss' to keep the area perfectly healthy." }
     ]
   },
   {
@@ -317,6 +624,68 @@ const treatments = [
       { q: "How can I prepare my child at home?", a: "Talk about the dentist as a 'tooth-helper' who polishes teeth. Avoid using the dentist as a threat for bad behavior." },
       { q: "What should I do for a dental emergency?", a: "Call us immediately. We keep emergency slots open every day for knocked-out teeth or severe toothaches in children." },
       { q: "Is teething normal for so long?", a: "Yes, every child is different. We can recommend safe ways to soothe teething pain without using harmful gels." }
+    ]
+  },
+  {
+    id: "smile-makeover",
+    title: "Smile Makeover",
+    shortDesc: "Veneers, bonding, whitening, and gum contouring — combined into one comprehensive plan that delivers a red-carpet smile.",
+    tag: "Cosmetic",
+    icon: Sparkles,
+    duration: "1–3 weeks",
+    sessions: "2–5 visits",
+    heroLine: "A complete transformation — designed for your face, your personality, your confidence.",
+    fullDescription: "A smile makeover is the ultimate blend of art and science. It's not just about 'white teeth'; it's about facial harmony. We analyse your lip line, skin tone, gum symmetry, and facial proportions to design a smile that looks naturally beautiful. We use a combination of ultra-thin veneers, laser gum contouring, and advanced bonding to create your masterpiece.",
+    indications: [
+      "Stained or discoloured teeth that don't respond to whitening",
+      "Chipped, cracked, or worn down teeth",
+      "Small or 'peg' teeth that look out of proportion",
+      "Gummy smile or uneven gum line",
+      "Slightly crooked teeth that don't require full orthodontics"
+    ],
+    whyChooseUs: [
+      "Digital Smile Design (DSD) Certified Clinic",
+      "Master Ceramist lab partnership for lifelike veneers",
+      "Minimal-prep techniques to preserve your natural tooth structure",
+      "In-house photography studio for precise facial analysis"
+    ],
+    process: [
+      {
+        step: "Esthetic Facial Analysis",
+        detail: "We take high-definition photos and videos of you talking and smiling. This helps us ensure your new smile matches your unique facial expressions."
+      },
+      {
+        step: "3D Wax-Up & Design",
+        detail: "Our lab creates a 3D physical model of your proposed new smile. You can see the exact shape and length of every tooth before we touch your teeth."
+      },
+      {
+        step: "The 'Test Drive' Smile",
+        detail: "We place a temporary version of your new smile over your existing teeth. You get to wear it for a few days to get feedback from family and friends."
+      },
+      {
+        step: "Precision Micropreparation",
+        detail: "Using a microscope, we remove a paper-thin layer (0.3mm to 0.5mm) of enamel only where necessary to make room for the porcelain."
+      },
+      {
+        step: "Biolase Gum Contouring",
+        detail: "If you have an uneven or 'gummy' smile, we use a painless laser to reshape the gum line for perfect symmetry and aesthetics."
+      },
+      {
+        step: "Artisan Lab Fabrication",
+        detail: "Our master ceramists hand-layer each porcelain veneer, adding translucency, texture, and 'mamelons' to mimic a natural, youthful tooth."
+      },
+      {
+        step: "Microscopic Bonding",
+        detail: "Each veneer is bonded using high-strength adhesive under moisture-controlled conditions, ensuring a bond that is virtually inseparable from the tooth."
+      }
+    ],
+    faqs: [
+      { q: "How long do veneers last?", a: "High-quality porcelain veneers typically last 15–20 years or more with routine dental care and good hygiene." },
+      { q: "Will they stain from coffee or wine?", a: "No. High-grade dental porcelain is non-porous and highly resistant to stains — even better than natural enamel." },
+      { q: "Is the procedure painful?", a: "No. We utilize local anaesthesia for preparation, and the post-op period involves very little to no discomfort." },
+      { q: "How many veneers will I need?", a: "It depends on your 'smile width' — usually between 6 to 10 veneers per arch to create a full, harmonious transformation." },
+      { q: "Can I choose how white they are?", a: "Yes, but we recommend shades that look natural. We guide you using shade tabs and your 'test drive' results." },
+      { q: "What if one veneer chips or breaks?", a: "It's rare, but if it happens, a single veneer can be replaced independently without affecting the others." }
     ]
   },
   {
@@ -444,68 +813,6 @@ const treatments = [
     ]
   },
   {
-    id: "wisdom-tooth",
-    title: "Wisdom Tooth Extraction",
-    shortDesc: "Impacted or painful wisdom teeth? We remove them with surgical precision under local anaesthesia. Minimal swelling, fast recovery.",
-    tag: "Same-Day",
-    icon: Target,
-    duration: "30–60 min",
-    sessions: "1 visit + follow-up",
-    heroLine: "Quick, precise extraction — so you heal faster and hurt less.",
-    fullDescription: "Wisdom teeth often stay hidden below the gumline (impacted) or grow at awkward angles, pushing against your other teeth. This causes chronic pain, jaw stiffness, and even cysts. Our surgical approach utilizes Piezo-Bone surgery—which uses ultrasonic vibrations rather than traditional drills—leading to significantly less swelling and a much faster healing time.",
-    indications: [
-      "Persistent pain or pressure at the back of the jaw",
-      "Stiffness or difficulty opening your mouth",
-      "Food trapping leading to decay in neighbouring molars",
-      "Visible crowding or pushing of your front teeth",
-      "Recurring infection (pericoronitis) around the wisdom tooth"
-    ],
-    whyChooseUs: [
-      "Piezo-Ultrasonic Surgery for zero-vibration, atraumatic extractions",
-      "PRF (Platelet Rich Fibrin) therapy for 50% faster socket healing",
-      "IV Sedation available for a 'sleep-through' experience",
-      "Direct Surgeon Access via WhatsApp for all recovery questions"
-    ],
-    process: [
-      {
-        step: "Nerve Projection Mapping",
-        detail: "We use high-res imaging to see exactly where the alveolar nerve is. This ensures we can remove the tooth without any risk of numbness."
-      },
-      {
-        step: "Atraumatic Anaesthesia",
-        detail: "We numb the specific nerve branch. Most patients feel 'heavy' or 'puffy' but absolutely zero sharp sensations throughout the surgery."
-      },
-      {
-        step: "Piezo-Ultrasonic Access",
-        detail: "Instead of a traditional drill, we use ultrasonic waves to gently sculpt the bone if needed. This preserves blood supply and reduces healing time."
-      },
-      {
-        step: "Tooth Sectioning",
-        detail: "For impacted teeth, we section the tooth into 2-3 small pieces. This allows for a smaller incision and a гораздо gentler removal process."
-      },
-      {
-        step: "Socket Bio-Debridement",
-        detail: "The empty socket is cleaned and any inflammatory tissue is removed to prevent the development of 'Dry Socket' after treatment."
-      },
-      {
-        step: "Advanced Wound Closure",
-        detail: "We use premium dissolvable sutures that stay for 7 days then disappear. No need for a stressful 'stitch removal' appointment."
-      },
-      {
-        step: "The Recovery Protocol",
-        detail: "We provide frozen gel packs and a specific medication schedule that starts before your numbness wears off, keeping you ahead of any pain."
-      }
-    ],
-    faqs: [
-      { q: "Is it better to remove all 4 at once?", a: "Yes, for most patients. It means one surgery, one round of antibiotics, and one recovery period instead of four." },
-      { q: "What is a 'Dry Socket'?", a: "It's when the blood clot is lost too soon. We use PRF technology to virtually eliminate the risk of this happening." },
-      { q: "When can I return to work/school?", a: "Most patients take 24–48 hours of rest and return to non-strenuous activities on the third day." },
-      { q: "Will my face swell up like a balloon?", a: "With our ultrasonic technique and proper icing, swelling is usually minimal and peaks at 48 hours before disappearing." },
-      { q: "What can I eat after surgery?", a: "Soft foods like yoghurt, smoothies, mashed potatoes, and lukewarm soups for the first 3 days. Avoid anything spicy or crunchy." },
-      { q: "Can I use a straw after extraction?", a: "No! The suction from a straw can dislodge the blood clot. Stick to drinking directly from a cup for 7 days." }
-    ]
-  },
-  {
     id: "dental-checkup",
     title: "Routine Check-up & Cleaning",
     shortDesc: "A comprehensive oral examination, professional scaling, and polish. Your foundation for lifelong dental health.",
@@ -565,68 +872,6 @@ const treatments = [
       { q: "Can I eat immediately after cleaning?", a: "Wait 30 minutes for the fluoride to fully absorb. After that, you're good to go!" },
       { q: "Why do I need 6-monthly check-ups?", a: "Because most dental problems are painless until they are severe. 6 months is the window where we can catch problems early." },
       { q: "What is an intra-oral camera?", a: "It's a small wand that lets us take high-res photos inside your mouth. It helps us track changes in your teeth over many years." }
-    ]
-  },
-  {
-    id: "dentures",
-    title: "Dentures & Bridges",
-    shortDesc: "Premium removable dentures and fixed bridges that restore your ability to eat, speak, and smile with confidence.",
-    tag: "Restorative",
-    icon: Brush,
-    duration: "1–2 weeks",
-    sessions: "3–4 visits",
-    heroLine: "Restore function and confidence — with solutions that fit your life and budget.",
-    fullDescription: "Losing teeth affects more than just your smile—it affects your nutrition and your speech. We offer modern, lightweight, and incredibly natural-looking prosthetics. From 'invisible' flexible dentures that have no metal clips, to zirconia bridges that are virtually indestructible, we help you enjoy your favorite foods again.",
-    indications: [
-      "Loss of multiple teeth in different areas",
-      "Total tooth loss in one or both arches",
-      "Sunken facial appearance due to lack of tooth support",
-      "Difficulty eating certain foods or speaking clearly",
-      "Desire to replace old, clicking, or ill-fitting dentures"
-    ],
-    whyChooseUs: [
-      "Digital Mock-up for perfect aesthetic alignment",
-      "BPS (Biofunctional Prosthetic System) for superior suction and fit",
-      "High-impact, allergy-free materials for longevity and comfort",
-      "Repair-while-you-wait service for damaged prosthetics"
-    ],
-    process: [
-      {
-        step: "Bite & Aesthetic Analysis",
-        detail: "We record how your jaws meet and how much of your teeth show when you speak and smile to ensure the new ones look perfectly natural."
-      },
-      {
-        step: "Digital/Manual Impressions",
-        detail: "We take highly accurate 'blueprints' of your gums and any remaining teeth to ensure a snug, comfortable fit that doesn't rub."
-      },
-      {
-        step: "The Shade & Shape Selection",
-        detail: "We work with you to choose the color and 'character' of the teeth. Some prefer a perfectly straight white look; others prefer a more 'natural' appearance."
-      },
-      {
-        step: "The 'Wax-Try-In' Phase",
-        detail: "You try the teeth while they are still in wax. You can talk, smile, and look in the mirror. We won't finish them until you are 100% happy with the look."
-      },
-      {
-        step: "Pressure-Injection Fabrication",
-        detail: "Using premium resins and high-pressure injection molding, we create a prosthetic that is stronger and fits more accurately than old-style methods."
-      },
-      {
-        step: "The Delivery & Bite-Balance",
-        detail: "We fit the final piece and perform 'clinical remounting' to ensure your bite is perfectly balanced, preventing any sore spots later."
-      },
-      {
-        step: "Adaptation Training",
-        detail: "We teach you the specific muscle movements for eating and speaking with your new teeth, ensuring your transition is smooth and fast."
-      }
-    ],
-    faqs: [
-      { q: "Will they look like 'false teeth'?", a: "No. We use multi-layered teeth that have translucency and varying shades, making them look like healthy, natural teeth." },
-      { q: "How long until I can speak normally?", a: "Most patients find their speech returns to 100% normal within 7 to 14 days as the tongue adjusts to the new prosthetic." },
-      { q: "Can I sleep with my dentures in?", a: "We recommend taking them out at night. This allows your gums to 'breathe' and prevents fungal infections." },
-      { q: "How do I stop dentures from clicking?", a: "Clicking usually means the fit has changed or the bite is off. A simple 're-lining' or adjustment in our clinic can fix this." },
-      { q: "Do you offer 'Flexible' dentures?", a: "Yes! Valplast or Sunflex dentures are translucent and flexible, making them much more comfortable and virtually invisible." },
-      { q: "What is a Bridge vs a Denture?", a: "A bridge is fixed (stays in), while a denture is removable. We can help you decide which is better for your budget and lifestyle." }
     ]
   }
 ]

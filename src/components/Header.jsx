@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
+import treatments from '../data/treatments'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -71,14 +72,33 @@ function Header() {
                   location.pathname === '/why-choose-us' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
-              <Link to="/treatments" className={`relative text-[14px] font-medium transition-all duration-300 group pb-1 ${
-                location.pathname === '/treatments' ? 'text-white' : 'text-white/70 hover:text-white'
-              }`}>
-                Treatments
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                  location.pathname === '/treatments' ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
-              </Link>
+              <div className="relative group/dropdown">
+                <Link to="/treatments" className={`relative text-[14px] font-medium transition-all duration-300 flex items-center gap-1 pb-1 ${
+                  location.pathname === '/treatments' ? 'text-white' : 'text-white/70 hover:text-white'
+                }`}>
+                  Treatments
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 group-hover/dropdown:rotate-180`} />
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    location.pathname === '/treatments' ? 'w-full' : 'w-0 group-hover/dropdown:w-full'
+                  }`}></span>
+                </Link>
+                
+                {/* Dropdown Menu */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-2 group-hover/dropdown:opacity-100 group-hover/dropdown:visible group-hover/dropdown:translate-y-0 transition-all duration-300 z-50">
+                  <div className="bg-[#242424] border border-white/10 rounded-2xl p-4 shadow-2xl w-[480px] grid grid-cols-2 gap-x-6 gap-y-1 backdrop-blur-xl">
+                    {treatments.map((t) => (
+                      <Link 
+                        key={t.id} 
+                        to={`/treatments?open=${t.id}`}
+                        className="flex flex-col p-2.5 rounded-xl hover:bg-white/5 transition-colors group/item"
+                      >
+                        <span className="text-[13px] font-semibold text-white group-hover/item:text-primary transition-colors line-clamp-1">{t.title}</span>
+                        <span className="text-[10px] text-white/40 line-clamp-1">{t.shortDesc}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
               <NavAnchor to="#reviews" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
                 Reviews
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -134,10 +154,23 @@ function Header() {
                 location.pathname === '/why-choose-us' ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
             </Link>
-            <Link to="/treatments" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
-              Our Treatments
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            <div className="flex flex-col gap-4">
+              <Link to="/treatments" onClick={toggleMenu} className="relative w-fit text-primary font-bold text-sm tracking-widest uppercase">
+                Our Treatments
+              </Link>
+              <div className="grid grid-cols-1 gap-4 pl-4 max-h-[40vh] overflow-y-auto">
+                {treatments.map((t) => (
+                  <Link 
+                    key={t.id} 
+                    to={`/treatments?open=${t.id}`} 
+                    onClick={toggleMenu}
+                    className="text-white/70 hover:text-white text-lg transition-colors"
+                  >
+                    {t.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <NavAnchor to="#reviews" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
               Patient Stories
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>

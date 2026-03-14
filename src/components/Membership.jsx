@@ -4,8 +4,8 @@ import { ChevronRight, ArrowRight } from 'lucide-react'
 import treatments from '../data/treatments'
 
 function Membership() {
-  // Show first 8 treatments on the homepage
-  const displayTreatments = treatments.slice(0, 8)
+  // Show first 12 treatments on the homepage
+  const displayTreatments = treatments.slice(0, 12)
 
   return (
     <section id="treatments" className="bg-bg py-24 sm:py-32 relative z-10 border-t border-border/50">
