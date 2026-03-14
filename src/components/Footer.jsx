@@ -66,6 +66,7 @@ function Footer() {
             <a href="#doctor" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Our Doctor</a>
             <a href="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Reviews</a>
             <a href="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Patient Journey</a>
+            <Link to="/visit" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Visit Clinic</Link>
           </div>
         </div>
 

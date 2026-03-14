@@ -84,6 +84,14 @@ function Header() {
                 Patient Journey
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </NavAnchor>
+              <Link to="/visit" className={`relative text-[14px] font-medium transition-all duration-300 group pb-1 ${
+                location.pathname === '/visit' ? 'text-white' : 'text-white/70 hover:text-white'
+              }`}>
+                Visit Clinic
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  location.pathname === '/visit' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
             </nav>
             
             <div className="hidden lg:flex items-center flex-shrink-0">
@@ -134,6 +142,10 @@ function Header() {
               Patient Journey
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </NavAnchor>
+            <Link to="/visit" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+              Visit Clinic
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </Link>
           </nav>
           
           <div className="flex flex-col gap-4">

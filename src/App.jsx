@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Header, ScrollToTop, Footer } from './components'
 import HomePage from './pages/HomePage'
 import TreatmentsPage from './pages/TreatmentsPage'
+import VisitClinicPage from './pages/VisitClinicPage'
 
 function App() {
   return (
@@ -13,6 +14,12 @@ function App() {
         <Route path="/treatments" element={
           <>
             <TreatmentsPage />
+            <Footer />
+          </>
+        } />
+        <Route path="/visit" element={
+          <>
+            <VisitClinicPage />
             <Footer />
           </>
         } />
