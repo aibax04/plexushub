@@ -1,22 +1,22 @@
 import React from 'react'
-import { Header, Hero, Services, Doctor, Membership, Reviews, CTAStrip, Footer, ScrollToTop } from './components'
+import { Routes, Route } from 'react-router-dom'
+import { Header, ScrollToTop, Footer } from './components'
+import HomePage from './pages/HomePage'
+import TreatmentsPage from './pages/TreatmentsPage'
 
 function App() {
   return (
     <>
       <Header />
-      <main className="relative">
-        <Hero />
-        
-        <div className="relative z-10 bg-bg shadow-2xl rounded-t-[3rem]">
-          <Services />
-          <Doctor />
-          <Membership />
-          <Reviews />
-          <CTAStrip />
-          <Footer />
-        </div>
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/treatments" element={
+          <>
+            <TreatmentsPage />
+            <Footer />
+          </>
+        } />
+      </Routes>
       <ScrollToTop />
     </>
   )

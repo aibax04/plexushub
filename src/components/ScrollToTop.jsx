@@ -4,25 +4,32 @@ import { ChevronUp } from 'lucide-react'
 function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
 
-  const toggleVisibility = () => {
-    if (window.scrollY > 500) {
-      setIsVisible(true)
-    } else {
-      setIsVisible(false)
-    }
-  }
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    })
-  }
+    });
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility)
-    return () => window.removeEventListener('scroll', toggleVisibility)
-  }, [])
+    let ticking = false;
+
+    const toggleVisibility = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsVisible(window.scrollY > 500);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    // Run once on load
+    toggleVisibility();
+
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
 
   return (
     <div className="fixed bottom-8 right-8 z-[1001]">

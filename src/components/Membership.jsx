@@ -1,58 +1,12 @@
 import React from 'react'
-import { ChevronRight, Zap, ShieldCheck, Smile, Sparkles, Heart, Stethoscope, Sun, Target } from 'lucide-react'
-
-const treatments = [
-  {
-    title: "Painless Root Canal (RCT)",
-    desc: "Single-sitting, microscope-assisted root canals. You won't feel a thing - we guarantee it. Save your natural tooth instead of pulling it.",
-    tag: "Most Popular",
-    icon: Zap,
-  },
-  {
-    title: "Dental Implants",
-    desc: "Missing a tooth? Our titanium implants look, feel, and function exactly like real teeth. Permanent. No adhesives. No compromise.",
-    tag: "Permanent Fix",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Clear Aligners & Braces",
-    desc: "Straighten your teeth invisibly. Custom-moulded clear aligners for adults, or colour braces that kids actually love wearing.",
-    tag: "Adults & Kids",
-    icon: Smile,
-  },
-  {
-    title: "Smile Makeover",
-    desc: "Veneers, bonding, whitening, and gum contouring - combined into one comprehensive plan that delivers a red-carpet smile.",
-    tag: "Cosmetic",
-    icon: Sparkles,
-  },
-  {
-    title: "Kids Dentistry",
-    desc: "We turn scary dentist visits into fun adventures. Fluoride treatments, sealants, and cavity care designed for tiny humans.",
-    tag: "Child-Friendly",
-    icon: Heart,
-  },
-  {
-    title: "Gum Disease Treatment",
-    desc: "Bleeding when you brush? Don't ignore it. Our laser-assisted deep cleaning halts gum disease before it causes tooth loss.",
-    tag: "Preventive",
-    icon: Stethoscope,
-  },
-  {
-    title: "Teeth Whitening",
-    desc: "Professional in-office whitening that's 8x stronger than strips. Visibly whiter teeth in a single 45-minute session.",
-    tag: "Quick Results",
-    icon: Sun,
-  },
-  {
-    title: "Wisdom Tooth Extraction",
-    desc: "Impacted or painful wisdom teeth? We remove them with surgical precision under local anaesthesia. Minimal swelling, fast recovery.",
-    tag: "Same-Day",
-    icon: Target,
-  }
-]
+import { Link } from 'react-router-dom'
+import { ChevronRight, ArrowRight } from 'lucide-react'
+import treatments from '../data/treatments'
 
 function Membership() {
+  // Show first 8 treatments on the homepage
+  const displayTreatments = treatments.slice(0, 8)
+
   return (
     <section id="treatments" className="bg-bg py-24 sm:py-32 relative z-10 border-t border-border/50">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -73,18 +27,28 @@ function Membership() {
             <p className="text-text font-medium text-[15px] mb-8">
               Every treatment includes a free consultation and transparent pricing. No surprises.
             </p>
-            <a href="#book" className="inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95">
-              <span className="text-[17px]">Book a Free Consultation</span>
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </a>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-2">
+              <a
+                href="#book"
+                className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-primary/30 active:scale-95"
+              >
+                Book Free Consultation
+                <ChevronRight className="w-3.5 h-3.5" />
+              </a>
+              <Link
+                to="/treatments"
+                className="inline-flex items-center justify-center whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-text-muted transition-all duration-300 border border-border rounded-full hover:border-primary/30 hover:text-primary active:scale-95"
+              >
+                View All Treatments
+              </Link>
+            </div>
           </div>
 
           {/* Right Scrolling Content */}
           <div className="lg:w-[65%]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {treatments.map((treatment, idx) => (
-                <div key={idx} className="flex flex-col group bg-[#f8f8f9] rounded-2xl p-6 border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  {/* Tag */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {displayTreatments.map((treatment) => (
+                <div key={treatment.id} className="flex flex-col group bg-[#f8f8f9] rounded-2xl p-6 border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   {/* Icon & Tag */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-10 h-10 rounded-xl bg-white border border-border/50 flex items-center justify-center text-primary/80 shadow-sm group-hover:bg-primary/5 group-hover:border-primary/20 transition-colors">
@@ -97,11 +61,14 @@ function Membership() {
                   
                   {/* Content */}
                   <h3 className="text-lg font-medium text-text mb-2 tracking-tight">{treatment.title}</h3>
-                  <p className="text-text-muted text-[14px] leading-relaxed flex-1">{treatment.desc}</p>
+                  <p className="text-text-muted text-[14px] leading-relaxed flex-1">{treatment.shortDesc}</p>
                   
-                  <a href="#book" className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-4 group-hover:gap-2 transition-all hover:text-primary-dark">
-                    Book this treatment <ChevronRight className="w-3.5 h-3.5" />
-                  </a>
+                  <Link
+                    to={`/treatments?open=${treatment.id}`}
+                    className="inline-flex items-center gap-1.5 text-primary text-[13px] font-medium mt-4 group-hover:gap-2.5 transition-all hover:text-primary-dark"
+                  >
+                    Learn more <ArrowRight strokeWidth={1.5} className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               ))}
             </div>

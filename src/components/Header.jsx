@@ -1,39 +1,89 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   const toggleMenu = () => setIsOpen(!isOpen)
+
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Helper: scroll-anchors work on home, link navigates otherwise
+  const NavAnchor = ({ to, children, className, onClick }) => {
+    if (isHome) {
+      return (
+        <a href={to} className={className} onClick={onClick}>
+          {children}
+        </a>
+      )
+    }
+    // If not on home, navigate to home with the hash
+    return (
+      <Link to={`/${to}`} className={className} onClick={onClick}>
+        {children}
+      </Link>
+    )
+  }
 
   return (
     <>
       <div className="fixed top-4 md:top-6 left-0 right-0 z-50 px-4 flex justify-center w-full">
-        <header className="w-full max-w-6xl bg-[#4b4b4b]/95 backdrop-blur-md text-white rounded-full shadow-2xl border border-white/10 transition-all">
+        <header className={`w-full max-w-6xl backdrop-blur-md text-white rounded-full shadow-2xl border transition-all duration-500 ${
+          isScrolled
+            ? 'bg-[#2a2a2a]/98 border-white/15'
+            : 'bg-[#4b4b4b]/95 border-white/10'
+        }`}>
           <div className="px-6 md:px-8 h-[64px] flex items-center justify-between">
             
-            <a href="/" className="font-sans font-bold text-2xl tracking-tight transition-all duration-300 hover:scale-[1.02] active:scale-95 flex-shrink-0">
+            <Link to="/" className="font-sans font-bold text-2xl tracking-tight transition-all duration-300 hover:scale-[1.02] active:scale-95 flex-shrink-0">
               plexus<span className="font-light">dental</span>
-            </a>
+            </Link>
             
             <nav className="hidden lg:flex items-center justify-center gap-8 flex-1">
-              <a href="#features" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
+              <NavAnchor to="#features" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
                 Why Us
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#treatments" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
+              </NavAnchor>
+              <Link to="/treatments" className={`relative text-[14px] font-medium transition-all duration-300 group pb-1 ${
+                location.pathname === '/treatments' ? 'text-white' : 'text-white/70 hover:text-white'
+              }`}>
                 Treatments
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#reviews" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  location.pathname === '/treatments' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
+              <NavAnchor to="#reviews" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
                 Reviews
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </NavAnchor>
               <div className="w-px h-3 bg-white/10 mx-1"></div>
-              <a href="#how-it-works" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
+              <NavAnchor to="#how-it-works" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
                 Patient Journey
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </NavAnchor>
             </nav>
             
             <div className="hidden lg:flex items-center flex-shrink-0">
@@ -68,22 +118,22 @@ function Header() {
       >
         <div className="pt-32 pb-8 px-8 h-full flex flex-col justify-between">
           <nav className="flex flex-col gap-8 text-2xl font-medium">
-            <a href="#features" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+            <NavAnchor to="#features" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
               Why Choose Us
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#treatments" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+            </NavAnchor>
+            <Link to="/treatments" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
               Our Treatments
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#reviews" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+            </Link>
+            <NavAnchor to="#reviews" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
               Patient Stories
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#how-it-works" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+            </NavAnchor>
+            <NavAnchor to="#how-it-works" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
               Patient Journey
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </NavAnchor>
           </nav>
           
           <div className="flex flex-col gap-4">
