@@ -132,20 +132,29 @@ function PatientSpeaks() {
         </div>
 
         {/* Vertical alignment - 3 per row on monitor, symmetric grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10 lg:gap-x-14 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10 lg:gap-x-14 mb-8">
           {testimonials.map((item) => (
             <TestimonialCard key={item.id} item={item} />
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
-          <button className="inline-flex items-center gap-4 py-4 px-10 rounded-full border border-border bg-white group transition-all duration-300 hover:border-primary hover:shadow-xl active:scale-95">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-text group-hover:text-primary transition-colors">
-              Explore More Stories
-            </span>
-            <div className="flex items-center">
-                <div className="w-8 h-[1px] bg-border group-hover:bg-primary transition-all duration-300 group-hover:w-12" />
-                <ChevronRight className="w-4 h-4 text-border group-hover:text-primary transition-colors -ml-1" />
+        <div className="flex justify-center">
+          <button className="group relative px-10 py-4 rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-lg hover:shadow-primary/25">
+            {/* Background Layer */}
+            <div className="absolute inset-0 bg-white border border-border group-hover:border-primary transition-colors duration-500" />
+            
+            {/* Liquid Fill Effect */}
+            <div className="absolute inset-0 bg-primary translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+            
+            {/* Content Container */}
+            <div className="relative flex items-center gap-3">
+              <span className="text-[11px] font-black tracking-[0.2em] uppercase text-text group-hover:text-white transition-colors duration-500">
+                Explore More Stories
+              </span>
+              <div className="flex items-center">
+                <div className="w-8 h-px bg-text/20 group-hover:bg-white/40 transition-all duration-500 group-hover:w-12" />
+                <ChevronRight className="w-4 h-4 text-text group-hover:text-white transition-colors duration-500 -ml-1" />
+              </div>
             </div>
           </button>
         </div>
