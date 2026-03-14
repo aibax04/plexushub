@@ -132,13 +132,13 @@ function PatientSpeaks() {
         </div>
 
         {/* Vertical alignment - 3 per row on monitor, symmetric grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10 lg:gap-x-14 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10 lg:gap-x-14 mb-16">
           {testimonials.map((item) => (
             <TestimonialCard key={item.id} item={item} />
           ))}
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-4">
             <button className="group relative flex items-center gap-6 py-4 px-8 transition-all duration-300 hover:scale-105 active:scale-95">
                 <span className="text-[11px] font-black tracking-[0.3em] uppercase text-text group-hover:text-primary transition-colors">
                     View more Transformations
