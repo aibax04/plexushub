@@ -115,48 +115,43 @@ const TestimonialCard = ({ item }) => (
 
 function PatientSpeaks() {
   return (
-    <section id="patient-speaks" className="bg-white py-32 sm:py-40 overflow-hidden border-t border-border/50 relative">
+    <section id="patient-speaks" className="bg-white py-20 sm:py-24 overflow-hidden border-t border-border/50 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[400px] bg-primary/[0.02] rounded-full blur-[120px] pointer-events-none" />
       
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="text-center mb-24">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest mb-8 border border-primary/20">
+        <div className="text-center mb-16">
+          <div className="inline-block px-3 py-1 rounded-full bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-widest mb-6 border border-primary/10">
             Success Stories
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-text mb-8">
+          <h2 className="text-4xl sm:text-5xl font-medium tracking-tight text-text mb-4">
             Patient Speaks
           </h2>
-          <p className="text-text-muted text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
             Hear from our community about how we're redefining <br className="hidden sm:block" /> dental excellence in Lucknow.
           </p>
         </div>
 
         {/* Vertical alignment - 3 per row on monitor, symmetric grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10 lg:gap-x-14 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10 lg:gap-x-14 mb-4">
           {testimonials.map((item) => (
             <TestimonialCard key={item.id} item={item} />
           ))}
         </div>
 
         <div className="flex justify-center">
-          <button className="group relative px-10 py-4 rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 shadow-lg hover:shadow-primary/25">
-            {/* Background Layer */}
-            <div className="absolute inset-0 bg-white border border-border group-hover:border-primary transition-colors duration-500" />
-            
-            {/* Liquid Fill Effect */}
-            <div className="absolute inset-0 bg-primary translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-            
-            {/* Content Container */}
-            <div className="relative flex items-center gap-3">
-              <span className="text-[11px] font-black tracking-[0.2em] uppercase text-text group-hover:text-white transition-colors duration-500">
-                Explore More Stories
-              </span>
-              <div className="flex items-center">
-                <div className="w-8 h-px bg-text/20 group-hover:bg-white/40 transition-all duration-500 group-hover:w-12" />
-                <ChevronRight className="w-4 h-4 text-text group-hover:text-white transition-colors duration-500 -ml-1" />
-              </div>
-            </div>
-          </button>
+            <button className="group relative flex items-center gap-6 py-4 px-8 transition-all duration-300 hover:scale-105 active:scale-95">
+                <span className="text-[11px] font-black tracking-[0.3em] uppercase text-text group-hover:text-primary transition-colors">
+                    View more Transformations
+                </span>
+                
+                <div className="relative flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white border border-border group-hover:border-primary group-hover:bg-primary transition-all duration-500 ease-out" />
+                    <ChevronRight className="absolute w-4 h-4 text-text group-hover:text-white group-hover:translate-x-1 transition-all duration-300 z-10" />
+                </div>
+                
+                {/* Underline decoration */}
+                <div className="absolute bottom-2 left-8 right-24 h-0.5 bg-primary/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            </button>
         </div>
       </div>
     </section>
