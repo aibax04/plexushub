@@ -63,10 +63,14 @@ function Header() {
             </Link>
             
             <nav className="hidden lg:flex items-center justify-center gap-8 flex-1">
-              <NavAnchor to="#features" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
+              <Link to="/why-choose-us" className={`relative text-[14px] font-medium transition-all duration-300 group pb-1 ${
+                location.pathname === '/why-choose-us' ? 'text-white' : 'text-white/70 hover:text-white'
+              }`}>
                 Why Us
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </NavAnchor>
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  location.pathname === '/why-choose-us' ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </Link>
               <Link to="/treatments" className={`relative text-[14px] font-medium transition-all duration-300 group pb-1 ${
                 location.pathname === '/treatments' ? 'text-white' : 'text-white/70 hover:text-white'
               }`}>
@@ -122,10 +126,14 @@ function Header() {
       >
         <div className="pt-32 pb-8 px-8 h-full flex flex-col justify-between">
           <nav className="flex flex-col gap-8 text-2xl font-medium">
-            <NavAnchor to="#features" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+            <Link to="/why-choose-us" onClick={toggleMenu} className={`relative w-fit text-2xl font-medium transition-all duration-300 group ${
+              location.pathname === '/why-choose-us' ? 'text-primary' : 'text-white hover:text-primary'
+            }`}>
               Why Choose Us
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </NavAnchor>
+              <span className={`absolute -bottom-1 left-0 h-1 bg-primary transition-all duration-300 ${
+                location.pathname === '/why-choose-us' ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
+            </Link>
             <Link to="/treatments" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
               Our Treatments
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>

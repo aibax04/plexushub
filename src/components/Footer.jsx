@@ -61,7 +61,7 @@ function Footer() {
               <br />Painless treatments. Honest pricing. Beautiful smiles.</p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-8">
-            <a href="#features" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Why Us</a>
+            <Link to="/why-choose-us" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Why Us</Link>
             <Link to="/treatments" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Treatments</Link>
             <a href="#doctor" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Our Doctor</a>
             <a href="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Reviews</a>
