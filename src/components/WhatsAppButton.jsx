@@ -12,7 +12,7 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className="fixed bottom-8 left-8 z-[1001] flex items-center gap-3">
+    <div className="fixed bottom-6 left-6 sm:bottom-8 sm:left-8 z-[1001] flex items-center gap-3">
       <div className="relative group">
         {/* Tooltip/Label */}
         <div className={`absolute bottom-full left-0 mb-3 px-4 py-2 bg-white rounded-2xl shadow-xl border border-border/50 text-sm font-medium text-text whitespace-nowrap transition-all duration-300 transform origin-bottom-left ${
@@ -30,13 +30,13 @@ const WhatsAppButton = () => {
           onClick={handleWhatsAppClick}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="relative flex items-center justify-center p-4 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-[#25D366]/30 hover:scale-110 active:scale-95 transition-all duration-300 group overflow-hidden"
+          className="relative flex items-center justify-center p-3.5 sm:p-4 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-[#25D366]/30 hover:scale-110 active:scale-95 transition-all duration-300 group overflow-hidden"
           aria-label="Chat on WhatsApp"
         >
           {/* Subtle shine effect */}
           <div className="absolute inset-x-0 top-0 h-1/2 bg-white/20 -skew-y-12 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
           
-          <MessageCircle className="w-7 h-7 fill-white/10" strokeWidth={1.5} />
+          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-white/10" strokeWidth={1.5} />
         </button>
 
         {/* Doctor Status Badge */}
