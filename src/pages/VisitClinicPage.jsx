@@ -47,7 +47,7 @@ function VisitClinicPage() {
   return (
     <div className="min-h-screen bg-bg pt-28 sm:pt-32">
       {/* Hero Section */}
-      <section className="container mx-auto px-6 max-w-6xl mb-12 sm:mb-16">
+      <section className="container mx-auto px-6 max-w-6xl mb-12 sm:mb-16 animate-page-entry">
         <div className="flex flex-wrap items-center gap-y-4 gap-x-5 mb-10">
           <Link
             to="/"

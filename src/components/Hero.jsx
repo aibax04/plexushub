@@ -60,8 +60,8 @@ function Hero() {
         <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-20">
-        <div className="max-w-4xl mx-auto flex flex-col items-center animate-reveal">
+      <div className="container mx-auto px-6 relative z-10 pt-20 animate-page-entry">
+        <div className="max-w-4xl mx-auto flex flex-col items-center">
           
           {/* Micro-badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-medium tracking-wide mb-8 backdrop-blur-sm">

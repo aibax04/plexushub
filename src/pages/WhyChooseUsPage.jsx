@@ -87,10 +87,6 @@ const TerminalWindow = ({ title, tag, className = "" }) => (
 function WhyChooseUsPage() {
   const facilityRef = useRef(null)
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   const scrollToFacility = (e) => {
     e.preventDefault()
     facilityRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -99,7 +95,7 @@ function WhyChooseUsPage() {
   return (
     <div className="min-h-screen bg-bg text-[#1D1D1F]">
       {/* Hero & Background Elements */}
-      <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
+      <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden animate-page-entry">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/[0.03] rounded-full blur-[120px] pointer-events-none" />
         
         <div className="container mx-auto px-6 max-w-6xl relative z-10">

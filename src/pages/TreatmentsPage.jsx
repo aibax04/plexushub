@@ -250,7 +250,7 @@ function TreatmentsPage() {
   return (
     <div className="min-h-screen bg-bg">
       {/* Page Hero */}
-      <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 bg-bg overflow-hidden">
+      <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 bg-bg overflow-hidden animate-page-entry">
         {/* Subtle gradient blob */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/[0.04] rounded-full blur-[100px] pointer-events-none" />
 
