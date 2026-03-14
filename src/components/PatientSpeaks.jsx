@@ -64,13 +64,13 @@ const TestimonialCard = ({ item }) => (
     <div className="relative aspect-[3/4.5] rounded-[3rem] overflow-hidden bg-white border border-border/60 shadow-sm group-hover:shadow-2xl group-hover:border-primary/30 transition-all duration-500">
       
       {/* Terminal Header */}
-      <div className="absolute top-0 left-0 right-0 h-14 flex items-center justify-between px-8 bg-white/5 backdrop-blur-md z-20 border-b border-white/5">
+      <div className="absolute top-0 left-0 right-0 h-14 flex items-center justify-between px-8 bg-black/10 backdrop-blur-md z-20 border-b border-white/5">
         <div className="flex gap-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-red-400/40 group-hover:bg-red-400/60 transition-colors" />
-          <div className="w-1.5 h-1.5 rounded-full bg-yellow-400/40 group-hover:bg-yellow-400/60 transition-colors" />
-          <div className="w-1.5 h-1.5 rounded-full bg-green-400/40 group-hover:bg-green-400/60 transition-colors" />
+          <div className="w-1.5 h-1.5 rounded-full bg-red-400/60 group-hover:bg-red-400/80 transition-colors" />
+          <div className="w-1.5 h-1.5 rounded-full bg-yellow-400/60 group-hover:bg-yellow-400/80 transition-colors" />
+          <div className="w-1.5 h-1.5 rounded-full bg-green-400/60 group-hover:bg-green-400/80 transition-colors" />
         </div>
-        <div className="text-[9px] font-bold text-white/40 uppercase tracking-[0.25em]">{item.treatment}</div>
+        <div className="text-[9px] font-bold text-white/90 uppercase tracking-[0.25em] drop-shadow-sm">{item.treatment}</div>
       </div>
 
       {/* Image / Thumbnail */}
@@ -81,17 +81,18 @@ const TestimonialCard = ({ item }) => (
       />
       
       {/* Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent opacity-100 z-10" />
       
       {/* Play Button */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-16 h-16 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center border border-white/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:border-primary/50 shadow-2xl">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+        <div className="w-16 h-16 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center border border-white/20 transition-all duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:border-primary/50 shadow-2xl pointer-events-auto">
           <Play className="w-7 h-7 text-white fill-current translate-x-0.5" />
         </div>
       </div>
 
       {/* Hero Name / Role */}
-      <div className="absolute bottom-10 left-8 right-8 z-10">
+      <div className="absolute bottom-10 left-8 right-8 z-20">
         <h3 className="text-white text-3xl font-medium tracking-tight mb-1 uppercase leading-none">{item.nameInImage}</h3>
         <p className="text-white/50 text-[10px] font-black tracking-[0.3em] uppercase">{item.role}</p>
       </div>
