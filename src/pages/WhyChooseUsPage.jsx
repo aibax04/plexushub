@@ -62,23 +62,23 @@ const stats = [
 ]
 
 const TerminalWindow = ({ title, tag, className = "" }) => (
-  <div className={`group relative overflow-hidden rounded-[2rem] bg-[#0A0A0B] border border-white/5 shadow-2xl flex flex-col ${className}`}>
+  <div className={`group relative overflow-hidden rounded-[2.5rem] bg-white border border-border/80 shadow-sm flex flex-col ${className}`}>
     {/* Terminal Header */}
-    <div className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-white/[0.02]">
-      <div className="flex gap-1.5">
-        <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] opacity-80" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] opacity-80" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F] opacity-80" />
+    <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-bg-alt/30">
+      <div className="flex gap-2">
+        <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/30" />
+        <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/30" />
+        <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/30" />
       </div>
-      <div className="text-[10px] font-medium text-white/30 uppercase tracking-[0.2em]">{tag}</div>
+      <div className="text-[10px] font-bold text-text-muted/50 uppercase tracking-widest">{tag}</div>
     </div>
     
     {/* Terminal Content Space */}
-    <div className="flex-1 p-8 flex flex-col justify-end relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/10 rounded-full blur-[60px] pointer-events-none group-hover:bg-primary/20 transition-colors" />
+    <div className="flex-1 p-10 flex flex-col justify-end relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/[0.04] rounded-full blur-[60px] pointer-events-none group-hover:bg-primary/[0.08] transition-all duration-700" />
       <div className="relative z-10">
-        <div className="w-10 h-0.5 bg-primary/40 mb-4 group-hover:w-16 transition-all duration-500" />
-        <h4 className="text-white/90 text-xl font-medium tracking-tight">{title}</h4>
+        <div className="w-10 h-0.5 bg-primary/30 mb-5 group-hover:w-16 transition-all duration-500" />
+        <h4 className="text-text font-medium text-2xl tracking-tight group-hover:text-primary transition-colors duration-500">{title}</h4>
       </div>
     </div>
   </div>
@@ -99,11 +99,11 @@ function WhyChooseUsPage() {
   return (
     <div className="min-h-screen bg-bg text-[#1D1D1F]">
       {/* Hero & Background Elements */}
-      <section className="relative pt-32 sm:pt-40 pb-20 sm:pb-32 overflow-hidden">
+      <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/[0.03] rounded-full blur-[120px] pointer-events-none" />
         
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="mb-10 lg:mb-12">
+          <div className="mb-10 lg:mb-12 text-center lg:text-left">
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-text-muted text-sm font-medium hover:text-primary transition-colors group"
@@ -140,11 +140,37 @@ function WhyChooseUsPage() {
             
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {stats.map((stat, i) => (
-                <div key={i} className="bg-bg border border-border/60 rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow">
+                <div key={i} className="bg-white border border-border/80 rounded-3xl p-6 sm:p-8 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow">
                   <span className="text-2xl sm:text-3xl font-bold text-primary mb-1">{stat.value}</span>
                   <span className="text-text-muted text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-center">{stat.label}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Facility Gallery Section */}
+      <section ref={facilityRef} id="facility" className="py-20 sm:py-28 scroll-mt-20">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <TerminalWindow 
+              title="Ashiyana Main Suite" 
+              tag="Facility" 
+              className="lg:col-span-2 aspect-[16/10] md:aspect-auto md:h-[500px]" 
+            />
+
+            <div className="flex flex-col gap-6 sm:gap-8">
+              <TerminalWindow 
+                title="Zeiss Micro-Endodontics" 
+                tag="Technology" 
+                className="aspect-square" 
+              />
+              <TerminalWindow 
+                title="B-Class Sterilization" 
+                tag="Safety" 
+                className="aspect-square" 
+              />
             </div>
           </div>
         </div>
@@ -220,7 +246,7 @@ function WhyChooseUsPage() {
         
         <div className="container mx-auto px-6 max-w-5xl relative z-10">
             <div className="text-center mb-16 sm:mb-20">
-                <h2 className="text-3xl sm:text-4xl font-medium mb-6">The Plexus Difference</h2>
+                <h2 className="text-3xl sm:text-4xl font-medium mb-6 tracking-tight">The Plexus Difference</h2>
                 <p className="text-dark-text-muted max-w-xl mx-auto">See how we compare to traditional neighborhood clinics in Lucknow.</p>
             </div>
 
@@ -263,37 +289,6 @@ function WhyChooseUsPage() {
                     </ul>
                 </div>
             </div>
-        </div>
-      </section>
-
-      {/* Facility Gallery Section */}
-      <section ref={facilityRef} id="facility" className="py-24 sm:py-32 bg-white scroll-mt-20">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-3xl sm:text-4xl font-medium tracking-tight mb-4 tracking-tight">Inside our Clinical Center</h2>
-            <p className="text-text-muted max-w-xl mx-auto">World-class dental engineering meets a designed patient experience.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <TerminalWindow 
-              title="Ashiyana Main Suite" 
-              tag="Facility" 
-              className="lg:col-span-2 aspect-[16/10] md:aspect-auto md:h-[500px]" 
-            />
-
-            <div className="flex flex-col gap-6 sm:gap-8">
-              <TerminalWindow 
-                title="Zeiss Micro-Endodontics" 
-                tag="Technology" 
-                className="aspect-square" 
-              />
-              <TerminalWindow 
-                title="B-Class Sterilization" 
-                tag="Safety" 
-                className="aspect-square" 
-              />
-            </div>
-          </div>
         </div>
       </section>
 
