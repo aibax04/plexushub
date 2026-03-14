@@ -151,48 +151,52 @@ function WhyChooseUsPage() {
       </section>
 
       {/* Facility Gallery Section */}
-      <section ref={facilityRef} id="facility" className="py-20 sm:py-28 scroll-mt-20">
+      <section ref={facilityRef} id="facility" className="py-16 sm:py-24 scroll-mt-20">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Row 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Main Feature - Top Left */}
             <TerminalWindow 
               title="Ashiyana Main Suite" 
               tag="Facility" 
-              className="lg:col-span-2 aspect-[16/10] md:aspect-auto md:h-[500px]" 
+              className="lg:col-span-2 lg:row-span-2 min-h-[400px] lg:min-h-[600px]" 
             />
+            
+            {/* Tech - Top Right */}
             <TerminalWindow 
               title="Zeiss Micro-Endodontics" 
               tag="Technology" 
-              className="aspect-square" 
+              className="min-h-[280px]" 
             />
 
-            {/* Row 2 */}
+            {/* Safety - Mid Right */}
             <TerminalWindow 
               title="B-Class Sterilization" 
               tag="Safety" 
-              className="aspect-square" 
+              className="min-h-[280px]" 
+            />
+
+            {/* Row 2 - Full Span Items */}
+            <TerminalWindow 
+              title="AI Diagnostic Center" 
+              tag="Technology" 
+              className="min-h-[320px]" 
             />
             <TerminalWindow 
               title="Consultation Hub" 
               tag="Facility" 
-              className="aspect-square" 
-            />
-            <TerminalWindow 
-              title="AI Diagnostic Center" 
-              tag="Technology" 
-              className="aspect-square" 
-            />
-
-            {/* Row 3 */}
-            <TerminalWindow 
-              title="Digital Scanning Bay" 
-              tag="Technology" 
-              className="lg:col-span-2 aspect-[16/10] md:aspect-auto md:h-[400px]" 
+              className="min-h-[320px]" 
             />
             <TerminalWindow 
               title="Patient Comfort Lounge" 
-              tag="Facility" 
-              className="aspect-square" 
+              tag="Comfort" 
+              className="min-h-[320px]" 
+            />
+
+            {/* Row 3 - Extended Feature */}
+            <TerminalWindow 
+              title="Digital Scanning Bay" 
+              tag="Precision" 
+              className="lg:col-span-3 min-h-[300px] lg:min-h-[400px]" 
             />
           </div>
         </div>
