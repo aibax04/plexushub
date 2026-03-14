@@ -100,8 +100,8 @@ function Header() {
                   </div>
                 </div>
               </div>
-              <NavAnchor to="#reviews" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
-                Reviews
+              <NavAnchor to="#patient-speaks" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
+                Patient Speaks
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </NavAnchor>
               <div className="w-px h-3 bg-white/10 mx-1"></div>
