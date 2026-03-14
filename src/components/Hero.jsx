@@ -71,7 +71,7 @@ function Hero() {
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-sans font-medium text-dark-text leading-[1.05] tracking-tight mb-6">
             Your smile deserves <br className="hidden md:block" />
-            nothing but the best
+            nothing but the best.
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl text-dark-text-muted mb-10 leading-relaxed max-w-2xl font-light px-4">

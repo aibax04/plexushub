@@ -5,6 +5,7 @@ import treatments from '../data/treatments'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
   const isHome = location.pathname === '/'
@@ -72,20 +73,20 @@ function Header() {
                   location.pathname === '/why-choose-us' ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
-              <div className="relative group/dropdown">
-                <Link to="/treatments" className={`relative text-[14px] font-medium transition-all duration-300 flex items-center gap-1 pb-1 ${
+              <div className="relative group/dropdown py-1">
+                <Link to="/treatments" className={`relative text-[14px] font-medium transition-all duration-300 flex items-center gap-1 pb-1 group ${
                   location.pathname === '/treatments' ? 'text-white' : 'text-white/70 hover:text-white'
                 }`}>
                   Treatments
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 group-hover/dropdown:rotate-180`} />
                   <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                    location.pathname === '/treatments' ? 'w-full' : 'w-0 group-hover/dropdown:w-full'
+                    location.pathname === '/treatments' ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}></span>
                 </Link>
                 
                 {/* Dropdown Menu */}
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-2 group-hover/dropdown:opacity-100 group-hover/dropdown:visible group-hover/dropdown:translate-y-0 transition-all duration-300 z-50">
-                  <div className="bg-[#242424] border border-white/10 rounded-2xl p-4 shadow-2xl w-[480px] grid grid-cols-2 gap-x-6 gap-y-1 backdrop-blur-xl">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 pointer-events-none translate-y-2 group-hover/dropdown:opacity-100 group-hover/dropdown:pointer-events-auto group-hover/dropdown:translate-y-0 transition-all duration-300 z-50">
+                  <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-4 shadow-2xl w-[480px] grid grid-cols-2 gap-x-6 gap-y-1 backdrop-blur-2xl">
                     {treatments.map((t) => (
                       <Link 
                         key={t.id} 
@@ -155,16 +156,23 @@ function Header() {
               }`}></span>
             </Link>
             <div className="flex flex-col gap-4">
-              <Link to="/treatments" onClick={toggleMenu} className="relative w-fit text-primary font-bold text-sm tracking-widest uppercase">
-                Our Treatments
-              </Link>
-              <div className="grid grid-cols-1 gap-4 pl-4 max-h-[40vh] overflow-y-auto">
+              <button 
+                onClick={() => setIsTreatmentsOpen(!isTreatmentsOpen)}
+                className="flex items-center justify-between w-full text-left"
+              >
+                <span className="text-primary font-bold text-sm tracking-widest uppercase">Our Treatments</span>
+                <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${isTreatmentsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`grid grid-cols-1 gap-4 pl-4 overflow-hidden transition-all duration-500 ${
+                isTreatmentsOpen ? 'max-h-[60vh] opacity-100 mt-2' : 'max-h-0 opacity-0'
+              }`}>
                 {treatments.map((t) => (
                   <Link 
                     key={t.id} 
                     to={`/treatments?open=${t.id}`} 
                     onClick={toggleMenu}
-                    className="text-white/70 hover:text-white text-lg transition-colors"
+                    className="text-white/70 hover:text-white text-lg transition-colors py-1"
                   >
                     {t.title}
                   </Link>

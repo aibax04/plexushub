@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, Services, Doctor, Membership, Reviews, CTAStrip, Footer } from '../components'
+import { Hero, Services, Doctor, Membership, PatientSpeaks, Reviews, CTAStrip, Footer } from '../components'
 
 function HomePage() {
   return (
@@ -10,6 +10,7 @@ function HomePage() {
         <Services />
         <Doctor />
         <Membership />
+        <PatientSpeaks />
         <Reviews />
         <CTAStrip />
         <Footer />
