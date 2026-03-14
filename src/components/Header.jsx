@@ -84,26 +84,22 @@ function Header() {
                 Patient Journey
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </NavAnchor>
-              <Link to="/visit" className={`relative text-[14px] font-medium transition-all duration-300 group pb-1 ${
-                location.pathname === '/visit' ? 'text-white' : 'text-white/70 hover:text-white'
-              }`}>
-                Visit Clinic
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                  location.pathname === '/visit' ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
-              </Link>
+
             </nav>
             
-            <div className="hidden lg:flex items-center flex-shrink-0">
+            <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+              <Link to="/visit" className="px-5 py-2.5 bg-white/10 text-white text-[13px] font-semibold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/10 active:scale-95">
+                Visit Us Now →
+              </Link>
               <a href="#book" className="px-6 py-2.5 bg-primary text-white text-[14px] font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-primary/40 active:scale-95">
                 Book Visit
               </a>
             </div>
 
             {/* Mobile Menu Button - Show only below lg */}
-            <div className="flex lg:hidden items-center gap-4">
-              <a href="#book" className="px-5 py-2 bg-primary text-white text-[13px] font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 active:scale-95">
-                Book
+            <div className="flex lg:hidden items-center gap-3">
+              <a href="#book" className="px-5 py-2 whitespace-nowrap bg-primary text-white text-[13px] font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 active:scale-95">
+                Book Now
               </a>
               <button 
                 onClick={toggleMenu} 
@@ -142,13 +138,13 @@ function Header() {
               Patient Journey
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </NavAnchor>
-            <Link to="/visit" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
-              Visit Clinic
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+
           </nav>
           
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
+            <Link to="/visit" onClick={toggleMenu} className="text-white text-center py-4 bg-white/10 rounded-full font-semibold transition-all duration-300 hover:bg-white/20 active:scale-95 border border-white/10">
+              Visit Us Now →
+            </Link>
             <a href="#book" onClick={toggleMenu} className="text-white text-center py-4 bg-primary rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-[1.02] active:scale-95 shadow-xl">
               Book an Appointment
             </a>
