@@ -115,43 +115,51 @@ const TestimonialCard = ({ item }) => (
 
 function PatientSpeaks() {
   return (
-    <section id="patient-speaks" className="bg-white py-20 sm:py-24 overflow-hidden border-t border-border/50 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[400px] bg-primary/[0.02] rounded-full blur-[120px] pointer-events-none" />
+    <section id="patient-speaks" className="bg-white py-16 sm:py-20 overflow-hidden border-t border-border/50 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[300px] bg-primary/[0.02] rounded-full blur-[100px] pointer-events-none" />
       
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 rounded-full bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-widest mb-6 border border-primary/10">
+        <div className="text-center mb-12">
+          <div className="inline-block px-3 py-1 rounded-full bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-widest mb-4 border border-primary/10">
             Success Stories
           </div>
-          <h2 className="text-4xl sm:text-5xl font-medium tracking-tight text-text mb-4">
+          <h2 className="text-4xl sm:text-5xl font-medium tracking-tight text-text mb-3">
             Patient Speaks
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-            Hear from our community about how we're redefining <br className="hidden sm:block" /> dental excellence in Lucknow.
+            Real experiences from the Plexus Dental community.
           </p>
         </div>
 
-        {/* Vertical alignment - 3 per row on monitor, symmetric grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10 lg:gap-x-14 mb-16">
+        {/* Symmetric 3-column grid with reduced margin */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10 lg:gap-x-14 mb-8">
           {testimonials.map((item) => (
             <TestimonialCard key={item.id} item={item} />
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
-            <button className="group relative h-16 px-10 rounded-full bg-white border border-border overflow-hidden transition-all duration-700 ease-in-out hover:border-primary active:scale-95 shadow-sm hover:shadow-2xl hover:shadow-primary/10">
-                {/* Liquid Background Fill */}
-                <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary rounded-full scale-0 group-hover:scale-[10] transition-transform duration-700 ease-in-out z-0" />
+        <div className="flex justify-center mt-12 md:mt-16">
+            <button className="group relative flex items-center gap-10 py-4 px-10 bg-white border border-border rounded-[2rem] overflow-hidden transition-all duration-500 hover:border-primary/40 active:scale-95 shadow-sm hover:shadow-2xl hover:shadow-primary/5">
+                {/* Subtle Moving Portal effect */}
+                <div className="absolute -right-8 top-1/2 -translate-y-1/2 w-24 h-24 bg-primary/[0.04] rounded-full scale-0 group-hover:scale-150 transition-transform duration-1000 ease-out" />
                 
                 <div className="relative z-10 flex items-center gap-8">
-                    <span className="text-[11px] font-black tracking-[0.3em] uppercase text-text group-hover:text-white transition-colors duration-500">
-                        View more transformations
+                    <span className="text-[11px] font-black tracking-[0.3em] uppercase text-text group-hover:text-primary transition-colors whitespace-nowrap leading-none">
+                        View 50+ Stories
                     </span>
                     
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full border border-border group-hover:border-white/20 transition-all duration-500">
-                        <ChevronRight className="w-5 h-5 text-text group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+                    <div className="relative flex items-center justify-center w-10 h-10">
+                        {/* Interactive Rotating Outer Frame */}
+                        <div className="absolute inset-0 rounded-full border border-border group-hover:border-primary group-hover:rotate-180 transition-all duration-1000 ease-in-out" />
+                        
+                        {/* Minimalist Arrow with dynamic slide */}
+                        <div className="absolute w-5 h-[1px] bg-border group-hover:bg-primary group-hover:w-8 transition-all duration-500" />
+                        <ChevronRight className="relative w-4 h-4 text-text group-hover:text-primary group-hover:translate-x-1 transition-all duration-500" />
                     </div>
                 </div>
+                
+                {/* Vertical Scanner light effect */}
+                <div className="absolute inset-0 w-1 h-full bg-primary/20 -translate-x-full group-hover:translate-x-[1500%] transition-transform duration-1000 ease-in-out" />
             </button>
         </div>
       </div>
