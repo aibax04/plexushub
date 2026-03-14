@@ -154,24 +154,46 @@ function WhyChooseUsPage() {
       <section ref={facilityRef} id="facility" className="py-20 sm:py-28 scroll-mt-20">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {/* Row 1 */}
             <TerminalWindow 
               title="Ashiyana Main Suite" 
               tag="Facility" 
               className="lg:col-span-2 aspect-[16/10] md:aspect-auto md:h-[500px]" 
             />
+            <TerminalWindow 
+              title="Zeiss Micro-Endodontics" 
+              tag="Technology" 
+              className="aspect-square" 
+            />
 
-            <div className="flex flex-col gap-6 sm:gap-8">
-              <TerminalWindow 
-                title="Zeiss Micro-Endodontics" 
-                tag="Technology" 
-                className="aspect-square" 
-              />
-              <TerminalWindow 
-                title="B-Class Sterilization" 
-                tag="Safety" 
-                className="aspect-square" 
-              />
-            </div>
+            {/* Row 2 */}
+            <TerminalWindow 
+              title="B-Class Sterilization" 
+              tag="Safety" 
+              className="aspect-square" 
+            />
+            <TerminalWindow 
+              title="Consultation Hub" 
+              tag="Facility" 
+              className="aspect-square" 
+            />
+            <TerminalWindow 
+              title="AI Diagnostic Center" 
+              tag="Technology" 
+              className="aspect-square" 
+            />
+
+            {/* Row 3 */}
+            <TerminalWindow 
+              title="Digital Scanning Bay" 
+              tag="Technology" 
+              className="lg:col-span-2 aspect-[16/10] md:aspect-auto md:h-[400px]" 
+            />
+            <TerminalWindow 
+              title="Patient Comfort Lounge" 
+              tag="Facility" 
+              className="aspect-square" 
+            />
           </div>
         </div>
       </section>
