@@ -138,19 +138,20 @@ function PatientSpeaks() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-4">
-            <button className="group relative flex items-center gap-6 py-4 px-8 transition-all duration-300 hover:scale-105 active:scale-95">
-                <span className="text-[11px] font-black tracking-[0.3em] uppercase text-text group-hover:text-primary transition-colors">
-                    View more Transformations
-                </span>
+        <div className="flex justify-center mt-12">
+            <button className="group relative h-16 px-10 rounded-full bg-white border border-border overflow-hidden transition-all duration-700 ease-in-out hover:border-primary active:scale-95 shadow-sm hover:shadow-2xl hover:shadow-primary/10">
+                {/* Liquid Background Fill */}
+                <div className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary rounded-full scale-0 group-hover:scale-[10] transition-transform duration-700 ease-in-out z-0" />
                 
-                <div className="relative flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white border border-border group-hover:border-primary group-hover:bg-primary transition-all duration-500 ease-out" />
-                    <ChevronRight className="absolute w-4 h-4 text-text group-hover:text-white group-hover:translate-x-1 transition-all duration-300 z-10" />
+                <div className="relative z-10 flex items-center gap-8">
+                    <span className="text-[11px] font-black tracking-[0.3em] uppercase text-text group-hover:text-white transition-colors duration-500">
+                        View more transformations
+                    </span>
+                    
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full border border-border group-hover:border-white/20 transition-all duration-500">
+                        <ChevronRight className="w-5 h-5 text-text group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+                    </div>
                 </div>
-                
-                {/* Underline decoration */}
-                <div className="absolute bottom-2 left-8 right-24 h-0.5 bg-primary/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </button>
         </div>
       </div>
