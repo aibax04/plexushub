@@ -1,6 +1,36 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { MapPin, Phone, Clock, Mail } from 'lucide-react'
+
+function NavAnchor({ to, className, children }) {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+  
+  const handleClick = (e) => {
+    if (isHome && to.startsWith('#')) {
+      e.preventDefault()
+      const el = document.querySelector(to)
+      if (el) {
+        const offset = 100
+        const bodyRect = document.body.getBoundingClientRect().top
+        const elementRect = el.getBoundingClientRect().top
+        const elementPosition = elementRect - bodyRect
+        const offsetPosition = elementPosition - offset
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+      }
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }
+
+  if (isHome && to.startsWith('#')) {
+    return <a href={to} onClick={handleClick} className={className}>{children}</a>
+  }
+  return <Link to={to.startsWith('#') ? `/${to}` : to} onClick={handleClick} className={className}>{children}</Link>
+}
 
 function Footer() {
   return (
@@ -9,46 +39,58 @@ function Footer() {
         
         {/* Contact strip */}
         <div id="contact" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 pb-16 border-b border-white/5">
-          <div className="flex items-start gap-3">
-            <div className="p-2 bg-white/5 rounded-lg mt-0.5">
-              <MapPin className="w-4 h-4 text-primary" />
+          <a 
+            href="https://www.google.com/maps/search/Plexus+Dental+Hub+Lucknow" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all group"
+          >
+            <div className="p-2.5 bg-white/5 rounded-xl mt-0.5 group-hover:bg-primary/20 transition-colors">
+              <MapPin className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <p className="text-dark-text text-sm font-medium mb-1">Visit Us</p>
+              <p className="text-dark-text text-sm font-semibold mb-1 group-hover:text-primary transition-colors">Visit Our Clinic</p>
               <p className="text-dark-text-muted text-xs leading-relaxed">
-                Shop no 9, SJS Pratham Complex,<br />
-                Chungi-Parag Rd, Opp. Shivalik School, Ashiyana, Lucknow 226012<br />
-                
+                Shop no 9, SJS Pratham Complex, Chungi-Parag Rd, Lucknow 226012
               </p>
             </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="p-2 bg-white/5 rounded-lg mt-0.5">
-              <Phone className="w-4 h-4 text-primary" />
+          </a>
+
+          <a 
+            href="tel:+916307114437"
+            className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all group"
+          >
+            <div className="p-2.5 bg-white/5 rounded-xl mt-0.5 group-hover:bg-primary/20 transition-colors">
+              <Phone className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <p className="text-dark-text text-sm font-medium mb-1">Call / WhatsApp</p>
-              <a href="tel:+916307114437" className="text-dark-text-muted text-xs hover:text-primary transition-colors">+91 63071 14437</a>
+              <p className="text-dark-text text-sm font-semibold mb-1 group-hover:text-primary transition-colors">Call / WhatsApp Now</p>
+              <span className="text-dark-text-muted text-xs">+91 63071 14437</span>
             </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="p-2 bg-white/5 rounded-lg mt-0.5">
-              <Clock className="w-4 h-4 text-primary" />
+          </a>
+
+          <div className="flex items-start gap-4 p-4 rounded-2xl">
+            <div className="p-2.5 bg-white/5 rounded-xl mt-0.5">
+              <Clock className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <p className="text-dark-text text-sm font-medium mb-1">Clinic Hours</p>
+              <p className="text-dark-text text-sm font-semibold mb-1">Clinic Hours</p>
               <p className="text-dark-text-muted text-xs leading-relaxed">Mon–Sat: 10am – 8pm<br />Sun: By Appointment</p>
             </div>
           </div>
-          <div className="flex items-start gap-3">
-            <div className="p-2 bg-white/5 rounded-lg mt-0.5">
-              <Mail className="w-4 h-4 text-primary" />
+
+          <a 
+            href="mailto:plexusdentalhub@gmail.com"
+            className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all group"
+          >
+            <div className="p-2.5 bg-white/5 rounded-xl mt-0.5 group-hover:bg-primary/20 transition-colors">
+              <Mail className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <p className="text-dark-text text-sm font-medium mb-1">Email</p>
-              <a href="mailto:plexusdentalhub@gmail.com" className="text-dark-text-muted text-xs hover:text-primary transition-colors">plexusdentalhub@gmail.com</a>
+              <p className="text-dark-text text-sm font-semibold mb-1 group-hover:text-primary transition-colors">Email Us</p>
+              <span className="text-dark-text-muted text-xs">plexusdentalhub@gmail.com</span>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* Brand + Links */}
@@ -60,13 +102,13 @@ function Footer() {
             <p className="text-dark-text-muted text-xs mt-2 max-w-xs">The most trusted dental clinic in Ashiyana, Lucknow. 
               <br />Painless treatments. Honest pricing. Beautiful smiles.</p>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-8">
-            <Link to="/why-choose-us" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Why Us</Link>
-            <Link to="/treatments" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Treatments</Link>
-            <a href="#doctor" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Our Doctor</a>
-            <a href="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Reviews</a>
-            <a href="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Patient Journey</a>
-            <Link to="/visit" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium">Visit Clinic</Link>
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
+            <NavAnchor to="/why-choose-us" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Why Us</NavAnchor>
+            <NavAnchor to="/treatments" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Treatments</NavAnchor>
+            <NavAnchor to="#doctor" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Our Doctor</NavAnchor>
+            <NavAnchor to="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Reviews</NavAnchor>
+            <NavAnchor to="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Patient Journey</NavAnchor>
+            <NavAnchor to="/visit" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Visit Clinic</NavAnchor>
           </div>
         </div>
 

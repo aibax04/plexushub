@@ -286,13 +286,13 @@ function VisitClinicPage() {
             first consultation is always free.
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-            <a
-              href="#book"
+            <Link
+              to="/#book"
               className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-primary/30 active:scale-95"
             >
               Book Free Consultation
               <ChevronRight className="w-3.5 h-3.5" />
-            </a>
+            </Link>
             <a
               href={`tel:${clinicInfo.phoneRaw}`}
               className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-white/90 transition-all duration-300 border border-white/20 rounded-full hover:border-white/40 hover:text-white active:scale-95"

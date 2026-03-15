@@ -131,16 +131,16 @@ function Header() {
               <Link to="/visit" className="px-5 py-2.5 bg-white/10 text-white text-[13px] font-semibold rounded-full hover:bg-white/20 transition-all duration-300 border border-white/10 active:scale-95">
                 Visit Us Now →
               </Link>
-              <a href="#book" className="px-6 py-2.5 bg-primary text-white text-[14px] font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-primary/40 active:scale-95">
+              <NavAnchor to="#book" className="px-6 py-2.5 bg-primary text-white text-[14px] font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-primary/40 active:scale-95">
                 Book Visit
-              </a>
+              </NavAnchor>
             </div>
 
             {/* Mobile Menu Button - Show only below lg */}
             <div className="flex lg:hidden items-center gap-3">
-              <a href="#book" className="px-5 py-2 whitespace-nowrap bg-primary text-white text-[13px] font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 active:scale-95">
+              <NavAnchor to="#book" className="px-5 py-2 whitespace-nowrap bg-primary text-white text-[13px] font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 active:scale-95">
                 Book Now
-              </a>
+              </NavAnchor>
               <button 
                 onClick={toggleMenu} 
                 className="text-white hover:text-primary transition-colors focus:outline-none p-1 transform transition-transform active:scale-90"
@@ -214,9 +214,9 @@ function Header() {
             <Link to="/visit" onClick={closeMenu} className="text-white text-center py-4 bg-white/10 rounded-full font-semibold transition-all duration-300 hover:bg-white/20 active:scale-95 border border-white/10">
               Visit Us Now →
             </Link>
-            <a href="#book" onClick={closeMenu} className="text-white text-center py-4 bg-primary rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-[1.02] active:scale-95 shadow-xl">
+            <NavAnchor to="#book" onClick={closeMenu} className="text-white text-center py-4 bg-primary rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-[1.02] active:scale-95 shadow-xl">
               Book an Appointment
-            </a>
+            </NavAnchor>
           </div>
         </div>
       </div>
