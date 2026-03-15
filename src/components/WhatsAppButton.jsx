@@ -48,11 +48,11 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className={`fixed bottom-6 left-6 sm:bottom-8 sm:left-8 z-[1001] flex flex-col items-start transition-all duration-300 ${
-      isMenuOpen ? 'opacity-0 pointer-events-none translate-y-10' : 'opacity-100 translate-y-0'
+    <div className={`fixed bottom-6 left-6 sm:bottom-8 sm:left-8 z-[1001] flex flex-col items-start transition-all duration-300 pointer-events-none ${
+      isMenuOpen ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'
     }`}>
       {/* Chat Window */}
-      <div className={`mb-4 w-[320px] sm:w-[360px] bg-white rounded-[2rem] shadow-2xl border border-border/50 overflow-hidden transition-all duration-500 origin-bottom-left ${
+      <div className={`mb-4 w-[320px] sm:w-[360px] bg-white rounded-[2rem] shadow-2xl border border-border/50 overflow-hidden transition-all duration-500 origin-bottom-left pointer-events-auto ${
         isOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0 pointer-events-none'
       }`}>
         {/* Header */}
@@ -134,7 +134,7 @@ const WhatsAppButton = () => {
         
         <button
           onClick={toggleChat}
-          className={`relative flex items-center justify-center p-3.5 sm:p-4 rounded-full shadow-lg transition-all duration-500 active:scale-95 group overflow-hidden ${
+          className={`relative flex items-center justify-center p-3.5 sm:p-4 rounded-full shadow-lg transition-all duration-500 active:scale-95 group overflow-hidden pointer-events-auto ${
             isOpen ? 'bg-primary text-white' : 'bg-[#25D366] text-white hover:scale-110'
           }`}
           aria-label="Toggle Chat"

@@ -41,12 +41,12 @@ function ScrollToTop() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[1001]">
+    <div className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[1001] pointer-events-none">
       <button
         type="button"
         onClick={scrollToTop}
-        className={`p-2.5 sm:p-3 rounded-full bg-primary text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-primary/25 active:scale-95 ${
-          isVisible && !isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        className={`p-2.5 sm:p-3 rounded-full bg-primary text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-primary/25 active:scale-95 pointer-events-auto ${
+          isVisible && !isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
         aria-label="Scroll to top"
       >
