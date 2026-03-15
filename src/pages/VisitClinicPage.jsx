@@ -48,14 +48,7 @@ function VisitClinicPage() {
     <div className="min-h-screen bg-bg pt-28 sm:pt-32">
       {/* Hero Section */}
       <section className="container mx-auto px-6 max-w-6xl mb-12 sm:mb-16 animate-page-entry">
-        <div className="flex flex-wrap items-center gap-y-4 gap-x-5 mb-10">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-text-muted text-sm font-medium hover:text-primary transition-colors group"
-          >
-            <ArrowLeft strokeWidth={1.5} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Home
-          </Link>
+        <div className="flex flex-wrap items-center gap-y-4 gap-x-5 mb-6">
 
           <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
             Visit Our Clinic

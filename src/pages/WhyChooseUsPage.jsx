@@ -99,15 +99,6 @@ function WhyChooseUsPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/[0.03] rounded-full blur-[120px] pointer-events-none" />
         
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="mb-10 lg:mb-12 text-center lg:text-left">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-text-muted text-sm font-medium hover:text-primary transition-colors group"
-            >
-              <ArrowLeft strokeWidth={1.5} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              Back to Home
-            </Link>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center text-center lg:text-left">
             <div>

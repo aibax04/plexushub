@@ -253,15 +253,6 @@ function TreatmentsPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/[0.04] rounded-full blur-[100px] pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-4xl relative z-10">
-          <div className="mb-10">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-text-muted text-sm font-medium hover:text-primary transition-colors group"
-            >
-              <ArrowLeft strokeWidth={1.5} className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              Back to Home
-            </Link>
-          </div>
 
           <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 border border-primary/20">
             Our Treatments
