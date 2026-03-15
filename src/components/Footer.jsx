@@ -6,30 +6,11 @@ function NavAnchor({ to, className, children }) {
   const location = useLocation()
   const isHome = location.pathname === '/'
   
-  const handleClick = (e) => {
-    if (isHome && to.startsWith('#')) {
-      e.preventDefault()
-      const el = document.querySelector(to)
-      if (el) {
-        const offset = 100
-        const bodyRect = document.body.getBoundingClientRect().top
-        const elementRect = el.getBoundingClientRect().top
-        const elementPosition = elementRect - bodyRect
-        const offsetPosition = elementPosition - offset
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        })
-      }
-    } else {
-      window.scrollTo(0, 0)
-    }
-  }
-
   if (isHome && to.startsWith('#')) {
-    return <a href={to} onClick={handleClick} className={className}>{children}</a>
+    return <a href={to} className={className}>{children}</a>
   }
-  return <Link to={to.startsWith('#') ? `/${to}` : to} onClick={handleClick} className={className}>{children}</Link>
+  const target = to.startsWith('#') ? `/${to}` : to
+  return <Link to={target} className={className}>{children}</Link>
 }
 
 function Footer() {
@@ -102,13 +83,13 @@ function Footer() {
             <p className="text-dark-text-muted text-xs mt-2 max-w-xs">The most trusted dental clinic in Ashiyana, Lucknow. 
               <br />Painless treatments. Honest pricing. Beautiful smiles.</p>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
-            <NavAnchor to="/why-choose-us" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Why Us</NavAnchor>
-            <NavAnchor to="/treatments" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Treatments</NavAnchor>
-            <NavAnchor to="#doctor" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Our Doctor</NavAnchor>
-            <NavAnchor to="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Reviews</NavAnchor>
-            <NavAnchor to="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Patient Journey</NavAnchor>
-            <NavAnchor to="/visit" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium py-1">Visit Clinic</NavAnchor>
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-2 gap-y-2">
+            <NavAnchor to="/why-choose-us" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-3">Why Us</NavAnchor>
+            <NavAnchor to="/treatments" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-3">Treatments</NavAnchor>
+            <NavAnchor to="#doctor" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-3">Our Doctor</NavAnchor>
+            <NavAnchor to="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-3">Reviews</NavAnchor>
+            <NavAnchor to="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-3">Patient Journey</NavAnchor>
+            <NavAnchor to="/visit" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-3">Visit Clinic</NavAnchor>
           </div>
         </div>
 

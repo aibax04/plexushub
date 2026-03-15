@@ -29,7 +29,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="sticky top-0 h-[100dvh] min-h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center -z-10 will-change-transform">
+    <section className="sticky top-0 h-[100dvh] min-h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center z-0 will-change-transform">
       {/* Innovative Pre-loader / Transition */}
       <div className="fixed inset-0 z-50 flex pointer-events-none overflow-hidden">
         <div className="w-1/2 h-full bg-[#030303] animate-shutter-left"></div>

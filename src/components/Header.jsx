@@ -50,16 +50,17 @@ function Header() {
 
   // Helper: scroll-anchors work on home, link navigates otherwise
   const NavAnchor = ({ to, children, className, onClick }) => {
-    if (isHome) {
+    if (isHome && to.startsWith('#')) {
       return (
         <a href={to} className={className} onClick={onClick}>
           {children}
         </a>
       )
     }
-    // If not on home, navigate to home with the hash
+    // If not on home OR targeting a full page, use Link
+    const target = to.startsWith('#') ? `/${to}` : to
     return (
-      <Link to={`/${to}`} className={className} onClick={onClick}>
+      <Link to={target} className={className} onClick={onClick}>
         {children}
       </Link>
     )
@@ -157,7 +158,7 @@ function Header() {
       {/* Mobile Menu Overlay */}
       <div 
         className={`fixed inset-0 bg-[#0a0a0a] z-40 transition-transform duration-300 ease-in-out lg:hidden ${
-          isOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'
+          isOpen ? 'translate-y-0 opacity-100 visible pointer-events-auto' : '-translate-y-full opacity-0 invisible pointer-events-none'
         }`}
       >
         <div className="pt-32 pb-8 px-8 h-full flex flex-col justify-between">

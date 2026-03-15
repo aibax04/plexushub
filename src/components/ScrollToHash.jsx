@@ -11,13 +11,10 @@ const ScrollToHash = () => {
       if (element) {
         // Wait a bit for page load/animations
         setTimeout(() => {
-          const headerOffset = 100;
-          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({
-            top: elementPosition - headerOffset,
+          element.scrollIntoView({
             behavior: 'smooth'
           });
-        }, 300);
+        }, 150);
       }
     }
   }, [pathname, hash]);
