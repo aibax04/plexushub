@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Header, ScrollToTop, Footer, PageWrapper, WhatsAppButton } from './components'
+import { Header, ScrollToTop, Footer, PageWrapper, WhatsAppButton, ScrollToHash } from './components'
 import HomePage from './pages/HomePage'
 import TreatmentsPage from './pages/TreatmentsPage'
 import VisitClinicPage from './pages/VisitClinicPage'
@@ -11,6 +11,7 @@ function App() {
     <>
       <Header />
       <PageWrapper>
+        <ScrollToHash />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/treatments" element={

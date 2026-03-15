@@ -3,6 +3,7 @@ import { ChevronUp } from 'lucide-react'
 
 function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -24,11 +25,19 @@ function ScrollToTop() {
       }
     };
 
+    const handleMenuToggle = (e) => {
+      setIsMenuOpen(e.detail.isOpen);
+    };
+
     window.addEventListener('scroll', toggleVisibility, { passive: true });
+    window.addEventListener('mobileMenuToggle', handleMenuToggle);
     // Run once on load
     toggleVisibility();
 
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener('mobileMenuToggle', handleMenuToggle);
+    };
   }, []);
 
   return (
@@ -37,7 +46,7 @@ function ScrollToTop() {
         type="button"
         onClick={scrollToTop}
         className={`p-2.5 sm:p-3 rounded-full bg-primary text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-primary/25 active:scale-95 ${
-          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          isVisible && !isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         aria-label="Scroll to top"
       >

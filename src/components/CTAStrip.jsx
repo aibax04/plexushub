@@ -39,7 +39,7 @@ function CTAStrip() {
         </div>
 
         {/* Final CTA Block */}
-        <div className="bg-dark-surface border border-dark-border rounded-[2rem] p-8 sm:p-12 md:p-16 text-center relative overflow-hidden">
+        <div id="book" className="bg-dark-surface border border-dark-border rounded-[2rem] p-8 sm:p-12 md:p-16 text-center relative overflow-hidden">
           {/* Glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
           
@@ -51,11 +51,11 @@ function CTAStrip() {
               The longer you wait, the more complex (and expensive) dental problems become. Book your free consultation today and get peace of mind - it takes less than 30 seconds.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#book" className="group inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95">
+              <a href="#book" className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95 text-[15px]">
                 Book Free Consultation
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="tel:+916307114437" className="inline-flex items-center gap-2 px-6 py-4 border border-white/10 rounded-full text-white/80 hover:text-white hover:border-white/30 hover:scale-[1.02] transition-all text-sm font-medium active:scale-95">
+              <a href="tel:+916307114437" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/10 rounded-full text-white/80 hover:text-white hover:border-white/30 hover:scale-[1.02] transition-all text-[15px] font-medium active:scale-95">
                 <Phone className="w-4 h-4" />
                 Call Now
               </a>

@@ -11,6 +11,7 @@ function Header() {
   const isHome = location.pathname === '/'
 
   const toggleMenu = () => setIsOpen(!isOpen)
+  const closeMenu = () => setIsOpen(false)
 
   useEffect(() => {
     let ticking = false;
@@ -32,6 +33,20 @@ function Header() {
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
+
+  // Handle body scroll lock and broadcast menu state
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      window.dispatchEvent(new CustomEvent('mobileMenuToggle', { detail: { isOpen: true } }));
+    } else {
+      document.body.style.overflow = '';
+      window.dispatchEvent(new CustomEvent('mobileMenuToggle', { detail: { isOpen: false } }));
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   // Helper: scroll-anchors work on home, link navigates otherwise
   const NavAnchor = ({ to, children, className, onClick }) => {
@@ -147,7 +162,7 @@ function Header() {
       >
         <div className="pt-32 pb-8 px-8 h-full flex flex-col justify-between">
           <nav className="flex flex-col gap-8 text-2xl font-medium">
-            <Link to="/why-choose-us" onClick={toggleMenu} className={`relative w-fit text-2xl font-medium transition-all duration-300 group ${
+            <Link to="/why-choose-us" onClick={closeMenu} className={`relative w-fit text-2xl font-medium transition-all duration-300 group ${
               location.pathname === '/why-choose-us' ? 'text-primary' : 'text-white hover:text-primary'
             }`}>
               Why Choose Us
@@ -158,10 +173,15 @@ function Header() {
             <div className="flex flex-col gap-4">
               <button 
                 onClick={() => setIsTreatmentsOpen(!isTreatmentsOpen)}
-                className="flex items-center justify-between w-full text-left"
+                className={`relative w-fit flex items-center gap-2 text-2xl font-medium transition-all duration-300 group ${
+                  location.pathname.startsWith('/treatments') ? 'text-primary' : 'text-white hover:text-primary'
+                }`}
               >
-                <span className="text-primary font-bold text-sm tracking-widest uppercase">Our Treatments</span>
-                <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${isTreatmentsOpen ? 'rotate-180' : ''}`} />
+                Our Treatments
+                <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${isTreatmentsOpen ? 'rotate-180' : ''}`} />
+                <span className={`absolute -bottom-1 left-0 h-1 bg-primary transition-all duration-300 ${
+                  location.pathname.startsWith('/treatments') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </button>
               
               <div className={`grid grid-cols-1 gap-4 pl-4 overflow-hidden transition-all duration-500 ${
@@ -171,7 +191,7 @@ function Header() {
                   <Link 
                     key={t.id} 
                     to={`/treatments?open=${t.id}`} 
-                    onClick={toggleMenu}
+                    onClick={closeMenu}
                     className="text-white/70 hover:text-white text-lg transition-colors py-1"
                   >
                     {t.title}
@@ -179,11 +199,11 @@ function Header() {
                 ))}
               </div>
             </div>
-            <NavAnchor to="#reviews" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+            <NavAnchor to="#reviews" onClick={closeMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
               Patient Stories
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </NavAnchor>
-            <NavAnchor to="#how-it-works" onClick={toggleMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+            <NavAnchor to="#how-it-works" onClick={closeMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
               Patient Journey
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </NavAnchor>
@@ -191,10 +211,10 @@ function Header() {
           </nav>
           
           <div className="flex flex-col gap-3">
-            <Link to="/visit" onClick={toggleMenu} className="text-white text-center py-4 bg-white/10 rounded-full font-semibold transition-all duration-300 hover:bg-white/20 active:scale-95 border border-white/10">
+            <Link to="/visit" onClick={closeMenu} className="text-white text-center py-4 bg-white/10 rounded-full font-semibold transition-all duration-300 hover:bg-white/20 active:scale-95 border border-white/10">
               Visit Us Now →
             </Link>
-            <a href="#book" onClick={toggleMenu} className="text-white text-center py-4 bg-primary rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-[1.02] active:scale-95 shadow-xl">
+            <a href="#book" onClick={closeMenu} className="text-white text-center py-4 bg-primary rounded-full font-bold transition-all duration-300 hover:bg-primary-dark hover:scale-[1.02] active:scale-95 shadow-xl">
               Book an Appointment
             </a>
           </div>

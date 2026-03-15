@@ -5,10 +5,21 @@ const WhatsAppButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [showNotification, setShowNotification] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const inputRef = useRef(null);
   
   const phoneNumber = '916307114437';
-  const doctorName = 'Dr. Samad';
+  const doctorName = 'Dr. Ashish';
+
+  useEffect(() => {
+    const handleMenuToggle = (e) => {
+      setIsMenuOpen(e.detail.isOpen);
+      if (e.detail.isOpen) setIsOpen(false); // Close chat if menu opens
+    };
+
+    window.addEventListener('mobileMenuToggle', handleMenuToggle);
+    return () => window.removeEventListener('mobileMenuToggle', handleMenuToggle);
+  }, []);
 
   useEffect(() => {
     // Show a small notification badge/hint after 3 seconds
@@ -21,8 +32,8 @@ const WhatsAppButton = () => {
   const handleSend = (e) => {
     e.preventDefault();
     if (!message.trim()) return;
-    
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const finalMessage = `Hello Dr Ashish, I would like to book an appointment and discuss my dental case.\n\n${message}`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
     window.open(url, '_blank');
     setIsOpen(false);
     setMessage('');
@@ -37,7 +48,9 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 sm:bottom-8 sm:left-8 z-[1001] flex flex-col items-start">
+    <div className={`fixed bottom-6 left-6 sm:bottom-8 sm:left-8 z-[1001] flex flex-col items-start transition-all duration-300 ${
+      isMenuOpen ? 'opacity-0 pointer-events-none translate-y-10' : 'opacity-100 translate-y-0'
+    }`}>
       {/* Chat Window */}
       <div className={`mb-4 w-[320px] sm:w-[360px] bg-white rounded-[2rem] shadow-2xl border border-border/50 overflow-hidden transition-all duration-500 origin-bottom-left ${
         isOpen ? 'scale-100 opacity-100' : 'scale-75 opacity-0 pointer-events-none'
@@ -108,7 +121,7 @@ const WhatsAppButton = () => {
         {showNotification && !isOpen && (
           <div className="absolute bottom-full left-0 mb-4 animate-bounce">
             <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-border/50 text-[13px] font-medium text-text whitespace-nowrap relative">
-              Chat with Dr. Samad
+              Chat with Dr. Ashish
               <div className="absolute top-full left-6 -mt-1 border-8 border-transparent border-t-white"></div>
             </div>
           </div>

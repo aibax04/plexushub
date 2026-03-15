@@ -205,37 +205,35 @@ function TreatmentsPage() {
   const [openIndex, setOpenIndex] = useState(null);
   const [searchParams] = useSearchParams();
   const accordionRefs = useRef({});
-  const hasScrolledRef = useRef(false);
 
   // Handle ?open=treatment-id query param
   useEffect(() => {
     const openId = searchParams.get('open');
 
-    if (openId && !hasScrolledRef.current) {
+    if (openId) {
       const targetIndex = treatments.findIndex(t => t.id === openId);
       if (targetIndex !== -1) {
         // Open the accordion
         setOpenIndex(targetIndex);
-        hasScrolledRef.current = true;
 
-        // Wait for render + accordion animation, then scroll
+        // Scroll to it
         requestAnimationFrame(() => {
           setTimeout(() => {
             const el = accordionRefs.current[targetIndex];
             if (el) {
-              const headerOffset = 120;
+              const headerOffset = 180; // Adjusted for fixed header + gap
               const elementPosition = el.getBoundingClientRect().top + window.scrollY;
               window.scrollTo({
                 top: elementPosition - headerOffset,
                 behavior: 'smooth'
               });
             }
-          }, 100);
+          }, 150);
         });
       }
-    } else if (!openId) {
-      // No query param — scroll to top
-      window.scrollTo({ top: 0, behavior: 'instant' });
+    } else {
+      // No query param — handled by PageWrapper/ScrollToHash usually, 
+      // but keeping local top scroll for safety if needed
     }
   }, [searchParams]);
 
