@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import { CheckCircle, ChevronRight, ChevronDown } from 'lucide-react'
+import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 function Hero() {
+  const { openConsultationModal } = useConsultationBooking()
   const scrollIndicatorRef = useRef(null);
 
   useEffect(() => {
@@ -79,12 +81,16 @@ function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
-            <a href="#book" className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95">
+            <button
+              type="button"
+              onClick={openConsultationModal}
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95"
+            >
               <span className="flex items-center gap-2 text-[15px] sm:text-[17px]">
                 Book Your Free Consultation
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
-            </a>
+            </button>
             <a href="tel:+916307114437" className="text-dark-text-muted text-sm font-medium hover:text-white transition-all duration-300 hover:translate-x-1">
               or call us directly →
             </a>

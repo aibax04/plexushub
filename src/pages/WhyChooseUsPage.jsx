@@ -14,6 +14,7 @@ import {
   Smile,
   Zap
 } from 'lucide-react'
+import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 const features = [
   {
@@ -86,6 +87,7 @@ const TerminalWindow = ({ title, tag, className = "" }) => (
 
 function WhyChooseUsPage() {
   const facilityRef = useRef(null)
+  const { openConsultationModal } = useConsultationBooking()
 
   const scrollToFacility = (e) => {
     e.preventDefault()
@@ -314,12 +316,13 @@ function WhyChooseUsPage() {
              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-8 tracking-tight">Ready to experience <br className="hidden sm:block" /> Lucknow's #1 dental care?</h2>
              <p className="text-text-muted text-lg mb-12 max-w-xl mx-auto">Stop worrying about your dental health and start your journey with a free comprehensive scan. Your first examination is on us.</p>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href="#book"
+                <button
+                  type="button"
+                  onClick={openConsultationModal}
                   className="px-8 py-4 bg-primary text-white font-bold rounded-full hover:scale-105 hover:bg-primary-dark transition-all duration-300 shadow-xl hover:shadow-primary/40 active:scale-95"
                 >
                   Schedule Your Visit Now
-                </a>
+                </button>
                 <Link to="/visit" className="px-8 py-4 bg-white text-text font-semibold border border-border rounded-full hover:bg-bg-alt transition-all duration-300 active:scale-95">
                   Explore Clinic Location
                 </Link>

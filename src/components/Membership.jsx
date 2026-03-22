@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronRight, ArrowRight } from 'lucide-react'
 import treatments from '../data/treatments'
+import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 function Membership() {
+  const { openConsultationModal } = useConsultationBooking()
   // Show first 12 treatments on the homepage
   const displayTreatments = treatments.slice(0, 12)
 
@@ -28,13 +30,14 @@ function Membership() {
               Every treatment includes a free consultation and transparent pricing. No surprises.
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-2">
-              <a
-                href="#book"
+              <button
+                type="button"
+                onClick={openConsultationModal}
                 className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-primary/30 active:scale-95"
               >
                 Book Free Consultation
                 <ChevronRight className="w-3.5 h-3.5" />
-              </a>
+              </button>
               <Link
                 to="/treatments"
                 className="inline-flex items-center justify-center whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-text-muted transition-all duration-300 border border-border rounded-full hover:border-primary/30 hover:text-primary active:scale-95"

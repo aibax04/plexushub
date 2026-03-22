@@ -1,5 +1,6 @@
 import React from 'react'
 import { Award, GraduationCap, Heart, CheckCircle2 } from 'lucide-react'
+import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 const doctors = [
   {
@@ -19,6 +20,8 @@ const doctors = [
 ]
 
 function Doctor() {
+  const { openConsultationModal } = useConsultationBooking()
+
   return (
     <section id="doctor" className="bg-white py-24 sm:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -58,9 +61,13 @@ function Doctor() {
                 ))}
               </div>
 
-              <a href="#book" className="inline-flex items-center justify-center px-6 py-3 bg-white border border-border text-text font-medium rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm text-sm group-hover:scale-105 group-hover:shadow-primary/30 active:scale-95">
+              <button
+                type="button"
+                onClick={openConsultationModal}
+                className="inline-flex items-center justify-center px-6 py-3 bg-white border border-border text-text font-medium rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 shadow-sm text-sm group-hover:scale-105 group-hover:shadow-primary/30 active:scale-95"
+              >
                 Book Consultation with {doc.name.split(' ')[1]} →
-              </a>
+              </button>
             </div>
           ))}
         </div>

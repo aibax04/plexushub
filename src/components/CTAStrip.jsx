@@ -1,6 +1,8 @@
 import { ChevronRight, Phone, CalendarClock, Stethoscope, Smile } from 'lucide-react'
+import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 function CTAStrip() {
+  const { openConsultationModal } = useConsultationBooking()
   return (
     <section id="how-it-works" className="py-32 bg-dark-bg text-dark-text relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-5xl">
@@ -51,10 +53,14 @@ function CTAStrip() {
               The longer you wait, the more complex (and expensive) dental problems become. Book your free consultation today and get peace of mind - it takes less than 30 seconds.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#book" className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95 text-[15px]">
+              <button
+                type="button"
+                onClick={openConsultationModal}
+                className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95 text-[15px]"
+              >
                 Book Free Consultation
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
               <a href="tel:+916307114437" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/10 rounded-full text-white/80 hover:text-white hover:border-white/30 hover:scale-[1.02] transition-all text-[15px] font-medium active:scale-95">
                 <Phone className="w-4 h-4" />
                 Call Now
