@@ -1,6 +1,27 @@
 import { ChevronRight, Phone, CalendarClock, Stethoscope, Smile } from 'lucide-react'
 import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
+const journeySteps = [
+  {
+    Icon: CalendarClock,
+    title: 'Book in 30 seconds',
+    body: 'Call, WhatsApp, or book online. Pick a slot that works for you - evenings and weekends available. Zero paperwork on arrival.',
+  },
+  {
+    Icon: Stethoscope,
+    title: 'Detailed consultation & treatment planning',
+    body: 'We take digital X-rays, show them to you on-screen, explain everything in plain Hindi or English, and give you an honest opinion. No pressure. No upselling.',
+  },
+  {
+    Icon: Smile,
+    title: 'Walk out smiling',
+    body: "Whether it's a same-day cleaning or a multi-visit smile makeover, every step is painless, transparent, and designed around your comfort.",
+  },
+]
+
+const iconBoxClass =
+  'w-14 h-14 shrink-0 rounded-2xl bg-white/5 border border-white/10 text-primary flex items-center justify-center shadow-inner'
+
 function CTAStrip() {
   const { openConsultationModal } = useConsultationBooking()
   return (
@@ -16,28 +37,36 @@ function CTAStrip() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
-          <div className="flex flex-col text-center md:text-left">
-            <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/5 border border-white/10 text-primary flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-inner">
-              <CalendarClock strokeWidth={1.2} className="w-7 h-7" />
+        {/* Mobile: stacked cards */}
+        <div className="flex flex-col gap-12 mb-32 md:hidden">
+          {journeySteps.map(({ Icon, title, body }) => (
+            <div key={title} className="flex flex-col items-center text-center">
+              <div className={`${iconBoxClass} mb-8`}>
+                <Icon strokeWidth={1.2} className="w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-medium mb-3 leading-snug">{title}</h3>
+              <p className="text-dark-text-muted text-sm leading-relaxed">{body}</p>
             </div>
-            <h3 className="text-xl font-medium mb-3 leading-snug md:min-h-[4.5rem] md:flex md:items-start">Book in 30 seconds</h3>
-            <p className="text-dark-text-muted text-sm leading-relaxed">Call, WhatsApp, or book online. Pick a slot that works for you - evenings and weekends available. Zero paperwork on arrival.</p>
-          </div>
-          <div className="flex flex-col text-center md:text-left">
-            <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/5 border border-white/10 text-primary flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-inner">
-              <Stethoscope strokeWidth={1.2} className="w-7 h-7" />
+          ))}
+        </div>
+
+        {/* md+: one grid row per band — headings share a row so body copy aligns */}
+        <div className="mb-32 hidden md:grid md:grid-cols-3 md:gap-x-10 lg:gap-x-12 md:gap-y-8 md:items-start">
+          {journeySteps.map(({ Icon, title }) => (
+            <div key={`icon-${title}`} className={iconBoxClass}>
+              <Icon strokeWidth={1.2} className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-medium mb-3 leading-snug md:min-h-[4.5rem] md:flex md:items-start">Detailed consultation & treatment planning</h3>
-            <p className="text-dark-text-muted text-sm leading-relaxed">We take digital X-rays, show them to you on-screen, explain everything in plain Hindi or English, and give you an honest opinion. No pressure. No upselling.</p>
-          </div>
-          <div className="flex flex-col text-center md:text-left">
-            <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/5 border border-white/10 text-primary flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-inner">
-              <Smile strokeWidth={1.2} className="w-7 h-7" />
-            </div>
-            <h3 className="text-xl font-medium mb-3 leading-snug md:min-h-[4.5rem] md:flex md:items-start">Walk out smiling</h3>
-            <p className="text-dark-text-muted text-sm leading-relaxed">Whether it's a same-day cleaning or a multi-visit smile makeover, every step is painless, transparent, and designed around your comfort.</p>
-          </div>
+          ))}
+          {journeySteps.map(({ title }) => (
+            <h3 key={title} className="text-xl font-medium leading-snug text-left">
+              {title}
+            </h3>
+          ))}
+          {journeySteps.map(({ body, title }) => (
+            <p key={`body-${title}`} className="text-dark-text-muted text-sm leading-relaxed text-left">
+              {body}
+            </p>
+          ))}
         </div>
 
         {/* Final CTA Block */}
