@@ -1,64 +1,8 @@
 import React from 'react'
 import { Play, ChevronRight } from 'lucide-react'
+import { patientSpeaksStories as testimonials } from '../data/patientSpeaks'
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Avantika",
-    role: "PATIENT",
-    treatment: "Invisalign",
-    location: "Indiranagar",
-    thumbnail: "/assets/testimonial-1.png",
-    nameInImage: "AVANTIKA"
-  },
-  {
-    id: 2,
-    name: "Rohan",
-    role: "PATIENT",
-    treatment: "Root Canal",
-    location: "Gomti Nagar",
-    thumbnail: "/assets/testimonial-2.png",
-    nameInImage: "ROHAN"
-  },
-  {
-    id: 3,
-    name: "Pulak",
-    role: "PATIENT",
-    treatment: "Dental Implants",
-    location: "Aliganj",
-    thumbnail: "/assets/testimonial-3.png",
-    nameInImage: "PULAK"
-  },
-  {
-    id: 4,
-    name: "Priya",
-    role: "PATIENT",
-    treatment: "Clear Aligners",
-    location: "Jankipuram",
-    thumbnail: "/assets/testimonial-2.png",
-    nameInImage: "PRIYA"
-  },
-  {
-    id: 5,
-    name: "Ayushi",
-    role: "PATIENT",
-    treatment: "Smile Makeover",
-    location: "Hazratganj",
-    thumbnail: "/assets/testimonial-1.png",
-    nameInImage: "AYUSHI"
-  },
-  {
-    id: 6,
-    name: "Gurkiran",
-    role: "PATIENT",
-    treatment: "Laser Dentistry",
-    location: "Ashiyana",
-    thumbnail: "/assets/testimonial-3.png",
-    nameInImage: "GURKIRAN"
-  }
-]
-
-const TestimonialCard = ({ item }) => (
+const TestimonialCard = ({ item, priority }) => (
   <div className="group relative flex flex-col transition-all duration-500 ease-out hover:-translate-y-2">
     {/* Vertical Terminal Card */}
     <div className="relative aspect-[3/4.5] rounded-[3rem] overflow-hidden bg-white border border-border/60 shadow-sm group-hover:shadow-2xl group-hover:border-primary/30 transition-all duration-500">
@@ -74,10 +18,16 @@ const TestimonialCard = ({ item }) => (
       </div>
 
       {/* Image / Thumbnail */}
-      <img 
-        src={item.thumbnail} 
-        alt={item.name}
-        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" 
+      <img
+        src={item.thumbnail}
+        alt={`${item.name} — patient story at Plexus Dental`}
+        width={800}
+        height={1200}
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        decoding="async"
+        fetchPriority={priority ? 'high' : 'low'}
+        loading={priority ? 'eager' : 'lazy'}
+        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
       />
       
       {/* Gradients */}
@@ -133,8 +83,8 @@ function PatientSpeaks() {
 
         {/* Symmetric 3-column grid with reduced margin */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-10 lg:gap-x-14 mb-8">
-          {testimonials.map((item) => (
-            <TestimonialCard key={item.id} item={item} />
+          {testimonials.map((item, i) => (
+            <TestimonialCard key={item.id} item={item} priority={i < 3} />
           ))}
         </div>
 
