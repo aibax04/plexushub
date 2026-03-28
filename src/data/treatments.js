@@ -765,7 +765,7 @@ const treatments = [
     ],
     whyChooseUs: [
       "EMS Airflow Master for pain-free, warm-water cleaning",
-      "AI-driven cavity detection for ultra-early diagnosis",
+      "Advanced digital imaging for ultra-early diagnosis",
       "Intra-oral camera tour of your own mouth on a 4K screen",
       "Oral Cancer screening included in every routine check-up"
     ],

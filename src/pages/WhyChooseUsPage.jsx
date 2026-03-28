@@ -46,6 +46,12 @@ const features = [
     title: 'Microscopic Root Canals',
     desc: 'We are Lucknow\'s first choice for microscopic dentistry. Working under 20x magnification means we find canals others miss and save teeth others would extract. Precision is our baseline.',
     tag: 'Gold Standard'
+  },
+  {
+    icon: Stethoscope,
+    title: 'Clear, Pressure-Free Guidance',
+    desc: 'We walk you through findings on-screen, outline honest options in plain language, and answer every question. Your treatment plan is yours to approve — no rushed sales pitches.',
+    tag: 'Trust'
   }
 ]
 
@@ -153,7 +159,7 @@ function WhyChooseUsPage() {
 
             {/* Row 2 - Full Span Items */}
             <TerminalWindow 
-              title="AI Diagnostic Center" 
+              title="Digital Diagnostic Center" 
               tag="Technology" 
               className="min-h-[320px]" 
             />
@@ -288,7 +294,7 @@ function WhyChooseUsPage() {
                     <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8">Plexus Dental Standard</h4>
                     <ul className="space-y-6">
                         {[
-                            'AI-calculated, ultra-precise 3D diagnostics',
+                            'Ultra-precise 3D digital diagnostics',
                             '20x Microscopic RCs & precision restoration',
                             '100% Fixed & Transparent upfront pricing',
                             'Minimal waiting — we respect your time',
