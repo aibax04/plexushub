@@ -8,6 +8,6 @@
 export const CONTACT = {
   phoneDisplay: '+91 63071 14437',
   phoneTel: '+916307114437',
-  secondaryPhoneDisplay: null,
-  secondaryPhoneTel: null,
+  secondaryPhoneDisplay: '+91 91155 32085',
+  secondaryPhoneTel: '+919115532085',
 }
