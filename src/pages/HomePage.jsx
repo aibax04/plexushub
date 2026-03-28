@@ -6,7 +6,7 @@ function HomePage() {
     <main className="relative">
       <Hero />
       
-      <div className="relative z-10 -mt-10 sm:-mt-14 bg-bg shadow-2xl rounded-t-[3rem]">
+      <div className="relative z-10 bg-bg shadow-2xl rounded-t-[3rem]">
         <Services />
         <Doctor />
         <Membership />

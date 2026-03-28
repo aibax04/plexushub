@@ -31,7 +31,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="hero-viewport-min relative w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center z-0">
+    <section className="hero-viewport-min sticky top-0 z-0 w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center isolate">
       {/* Innovative Pre-loader / Transition */}
       <div className="fixed inset-0 z-50 flex pointer-events-none overflow-hidden">
         <div className="w-1/2 h-full bg-[#030303] animate-shutter-left"></div>
