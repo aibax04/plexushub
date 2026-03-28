@@ -24,12 +24,6 @@ const features = [
     tag: 'Transparency'
   },
   {
-    icon: Zap,
-    title: 'AI-Enhanced Diagnostics',
-    desc: 'Our AI software analyzes your 3D scans with superhuman accuracy, detecting hidden decay or bone loss months before it becomes a painful emergency.',
-    tag: 'Future-Proof'
-  },
-  {
     icon: Heart,
     title: 'Patient-First Ethics',
     desc: "We follow a 'Conservative First' approach. We never recommend a crown if a filling will suffice, and we never compromise on safety or material quality.",
@@ -171,6 +165,11 @@ function WhyChooseUsPage() {
             <TerminalWindow 
               title="Patient Comfort Lounge" 
               tag="Comfort" 
+              className="min-h-[320px]" 
+            />
+            <TerminalWindow 
+              title="Private Treatment Suites" 
+              tag="Privacy" 
               className="min-h-[320px]" 
             />
 
