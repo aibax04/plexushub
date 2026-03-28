@@ -18,12 +18,6 @@ import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 const features = [
   {
-    icon: Microscope,
-    title: 'Microscopic Root Canals',
-    desc: 'We are Lucknow\'s first choice for microscopic dentistry. Working under 20x magnification means we find canals others miss and save teeth others would extract. Precision is our baseline.',
-    tag: 'Gold Standard'
-  },
-  {
     icon: ShieldCheck,
     title: 'Zero Hidden Costs',
     desc: 'No "extra" charges for trays, sterilization, or standard materials. You get a typed, final treatment plan with a 100% price lock before we even begin.',
@@ -49,9 +43,15 @@ const features = [
   },
   {
     icon: Sparkles,
-    title: 'Lifetime Guarantee',
-    desc: 'Our implants and high-end restorations come with extended warranties. We stand by our work because we know the precision we put into it.',
-    tag: 'Confidence'
+    title: 'Lasting Quality & Precision',
+    desc: 'We focus on delivering high-quality, long-lasting dental care with precision and expertise.',
+    tag: 'Excellence'
+  },
+  {
+    icon: Microscope,
+    title: 'Microscopic Root Canals',
+    desc: 'We are Lucknow\'s first choice for microscopic dentistry. Working under 20x magnification means we find canals others miss and save teeth others would extract. Precision is our baseline.',
+    tag: 'Gold Standard'
   }
 ]
 
@@ -150,14 +150,7 @@ function WhyChooseUsPage() {
               className="lg:col-span-2 lg:row-span-2 min-h-[400px] lg:min-h-[600px]" 
             />
             
-            {/* Tech - Top Right */}
-            <TerminalWindow 
-              title="Zeiss Micro-Endodontics" 
-              tag="Technology" 
-              className="min-h-[280px]" 
-            />
-
-            {/* Safety - Mid Right */}
+            {/* Safety - Top Right */}
             <TerminalWindow 
               title="B-Class Sterilization" 
               tag="Safety" 
@@ -187,6 +180,12 @@ function WhyChooseUsPage() {
               tag="Precision" 
               className="lg:col-span-3 min-h-[300px] lg:min-h-[400px]" 
             />
+
+            <TerminalWindow 
+              title="Zeiss Micro-Endodontics" 
+              tag="Technology" 
+              className="lg:col-span-3 min-h-[260px] lg:min-h-[320px]" 
+            />
           </div>
         </div>
       </section>
@@ -214,8 +213,8 @@ function WhyChooseUsPage() {
                     <div className="w-16 h-16 rounded-2xl bg-white shadow-sm border border-border/50 flex items-center justify-center text-primary mb-6 transition-transform hover:scale-110">
                         <Zap strokeWidth={1.2} className="w-8 h-8" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 tracking-tight">Zero Pain Guarantee</h3>
-                    <p className="text-text-muted text-sm leading-relaxed px-4">Utilizing the latest sedation and numbing protocols to ensure your visit is completely stress-free.</p>
+                    <h3 className="text-xl font-semibold mb-3 tracking-tight">Exceptional Comfort</h3>
+                    <p className="text-text-muted text-sm leading-relaxed px-4">Advanced anaesthesia and gentle techniques to keep your visit as relaxed and stress-free as possible.</p>
                 </div>
             </div>
         </div>
@@ -293,7 +292,7 @@ function WhyChooseUsPage() {
                             'AI-calculated, ultra-precise 3D diagnostics',
                             '20x Microscopic RCs & precision restoration',
                             '100% Fixed & Transparent upfront pricing',
-                            'Guaranteed <15 minute waiting time',
+                            'Minimal waiting — we respect your time',
                             'Bespoke care plans tailored to your timeline'
                         ].map((item, i) => (
                             <li key={i} className="flex items-center gap-4 text-white text-sm">
@@ -314,7 +313,7 @@ function WhyChooseUsPage() {
                 <Sparkles strokeWidth={1.2} className="w-10 h-10" />
              </div>
              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-8 tracking-tight">Ready to experience <br className="hidden sm:block" /> Lucknow's #1 dental care?</h2>
-             <p className="text-text-muted text-lg mb-12 max-w-xl mx-auto">Stop worrying about your dental health and start your journey with a free comprehensive scan. Your first examination is on us.</p>
+             <p className="text-text-muted text-lg mb-12 max-w-xl mx-auto">Stop worrying about your dental health and start with a detailed consultation and personalized treatment planning tailored to your goals.</p>
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button
                   type="button"

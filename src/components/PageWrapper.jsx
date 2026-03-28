@@ -5,12 +5,9 @@ const PageWrapper = ({ children }) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to top instantly on navigation
-    window.scrollTo({
-      top: 0,
-      behavior: 'instant'
-    });
-  }, [pathname]);
+    // Use 'auto' — 'instant' is not supported in all browsers and can throw / noop oddly
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [pathname])
 
   return (
     <div>

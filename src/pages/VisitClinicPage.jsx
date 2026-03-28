@@ -63,7 +63,7 @@ function VisitClinicPage() {
         <p className="text-text-muted text-[15px] sm:text-base leading-relaxed max-w-2xl">
           We're conveniently located at SJS Pratham Complex, right opposite
           Shivalik School. Walk-ins welcome during clinic hours, or book ahead
-          for a guaranteed slot.
+          for a confirmed slot.
         </p>
       </section>
 
@@ -284,7 +284,7 @@ function VisitClinicPage() {
           </h2>
           <p className="text-dark-text-muted text-[15px] leading-relaxed mb-10 max-w-xl mx-auto">
             Walk in during clinic hours or book an appointment in advance. Your
-            first consultation is always free.
+            we offer detailed consultation and personalized treatment planning.
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
             <button
@@ -292,7 +292,7 @@ function VisitClinicPage() {
               onClick={openConsultationModal}
               className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-primary/30 active:scale-95"
             >
-              Book Free Consultation
+              Book Consultation
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
             <a

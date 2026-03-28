@@ -175,7 +175,7 @@ function TreatmentAccordion({ treatment, isOpen, onToggle, accordionRef, onBookC
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="text-center md:text-left">
                 <h4 className="text-base sm:text-lg font-semibold text-text mb-1">Ready to start your {treatment.title}?</h4>
-                <p className="text-text-muted text-sm">Schedule a free consultation to discuss your specific case.</p>
+                <p className="text-text-muted text-sm">Schedule a detailed consultation to discuss your specific case.</p>
               </div>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
                 <button
@@ -183,7 +183,7 @@ function TreatmentAccordion({ treatment, isOpen, onToggle, accordionRef, onBookC
                   onClick={onBookConsultation}
                   className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-primary/30 active:scale-95"
                 >
-                  Book Free Consultation
+                  Book Consultation
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
                 <a
@@ -276,7 +276,7 @@ function TreatmentsPage() {
               <span>{treatments.length} treatments available</span>
             </div>
             <div className="w-px h-4 bg-border" />
-            <span>Free consultation on every treatment</span>
+            <span>Detailed consultation on every treatment</span>
           </div>
         </div>
       </section>
@@ -308,7 +308,7 @@ function TreatmentsPage() {
             Not sure which treatment <br className="hidden sm:block" />you need? That's okay.
           </h2>
           <p className="text-dark-text-muted text-[15px] leading-relaxed mb-10 max-w-xl mx-auto">
-            Book a free consultation and we'll examine, diagnose, and recommend
+            Book a detailed consultation and we'll examine, diagnose, and recommend
             the best course of action — with transparent pricing and zero pressure.
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
@@ -317,7 +317,7 @@ function TreatmentsPage() {
               onClick={openConsultationModal}
               className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-primary/30 active:scale-95"
             >
-              Book Free Consultation
+              Book Consultation
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
             <a

@@ -5,17 +5,17 @@ import { useConsultationBooking } from '../context/ConsultationBookingContext'
 const doctors = [
   {
     name: "Dr. Ashish Kumar",
-    role: "BDS, MDS - Chief Dental Surgeon",
+    role: "BDS, Implantologist, Specialized in Aesthetic Dentistry",
     image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80",
     stats: "15+ Years · 10,000+ Procedures",
-    specialties: ["Implantology", "Oral Surgery"]
+    specialties: ["Implantology", "Aesthetic Dentistry"]
   },
   {
-    name: "Dr. Deepika Rajouria",
-    role: "BDS, MDS - Senior Dental Surgeon",
+    name: "Dr. Deepika Rajoria",
+    role: "BDS, Specialized in Aesthetic Dentistry",
     image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80",
     stats: "12+ Years · 8,000+ Procedures",
-    specialties: ["Smile Design", "Paediatrics"]
+    specialties: ["Aesthetic Dentistry", "Smile Design"]
   }
 ]
 

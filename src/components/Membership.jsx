@@ -6,8 +6,10 @@ import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 function Membership() {
   const { openConsultationModal } = useConsultationBooking()
-  // Show first 12 treatments on the homepage
-  const displayTreatments = treatments.slice(0, 12)
+  // Show 12 treatments; keep root canal / micro-endo last (full list order is in treatments.js)
+  const rct = treatments.find((t) => t.id === 'root-canal')
+  const others = treatments.filter((t) => t.id !== 'root-canal')
+  const displayTreatments = rct ? [...others.slice(0, 11), rct] : others.slice(0, 12)
 
   return (
     <section id="treatments" className="bg-bg py-24 sm:py-32 relative z-10 border-t border-border/50">
@@ -27,7 +29,7 @@ function Membership() {
               From a simple cleaning to a complete smile transformation - our Ashiyana clinic handles it all. No referrals needed. No running between specialists.
             </p>
             <p className="text-text font-medium text-[15px] mb-8">
-              Every treatment includes a free consultation and transparent pricing. No surprises.
+              Every treatment includes detailed consultation & personalized treatment planning, with transparent pricing. No surprises.
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-2">
               <button
@@ -35,7 +37,7 @@ function Membership() {
                 onClick={openConsultationModal}
                 className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-300 bg-primary rounded-full hover:bg-primary-dark shadow-md hover:shadow-primary/30 active:scale-95"
               >
-                Book Free Consultation
+                Book Consultation
                 <ChevronRight className="w-3.5 h-3.5" />
               </button>
               <Link

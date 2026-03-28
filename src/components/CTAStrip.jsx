@@ -28,7 +28,7 @@ function CTAStrip() {
             <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 text-primary flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-inner">
               <Stethoscope strokeWidth={1.2} className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-medium mb-3">Free consultation & diagnosis</h3>
+            <h3 className="text-xl font-medium mb-3">Detailed consultation & treatment planning</h3>
             <p className="text-dark-text-muted text-sm leading-relaxed">We take digital X-rays, show them to you on-screen, explain everything in plain Hindi or English, and give you an honest opinion. No pressure. No upselling.</p>
           </div>
           <div className="flex flex-col text-center md:text-left">
@@ -50,7 +50,7 @@ function CTAStrip() {
               Stop putting it off. <br className="hidden sm:block" />Your smile is worth it.
             </h3>
             <p className="text-dark-text-muted mb-10 max-w-xl mx-auto text-[15px] leading-relaxed">
-              The longer you wait, the more complex (and expensive) dental problems become. Book your free consultation today and get peace of mind - it takes less than 30 seconds.
+              The longer you wait, the more complex (and expensive) dental problems become. Book a detailed consultation today and get peace of mind — it takes less than 30 seconds.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
@@ -58,7 +58,7 @@ function CTAStrip() {
                 onClick={openConsultationModal}
                 className="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95 text-[15px]"
               >
-                Book Free Consultation
+                Book Consultation
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
               <a href="tel:+916307114437" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/10 rounded-full text-white/80 hover:text-white hover:border-white/30 hover:scale-[1.02] transition-all text-[15px] font-medium active:scale-95">

@@ -31,7 +31,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="sticky top-0 h-[100dvh] min-h-screen w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center z-0 will-change-transform">
+    <section className="hero-viewport-min relative w-full flex items-center justify-center overflow-hidden bg-dark-bg text-center z-0">
       {/* Innovative Pre-loader / Transition */}
       <div className="fixed inset-0 z-50 flex pointer-events-none overflow-hidden">
         <div className="w-1/2 h-full bg-[#030303] animate-shutter-left"></div>
@@ -87,7 +87,7 @@ function Hero() {
               className="group relative inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-300 bg-primary rounded-full hover:scale-105 hover:bg-primary-dark shadow-lg hover:shadow-primary/40 active:scale-95"
             >
               <span className="flex items-center gap-2 text-[15px] sm:text-[17px]">
-                Book Your Free Consultation
+                Book Consultation
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
@@ -104,7 +104,7 @@ function Hero() {
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle className="w-4 h-4 text-green-400" />
-              <span>Painless Guarantee</span>
+              <span>Comfort-focused care</span>
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle className="w-4 h-4 text-green-400" />

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { MapPin, Phone, Clock, Mail } from 'lucide-react'
+import { CONTACT } from '../data/contact'
 
 function NavAnchor({ to, className, children }) {
   const location = useLocation()
@@ -37,18 +38,25 @@ function Footer() {
             </div>
           </a>
 
-          <a 
-            href="tel:+916307114437"
-            className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all group"
-          >
+          <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/5 transition-all group">
             <div className="p-2.5 bg-white/5 rounded-xl mt-0.5 group-hover:bg-primary/20 transition-colors">
               <Phone className="w-5 h-5 text-primary" />
             </div>
-            <div>
-              <p className="text-dark-text text-sm font-semibold mb-1 group-hover:text-primary transition-colors">Call / WhatsApp Now</p>
-              <span className="text-dark-text-muted text-xs">+91 63071 14437</span>
+            <div className="min-w-0">
+              <p className="text-dark-text text-sm font-semibold mb-2 group-hover:text-primary transition-colors">Call / WhatsApp</p>
+              <a href={`tel:${CONTACT.phoneTel}`} className="block text-dark-text-muted text-xs hover:text-primary transition-colors">
+                {CONTACT.phoneDisplay}
+              </a>
+              {CONTACT.secondaryPhoneTel && CONTACT.secondaryPhoneDisplay ? (
+                <a
+                  href={`tel:${CONTACT.secondaryPhoneTel}`}
+                  className="block text-dark-text-muted text-xs hover:text-primary transition-colors mt-1.5"
+                >
+                  {CONTACT.secondaryPhoneDisplay}
+                </a>
+              ) : null}
             </div>
-          </a>
+          </div>
 
           <div className="flex items-start gap-4 p-4 rounded-2xl">
             <div className="p-2.5 bg-white/5 rounded-xl mt-0.5">

@@ -32,6 +32,13 @@ function ConsultationModal({ isOpen, onClose }) {
     }
   }, [isOpen, onClose])
 
+  // If the app unmounts while open, don’t leave the page non-scrollable
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [])
+
   useEffect(() => {
     if (!isOpen) {
       setForm(initialForm)
@@ -100,10 +107,10 @@ function ConsultationModal({ isOpen, onClose }) {
         <div className="flex items-start justify-between gap-4 p-6 sm:p-8 pb-4">
           <div>
             <h2 id={titleId} className="text-xl sm:text-2xl font-medium tracking-tight text-white">
-              Book your free consultation
+              Book your consultation
             </h2>
             <p className="text-dark-text-muted text-sm mt-2 leading-relaxed">
-              Tell us how to reach you. We’ll confirm your slot shortly.
+              Detailed consultation & personalized treatment planning. Tell us how to reach you — we’ll follow up shortly.
             </p>
           </div>
           <button

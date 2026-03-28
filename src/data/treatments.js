@@ -141,72 +141,6 @@ const treatments = [
     ]
   },
   {
-    id: "root-canal",
-    title: "Root Canal Treatment (RCT)",
-    shortDesc: "Single-sitting, microscope-assisted root canals. You won't feel a thing — we guarantee it. Save your natural tooth instead of pulling it.",
-    tag: "Most Popular",
-    icon: Zap,
-    duration: "45–90 min",
-    sessions: "1–2 visits",
-    heroLine: "The world's most feared dental procedure — made completely painless.",
-    fullDescription: "A root canal saves a badly infected or damaged tooth by removing the infected nerve tissue, cleaning the inner canal, and sealing it permanently. At Plexus Dental, we use microscopic magnification and advanced rotary instruments so the entire process is faster, more precise, and genuinely painless. Our goal is to save your natural teeth and prevent the need for extractions.",
-    indications: [
-      "Severe toothache that wakes you up at night",
-      "Sensitivity to hot or cold that lingers after the source is removed",
-      "Swelling or tenderness in the gums surrounding a tooth",
-      "Discolouration or darkening of a tooth",
-      "Persistent or recurring pimple on the gums (abscess)"
-    ],
-    whyChooseUs: [
-      "Microscope-enhanced precision (20x zoom) for superior cleaning",
-      "Single-visit RCT capability for busy professionals",
-      "Advanced Rotary Endodontics for faster, quieter treatment",
-      "Digital Apex Locators to ensure 100% accurate canal length"
-    ],
-    process: [
-      {
-        step: "Comprehensive Digital Diagnostics",
-        detail: "We take high-resolution digital X-rays and intra-oral photos. We show them to you on a large screen so you can see exactly why the nerve is compromised."
-      },
-      {
-        step: "Computerised Painless Anaesthesia",
-        detail: "We use topical numbing gel first, followed by a precision delivery system that ensures you feel absolutely nothing. We test the area twice before starting."
-      },
-      {
-        step: "Microscopic Isolation",
-        detail: "The tooth is isolated using a rubber dam to keep the area sterile and prevent saliva from interfering with the treatment — a gold standard at Plexus."
-      },
-      {
-        step: "Micro-Precision Canal Access",
-        detail: "Using our dental microscope, we create a tiny access point and locate all canals. Many teeth have tiny 'extra' canals that are often missed without a microscope."
-      },
-      {
-        step: "Biolase Disinfection & Irrigation",
-        detail: "Canals are cleaned using ultrasonic irrigants and advanced rotary files that remove every trace of bacteria from the most complex canal structures."
-      },
-      {
-        step: "Biocompatible Sealing",
-        detail: "The cleaned canals are filled with Gutta-Percha and a bio-ceramic sealer that prevents any future bacterial entry, sealing the tooth from within."
-      },
-      {
-        step: "Core Reconstruction",
-        detail: "The access point is filled with a high-strength composite resin (filling) that restores the tooth's internal structure and strength."
-      },
-      {
-        step: "3D Custom Crown Restoration",
-        detail: "Finally, a custom-designed zirconia or porcelain crown is fitted to provide 360-degree protection and restore 100% chewing function."
-      }
-    ],
-    faqs: [
-      { q: "Is a root canal really painless?", a: "Yes. With modern anaesthetics and our precision techniques, a root canal feels no different than getting a routine filling. We guarantee a pain-free experience." },
-      { q: "Can it be done in one sitting?", a: "In 90% of cases, yes. Our advanced technology allows us to complete the entire process in about 60–90 minutes." },
-      { q: "What happens if I don't get a root canal?", a: "The infection will grow, leading to a painful abscess, bone loss around the root, and eventually, the tooth will need to be extracted." },
-      { q: "How long does a treated tooth last?", a: "With a high-quality crown and good hygiene, a root-canal-treated tooth can last for the rest of your life." },
-      { q: "Will I feel pain after the procedure?", a: "You may feel mild 'tightness' for 24-48 hours as the surrounding tissue heals. This is easily managed with routine painkillers." },
-      { q: "Does insurance cover root canals?", a: "Most dental insurance plans cover a significant portion of RCT costs. We provide all necessary documentation for your claims." }
-    ]
-  },
-  {
     id: "wisdom-tooth",
     title: "Wisdom Teeth Removal",
     shortDesc: "Impacted or painful wisdom teeth? We remove them with surgical precision under local anaesthesia. Minimal swelling, fast recovery.",
@@ -413,12 +347,12 @@ const treatments = [
         detail: "Your custom zirconia crown is screwed or cemented onto the implant. It looks, feels, and functions exactly like a real tooth."
       },
       {
-        step: "Lifetime Maintenance Checkups",
+        step: "Long-Term Maintenance Checkups",
         detail: "We provide an annual implant health check to ensure the surrounding bone and gum tissue remain perfectly healthy for decades to come."
       }
     ],
     faqs: [
-      { q: "How long do implants last?", a: "With proper hygiene, the titanium implant itself is designed to last a lifetime. The porcelain crown may need replacement after 15-20 years." },
+      { q: "How long do implants last?", a: "With proper hygiene, the titanium implant can last many years. The porcelain crown may need replacement after 15–20 years." },
       { q: "Is the surgery painful?", a: "Most patients tell us it was easier than a tooth extraction. You will be fully numbed and won't feel any pain during the procedure." },
       { q: "What is the success rate?", a: "Our success rate for dental implants is over 98%, thanks to our meticulous 3D planning and premium implant systems." },
       { q: "What if I have low bone density?", a: "We can perform 'Bone Grafting' or a 'Sinus Lift' to rebuild the bone, making implants possible for almost everyone." },
@@ -493,7 +427,7 @@ const treatments = [
       "Digital scanning for perfect, 'no-goo' impressions",
       "High-translucency Zirconia for lifelike aesthetics",
       "Precision-milled CAD/CAM technology",
-      "Guaranteed fit and bite alignment"
+      "Precise fit and bite alignment"
     ],
     process: [
       {
@@ -872,6 +806,72 @@ const treatments = [
       { q: "Can I eat immediately after cleaning?", a: "Wait 30 minutes for the fluoride to fully absorb. After that, you're good to go!" },
       { q: "Why do I need 6-monthly check-ups?", a: "Because most dental problems are painless until they are severe. 6 months is the window where we can catch problems early." },
       { q: "What is an intra-oral camera?", a: "It's a small wand that lets us take high-res photos inside your mouth. It helps us track changes in your teeth over many years." }
+    ]
+  },
+  {
+    id: "root-canal",
+    title: "Root Canal Treatment (RCT)",
+    shortDesc: "Single-sitting, microscope-assisted root canals. Modern anaesthesia and precision techniques keep you comfortable. Save your natural tooth instead of pulling it.",
+    tag: "Most Popular",
+    icon: Zap,
+    duration: "45–90 min",
+    sessions: "1–2 visits",
+    heroLine: "The world's most feared dental procedure — made completely painless.",
+    fullDescription: "A root canal saves a badly infected or damaged tooth by removing the infected nerve tissue, cleaning the inner canal, and sealing it permanently. At Plexus Dental, we use microscopic magnification and advanced rotary instruments so the entire process is faster, more precise, and genuinely painless. Our goal is to save your natural teeth and prevent the need for extractions.",
+    indications: [
+      "Severe toothache that wakes you up at night",
+      "Sensitivity to hot or cold that lingers after the source is removed",
+      "Swelling or tenderness in the gums surrounding a tooth",
+      "Discolouration or darkening of a tooth",
+      "Persistent or recurring pimple on the gums (abscess)"
+    ],
+    whyChooseUs: [
+      "Microscope-enhanced precision (20x zoom) for superior cleaning",
+      "Single-visit RCT capability for busy professionals",
+      "Advanced Rotary Endodontics for faster, quieter treatment",
+      "Digital Apex Locators to ensure 100% accurate canal length"
+    ],
+    process: [
+      {
+        step: "Comprehensive Digital Diagnostics",
+        detail: "We take high-resolution digital X-rays and intra-oral photos. We show them to you on a large screen so you can see exactly why the nerve is compromised."
+      },
+      {
+        step: "Computerised Painless Anaesthesia",
+        detail: "We use topical numbing gel first, followed by a precision delivery system that ensures you feel absolutely nothing. We test the area twice before starting."
+      },
+      {
+        step: "Microscopic Isolation",
+        detail: "The tooth is isolated using a rubber dam to keep the area sterile and prevent saliva from interfering with the treatment — a gold standard at Plexus."
+      },
+      {
+        step: "Micro-Precision Canal Access",
+        detail: "Using our dental microscope, we create a tiny access point and locate all canals. Many teeth have tiny 'extra' canals that are often missed without a microscope."
+      },
+      {
+        step: "Biolase Disinfection & Irrigation",
+        detail: "Canals are cleaned using ultrasonic irrigants and advanced rotary files that remove every trace of bacteria from the most complex canal structures."
+      },
+      {
+        step: "Biocompatible Sealing",
+        detail: "The cleaned canals are filled with Gutta-Percha and a bio-ceramic sealer that prevents any future bacterial entry, sealing the tooth from within."
+      },
+      {
+        step: "Core Reconstruction",
+        detail: "The access point is filled with a high-strength composite resin (filling) that restores the tooth's internal structure and strength."
+      },
+      {
+        step: "3D Custom Crown Restoration",
+        detail: "Finally, a custom-designed zirconia or porcelain crown is fitted to provide 360-degree protection and restore 100% chewing function."
+      }
+    ],
+    faqs: [
+      { q: "Is a root canal really painless?", a: "With modern anaesthetics and our precision techniques, a root canal typically feels similar to a routine filling for most patients." },
+      { q: "Can it be done in one sitting?", a: "In 90% of cases, yes. Our advanced technology allows us to complete the entire process in about 60–90 minutes." },
+      { q: "What happens if I don't get a root canal?", a: "The infection will grow, leading to a painful abscess, bone loss around the root, and eventually, the tooth will need to be extracted." },
+      { q: "How long does a treated tooth last?", a: "With a high-quality crown and good hygiene, a root-canal-treated tooth can last for many years." },
+      { q: "Will I feel pain after the procedure?", a: "You may feel mild 'tightness' for 24-48 hours as the surrounding tissue heals. This is easily managed with routine painkillers." },
+      { q: "Does insurance cover root canals?", a: "Most dental insurance plans cover a significant portion of RCT costs. We provide all necessary documentation for your claims." }
     ]
   }
 ]
