@@ -27,35 +27,77 @@ function CTAStrip() {
   return (
     <>
       <section id="socials" className="py-24 bg-dark-bg text-dark-text relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-6xl text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-widest mb-6">
-            Social Media
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-widest mb-6">
+              Social Media
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.1]">
+              Explore our socials
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.1] mb-16">
-            Explore our socials
-          </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              "DWTIix-DmTb",
-              "DWTNkstDhHj",
-              "DWYvyscEt-T"
-            ].map((id) => (
-              <div 
-                key={id} 
-                className="group relative w-full h-[600px] bg-dark-surface rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-primary/20 hover:border-primary/30"
-              >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none z-10" />
-                <iframe 
-                  src={`https://www.instagram.com/p/${id}/embed`}
-                  className="w-full h-full border-0"
-                  scrolling="no"
-                  allowTransparency="true"
-                  allow="encrypted-media"
-                  style={{ borderRadius: '0px' }}
-                ></iframe>
-              </div>
-            ))}
+          {/* Horizontal Reel Slider with Deep Masking */}
+          <div className="relative">
+            <div className="flex overflow-x-auto pb-12 gap-6 snap-x scrollbar-hide no-scrollbar -mx-6 px-6 md:justify-center md:mx-0 md:px-0">
+              {[
+                { id: "DWTIix-DmTb", title: "Patient Success Story", tag: "Treatment" },
+                { id: "DWTNkstDhHj", title: "Oral Health Guide", tag: "Health Tips" },
+                { id: "DWYvyscEt-T", title: "Behind the Scenes", tag: "Facility" }
+              ].map((reel) => (
+                <div 
+                  key={reel.id} 
+                  className="flex-none w-[280px] sm:w-[320px] snap-center"
+                >
+                  <div className="relative h-[580px] bg-dark-bg rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/5 ring-1 ring-white/10 group">
+                    {/* Aggressive Masking Container */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      {/* 
+                         Hiding the Instagram UI:
+                         We shift the 750px tall iframe up by 55px (header) and since the container
+                         is only 580px tall, the 110px footer gets cut off at the bottom.
+                      */}
+                      <iframe 
+                        src={`https://www.instagram.com/p/${reel.id}/embed`}
+                        className="absolute w-[calc(100%+4px)] h-[740px] -top-[52px] -left-[2px] border-0"
+                        scrolling="no"
+                        allowTransparency="true"
+                        allow="encrypted-media"
+                      ></iframe>
+                    </div>
+
+                    {/* Gradient to darken the bottom and keep it consistent with the UI */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-60 pointer-events-none" />
+
+                    {/* Bottom Label Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                      <div className="bg-white/5 backdrop-blur-xl rounded-[2rem] p-5 border border-white/10 flex items-center gap-4 transition-all duration-500 group-hover:bg-white/10 group-hover:translate-y-[-4px]">
+                        <div className="w-11 h-11 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0">
+                           <Smile className="w-6 h-6 text-primary" />
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-[15px] font-semibold text-white tracking-wide truncate">{reel.title}</span>
+                          <span className="text-[11px] text-white/40 uppercase tracking-[0.2em] font-bold">{reel.tag}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Floating Quality Badge */}
+                    <div className="absolute top-6 left-6 bg-primary/90 text-white px-3.5 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-tighter backdrop-blur-sm z-30 shadow-lg">
+                      NEW
+                    </div>
+
+                    {/* Click Shield: Ensures user doesn't accidentally click IG UI through the mask, 
+                        but we can't fully block if we want them to play... 
+                        Actually, Instagram embeds usually need a click to play. */}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Subtle Gradient Fades for Scroll Indication */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-dark-bg to-transparent md:hidden"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-dark-bg to-transparent md:hidden"></div>
           </div>
         </div>
       </section>
