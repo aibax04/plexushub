@@ -72,6 +72,18 @@ function Doctor() {
           ))}
         </div>
 
+        {/* Team Photo */}
+        <div className="mt-12 relative rounded-[2rem] overflow-hidden border border-border shadow-md">
+          <img
+            src="/assets/WhatsApp Image 2026-04-02 at 14.12.19.jpeg"
+            alt="Plexus Dental Team"
+            className="w-full h-auto object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-8">
+            <h4 className="text-2xl font-medium text-white">Our Team</h4>
+          </div>
+        </div>
+
         {/* Philosophy Block */}
         <div className="mt-20 p-8 sm:p-12 bg-[#f8f8f9] rounded-[2.5rem] border border-border/50 text-center max-w-4xl mx-auto">
           <p className="text-lg sm:text-xl text-text-muted leading-relaxed font-light">
