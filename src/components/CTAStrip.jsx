@@ -28,7 +28,7 @@ function CTAStrip() {
     <>
       <section id="socials" className="py-24 bg-dark-bg text-dark-text relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-widest mb-6">
             Social Media
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.1] mb-16">
