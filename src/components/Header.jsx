@@ -53,8 +53,14 @@ function Header() {
   // Helper: scroll-anchors work on home, link navigates otherwise
   const NavAnchor = ({ to, children, className, onClick }) => {
     if (isHome && to.startsWith('#')) {
+      const handleClick = (e) => {
+        e.preventDefault()
+        const el = document.querySelector(to)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+        if (onClick) onClick(e)
+      }
       return (
-        <a href={to} className={className} onClick={onClick}>
+        <a href={to} className={className} onClick={handleClick}>
           {children}
         </a>
       )

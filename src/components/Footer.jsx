@@ -8,7 +8,12 @@ function NavAnchor({ to, className, children }) {
   const isHome = location.pathname === '/'
   
   if (isHome && to.startsWith('#')) {
-    return <a href={to} className={className}>{children}</a>
+    const handleClick = (e) => {
+      e.preventDefault()
+      const el = document.querySelector(to)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+    return <a href={to} className={className} onClick={handleClick}>{children}</a>
   }
   const target = to.startsWith('#') ? `/${to}` : to
   return <Link to={target} className={className}>{children}</Link>

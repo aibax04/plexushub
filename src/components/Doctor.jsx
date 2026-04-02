@@ -6,7 +6,7 @@ const doctors = [
   {
     name: "Dr. Ashish Kumar",
     role: "BDS, Implantologist, Specialized in Aesthetic Dentistry",
-    image: "/assets/IMG_7653.jpg",
+    image: "/assets/Untitled design (99).png",
     stats: "10+ Years · 10,000+ Procedures",
     specialties: ["Implantology", "Aesthetic Dentistry"]
   },
