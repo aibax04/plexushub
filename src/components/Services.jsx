@@ -46,7 +46,7 @@ function Services() {
           </h2>
           <p className="text-text-muted text-sm mb-6">- Priya M., Gomti Nagar</p>
           
-          <a href="#reviews" className="inline-flex items-center gap-2 text-sm font-medium text-text hover:text-primary transition-colors mb-16">
+          <a href="https://share.google/eUKP8hBjjV8z5QCV7" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-text hover:text-primary transition-colors mb-16">
             See 200+ reviews on Google <ArrowRight className="w-4 h-4" />
           </a>
 
@@ -65,7 +65,7 @@ function Services() {
             {/* Stat Card 2 */}
             <div className="bg-white p-8 rounded-2xl shadow-sm text-left flex flex-col justify-between min-h-[160px]">
               <div className="flex items-baseline gap-1 mb-4">
-                <span className="text-5xl font-light text-text tracking-tighter">15</span>
+                <span className="text-5xl font-light text-text tracking-tighter">10+</span>
                 <span className="text-xl font-medium text-text">yrs</span>
               </div>
               <p className="text-text-muted text-sm leading-relaxed">
