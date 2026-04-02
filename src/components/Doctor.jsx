@@ -1,5 +1,5 @@
-import React from 'react'
-import { Award, GraduationCap, Heart, CheckCircle2 } from 'lucide-react'
+import React, { useState } from 'react'
+import { Award, GraduationCap, Heart, CheckCircle2, ChevronDown } from 'lucide-react'
 import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 const doctors = [
@@ -13,11 +13,45 @@ const doctors = [
   {
     name: "Dr. Deepika Rajoria",
     role: "BDS, Specialized in Aesthetic Dentistry",
-    image: "/assets/Untitled design (94).png",
+    image: "/Untitled design (97).png",
     stats: "10+ Years · 8,000+ Procedures",
     specialties: ["Aesthetic Dentistry", "Smile Design"]
   }
 ]
+
+function TeamDropdown() {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="mt-12">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-8 py-5 bg-[#f8f8f9] rounded-2xl border border-border/50 hover:bg-[#f0f0f1] transition-colors"
+      >
+        <span className="text-lg font-medium text-text">Meet Our Team</span>
+        <ChevronDown className={`w-5 h-5 text-text-muted transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+      </button>
+      <div className={`overflow-hidden transition-all duration-500 ${open ? 'max-h-[1200px] mt-4' : 'max-h-0'}`}>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-md">
+            <img
+              src="/assets/WhatsApp Image 2026-04-02 at 14.12.19.jpeg"
+              alt="Plexus Dental Team"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-md">
+            <img
+              src="/assets/image.png"
+              alt="Plexus Dental Team"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function Doctor() {
   const { openConsultationModal } = useConsultationBooking()
@@ -72,17 +106,8 @@ function Doctor() {
           ))}
         </div>
 
-        {/* Team Photo */}
-        <div className="mt-12 relative rounded-[2rem] overflow-hidden border border-border shadow-md">
-          <img
-            src="/assets/WhatsApp Image 2026-04-02 at 14.12.19.jpeg"
-            alt="Plexus Dental Team"
-            className="w-full h-auto object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-8">
-            <h4 className="text-2xl font-medium text-white">Our Team</h4>
-          </div>
-        </div>
+        {/* Team Dropdown */}
+        <TeamDropdown />
 
         {/* Philosophy Block */}
         <div className="mt-20 p-8 sm:p-12 bg-[#f8f8f9] rounded-[2.5rem] border border-border/50 text-center max-w-4xl mx-auto">
