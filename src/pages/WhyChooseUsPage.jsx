@@ -62,24 +62,32 @@ const stats = [
   { label: 'Patient Retention', value: '98%' }
 ]
 
-const TerminalWindow = ({ title, tag, className = "" }) => (
+const TerminalWindow = ({ title, tag, image, className = "" }) => (
   <div className={`group relative overflow-hidden rounded-[2.5rem] bg-white border border-border/80 shadow-sm flex flex-col ${className}`}>
     {/* Terminal Header */}
-    <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-bg-alt/30">
+    <div className="flex relative z-20 items-center justify-between px-6 py-4 border-b border-border bg-white/60 backdrop-blur-md">
       <div className="flex gap-2">
-        <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/30" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/30" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/30" />
+        <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80 shadow-sm" />
+        <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80 shadow-sm" />
+        <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80 shadow-sm" />
       </div>
-      <div className="text-[10px] font-bold text-text-muted/50 uppercase tracking-widest">{tag}</div>
+      <div className="text-[10px] font-bold text-text-muted/70 uppercase tracking-widest">{tag}</div>
     </div>
     
     {/* Terminal Content Space */}
     <div className="flex-1 p-10 flex flex-col justify-end relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/[0.04] rounded-full blur-[60px] pointer-events-none group-hover:bg-primary/[0.08] transition-all duration-700" />
+      {image && (
+        <>
+          <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+        </>
+      )}
+      {!image && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/[0.04] rounded-full blur-[60px] pointer-events-none group-hover:bg-primary/[0.08] transition-all duration-700" />
+      )}
       <div className="relative z-10">
-        <div className="w-10 h-0.5 bg-primary/30 mb-5 group-hover:w-16 transition-all duration-500" />
-        <h4 className="text-text font-medium text-2xl tracking-tight group-hover:text-primary transition-colors duration-500">{title}</h4>
+        <div className={`w-10 h-0.5 mb-5 group-hover:w-16 transition-all duration-500 ${image ? 'bg-primary border-primary' : 'bg-primary/30'}`} />
+        <h4 className={`font-medium text-2xl tracking-tight transition-colors duration-500 ${image ? 'text-white' : 'text-text group-hover:text-primary'}`}>{title}</h4>
       </div>
     </div>
   </div>
@@ -147,6 +155,7 @@ function WhyChooseUsPage() {
             <TerminalWindow 
               title="Ashiyana Main Suite" 
               tag="Facility" 
+              image="/assets/image copy 6.png"
               className="lg:col-span-2 lg:row-span-2 min-h-[400px] lg:min-h-[600px]" 
             />
             
@@ -154,6 +163,7 @@ function WhyChooseUsPage() {
             <TerminalWindow 
               title="B-Class Sterilization" 
               tag="Safety" 
+              image="/assets/image copy 4.png"
               className="min-h-[280px]" 
             />
 
@@ -161,35 +171,34 @@ function WhyChooseUsPage() {
             <TerminalWindow 
               title="Digital Diagnostic Center" 
               tag="Technology" 
+              image="/assets/image copy 3.png"
               className="min-h-[320px]" 
             />
             <TerminalWindow 
-              title="Consultation Hub" 
-              tag="Facility" 
+              title="Sitting Area" 
+              tag="Comfort" 
+              image="/assets/image copy 8.png"
               className="min-h-[320px]" 
             />
             <TerminalWindow 
               title="Patient Comfort Lounge" 
               tag="Comfort" 
+              image="/assets/image copy 7.png"
               className="min-h-[320px]" 
             />
             <TerminalWindow 
-              title="Private Treatment Suites" 
-              tag="Privacy" 
+              title="Instrumental Sealing Machine" 
+              tag="Safety" 
+              image="/assets/image copy 5.png"
               className="min-h-[320px]" 
             />
 
             {/* Row 3 - Extended Feature */}
             <TerminalWindow 
-              title="Digital Scanning Bay" 
+              title="Intraoral Digital Scanner" 
               tag="Precision" 
+              image="/assets/image copy 2.png"
               className="lg:col-span-3 min-h-[300px] lg:min-h-[400px]" 
-            />
-
-            <TerminalWindow 
-              title="Zeiss Micro-Endodontics" 
-              tag="Technology" 
-              className="lg:col-span-3 min-h-[260px] lg:min-h-[320px]" 
             />
           </div>
         </div>

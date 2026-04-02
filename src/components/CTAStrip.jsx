@@ -35,6 +35,29 @@ function CTAStrip() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.1]">
             From booking to <br className="hidden sm:block" />beautiful - in 3 simple steps
           </h2>
+          
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              "DWTIix-DmTb",
+              "DWTNkstDhHj",
+              "DWYvyscEt-T"
+            ].map((id, index) => (
+              <div 
+                key={id} 
+                className="group relative w-full h-[600px] bg-dark-surface rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-primary/20 hover:border-primary/30"
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none z-10" />
+                <iframe 
+                  src={`https://www.instagram.com/p/${id}/embed`}
+                  className="w-full h-full border-0"
+                  scrolling="no"
+                  allowTransparency="true"
+                  allow="encrypted-media"
+                  style={{ borderRadius: '0px' }}
+                ></iframe>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Mobile: stacked cards */}

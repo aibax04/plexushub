@@ -22,29 +22,43 @@ const doctors = [
 function TeamDropdown() {
   const [open, setOpen] = useState(false)
   return (
-    <div className="mt-12">
+        <div className="mt-12 bg-white rounded-[2rem] border border-border/80 shadow-sm hover:border-primary/30 hover:shadow-md transition-all duration-300 p-2">
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-8 py-5 bg-[#f8f8f9] rounded-2xl border border-border/50 hover:bg-[#f0f0f1] transition-colors"
+        className="w-full flex items-center justify-between px-6 py-4 bg-transparent rounded-2xl transition-colors"
       >
         <span className="text-lg font-medium text-text">Meet Our Team</span>
         <ChevronDown className={`w-5 h-5 text-text-muted transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
-      <div className={`overflow-hidden transition-all duration-500 ${open ? 'max-h-[1200px] mt-4' : 'max-h-0'}`}>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-md">
+      <div className={`overflow-hidden transition-all duration-500 ${open ? 'max-h-[1200px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+        <div className="grid md:grid-cols-2 gap-4 px-2 pb-4">
+          <div className="relative aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-border shadow-md">
             <img
               src="/assets/WhatsApp Image 2026-04-02 at 14.12.19.jpeg"
               alt="Plexus Dental Team"
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </div>
-          <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-md">
+          <div className="relative aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-border shadow-md">
             <img
               src="/assets/image.png"
               alt="Plexus Dental Team"
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div className="relative aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-border shadow-md">
+            <img
+              src="/assets/image copy.png"
+              alt="Plexus Dental Team"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div className="relative aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-border shadow-md">
+            <img
+              src="/assets/IMG_7642.jpg"
+              alt="Plexus Dental Team"
+              className="w-full h-full object-cover object-bottom"
             />
           </div>
         </div>

@@ -8,6 +8,7 @@ const initialForm = {
   fullName: '',
   email: '',
   phone: '',
+  treatment: '',
   preferredDateTime: '',
   message: '',
 }
@@ -64,6 +65,7 @@ function ConsultationModal({ isOpen, onClose }) {
       fullName: form.fullName.trim(),
       email: form.email.trim(),
       phone: form.phone.trim(),
+      treatment: form.treatment || null,
       preferredDateTime: form.preferredDateTime || null,
       message: form.message.trim() || null,
     }
@@ -195,6 +197,27 @@ function ConsultationModal({ isOpen, onClose }) {
                   onChange={handleChange}
                   className={`${inputClass} [color-scheme:dark]`}
                 />
+              </div>
+              <div>
+                <label htmlFor="consult-treatment" className="mb-1.5 block text-xs font-medium text-white/70">
+                  Treatment Interest <span className="font-normal text-white/40">(optional)</span>
+                </label>
+                <select
+                  id="consult-treatment"
+                  name="treatment"
+                  value={form.treatment}
+                  onChange={handleChange}
+                  className={`${inputClass} *:bg-dark-surface *:text-white`}
+                >
+                  <option value="">Select a treatment</option>
+                  <option value="General Consultation">General Consultation</option>
+                  <option value="RCT (Root Canal Treatment)">RCT (Root Canal Treatment)</option>
+                  <option value="Teeth Whitening">Teeth Whitening</option>
+                  <option value="Orthodontics">Orthodontics (Braces/Aligners)</option>
+                  <option value="Dental Implants">Dental Implants</option>
+                  <option value="Crowns & Bridges">Crowns & Bridges</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
               <div>
                 <label htmlFor="consult-msg" className="mb-1.5 block text-xs font-medium text-white/70">
