@@ -54,7 +54,7 @@ function Reviews() {
               Real patients. <br className="hidden sm:block" />Real transformations.
             </h2>
           </div>
-          <a href="https://g.co/kgs/yourlink" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline whitespace-nowrap">
+          <a href="https://share.google/eUKP8hBjjV8z5QCV7" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline whitespace-nowrap">
             See all reviews on Google <ArrowRight className="w-4 h-4" />
           </a>
         </div>

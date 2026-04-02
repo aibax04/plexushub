@@ -56,7 +56,7 @@ const features = [
 ]
 
 const stats = [
-  { label: 'Clinical Experience', value: '15+ Years' },
+  { label: 'Clinical Experience', value: '10+ Years' },
   { label: 'Successful Smiles', value: '10,000+' },
   { label: 'Modern Technology', value: '100%' },
   { label: 'Patient Retention', value: '98%' }

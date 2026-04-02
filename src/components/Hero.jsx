@@ -77,7 +77,7 @@ function Hero() {
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl text-dark-text-muted mb-10 leading-relaxed max-w-2xl font-light px-4">
-            Ashiyana's most trusted dental clinic. Painless root canals, invisible braces, implants, and smile makeovers - all backed by 15+ years of expertise and the latest technology.
+            Ashiyana's most trusted dental clinic. Painless root canals, invisible braces, implants, and smile makeovers - all backed by 10+ years of expertise and the latest technology.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">

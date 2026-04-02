@@ -6,15 +6,15 @@ const doctors = [
   {
     name: "Dr. Ashish Kumar",
     role: "BDS, Implantologist, Specialized in Aesthetic Dentistry",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80",
-    stats: "15+ Years · 10,000+ Procedures",
+    image: "/assets/IMG_7653.jpg",
+    stats: "10+ Years · 10,000+ Procedures",
     specialties: ["Implantology", "Aesthetic Dentistry"]
   },
   {
     name: "Dr. Deepika Rajoria",
     role: "BDS, Specialized in Aesthetic Dentistry",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80",
-    stats: "12+ Years · 8,000+ Procedures",
+    image: "/assets/IMG_7642.jpg",
+    stats: "10+ Years · 8,000+ Procedures",
     specialties: ["Aesthetic Dentistry", "Smile Design"]
   }
 ]
