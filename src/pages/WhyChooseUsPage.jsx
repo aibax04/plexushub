@@ -195,8 +195,8 @@ function WhyChooseUsPage() {
 
             {/* Row 3 - Extended Feature */}
             <TerminalWindow 
-              title="Intraoral Digital Scanner" 
-              tag="Precision" 
+              title="Ultrasonic Cleaner" 
+              tag="Technology" 
               image="/assets/image copy 2.png"
               className="lg:col-span-3 min-h-[300px] lg:min-h-[400px]" 
             />

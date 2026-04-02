@@ -29,14 +29,11 @@ function CTAStrip() {
       <div className="container mx-auto px-6 max-w-5xl">
         
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-widest mb-6">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-widest mb-10">
             Patient Journey
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.1]">
-            From booking to <br className="hidden sm:block" />beautiful - in 3 simple steps
-          </h2>
-          
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+          <div className="mb-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               "DWTIix-DmTb",
               "DWTNkstDhHj",
@@ -58,6 +55,10 @@ function CTAStrip() {
               </div>
             ))}
           </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.1]">
+            From booking to <br className="hidden sm:block" />beautiful - in 3 simple steps
+          </h2>
         </div>
 
         {/* Mobile: stacked cards */}

@@ -31,36 +31,22 @@ function TeamDropdown() {
         <span className="text-lg font-medium text-text">Meet Our Team</span>
         <ChevronDown className={`w-5 h-5 text-text-muted transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
-      <div className={`overflow-hidden transition-all duration-500 ${open ? 'max-h-[1200px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-        <div className="grid md:grid-cols-2 gap-4 px-2 pb-4">
-          <div className="relative aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-border shadow-md">
-            <img
-              src="/assets/WhatsApp Image 2026-04-02 at 14.12.19.jpeg"
-              alt="Plexus Dental Team"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-          <div className="relative aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-border shadow-md">
-            <img
-              src="/assets/image.png"
-              alt="Plexus Dental Team"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-          <div className="relative aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-border shadow-md">
-            <img
-              src="/assets/image copy.png"
-              alt="Plexus Dental Team"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
-          <div className="relative aspect-[4/5] sm:aspect-square rounded-[2rem] overflow-hidden border border-border shadow-md">
-            <img
-              src="/assets/IMG_7642.jpg"
-              alt="Plexus Dental Team"
-              className="w-full h-full object-cover object-bottom"
-            />
-          </div>
+      <div className={`overflow-hidden transition-all duration-700 ${open ? 'max-h-[2000px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+        <div className="grid grid-cols-2 gap-2 md:gap-4 px-1 md:px-2 pb-2 md:pb-4">
+          {[
+            { src: "/assets/WhatsApp Image 2026-04-02 at 14.12.19.jpeg", pos: "object-center" },
+            { src: "/assets/image.png", pos: "object-center" },
+            { src: "/assets/image copy.png", pos: "object-top" },
+            { src: "/assets/IMG_7642.jpg", pos: "object-bottom" }
+          ].map((img, i) => (
+            <div key={i} className="relative aspect-square rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-border/50 shadow-sm">
+              <img
+                src={img.src}
+                alt="Plexus Dental Team"
+                className={`w-full h-full object-cover ${img.pos} transition-transform duration-500 hover:scale-105`}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
