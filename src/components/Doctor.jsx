@@ -13,7 +13,7 @@ const doctors = [
   {
     name: "Dr. Deepika Rajoria",
     role: "BDS, Specialized in Aesthetic Dentistry",
-    image: "/assets/IMG_7642.jpg",
+    image: "/assets/Untitled design (94).png",
     stats: "10+ Years · 8,000+ Procedures",
     specialties: ["Aesthetic Dentistry", "Smile Design"]
   }
