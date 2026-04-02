@@ -50,7 +50,7 @@ const features = [
   {
     icon: Stethoscope,
     title: 'Clear, Pressure-Free Guidance',
-    desc: 'We walk you through findings on-screen, outline honest options in plain language, and answer every question. Your treatment plan is yours to approve — no rushed sales pitches.',
+    desc: 'We walk you through findings on-screen, outline honest options in plain language, and answer every question. Your treatment plan is yours to approve - no rushed sales pitches.',
     tag: 'Trust'
   }
 ]
@@ -297,7 +297,7 @@ function WhyChooseUsPage() {
                             'Ultra-precise 3D digital diagnostics',
                             '20x Microscopic RCs & precision restoration',
                             '100% Fixed & Transparent upfront pricing',
-                            'Minimal waiting — we respect your time',
+                            'Minimal waiting - we respect your time',
                             'Bespoke care plans tailored to your timeline'
                         ].map((item, i) => (
                             <li key={i} className="flex items-center gap-4 text-white text-sm">

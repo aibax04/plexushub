@@ -251,7 +251,7 @@ function VisitClinicPage() {
             {
               icon: Phone,
               title: 'Transparent communication',
-              desc: 'Your treatment plan, timeline, and costs are discussed upfront — no surprises, no hidden charges.',
+              desc: 'Your treatment plan, timeline, and costs are discussed upfront - no surprises, no hidden charges.',
             },
           ].map((item, i) => (
             <div

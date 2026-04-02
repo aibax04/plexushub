@@ -9,7 +9,7 @@ const treatments = [
     icon: Smile,
     duration: "6–12 months",
     sessions: "Monthly check-ups",
-    heroLine: "The clear alternative to braces — designed for your comfort.",
+    heroLine: "The clear alternative to braces - designed for your comfort.",
     fullDescription: "Invisalign is the gold standard in clear aligner technology. Using proprietary SmartTrack material and 3D digital planning, we create a series of custom, nearly invisible aligners that gradually shift your teeth into place. No metal, no wires, and completely removable for eating and cleaning.",
     indications: [
       "Crowded or overlapping teeth",
@@ -44,7 +44,7 @@ const treatments = [
     ],
     faqs: [
       { q: "How many hours a day must I wear them?", a: "For best results, wear them for 20–22 hours per day." },
-      { q: "Is it painful?", a: "You'll feel slight pressure with each new set — a sign that your teeth are moving." },
+      { q: "Is it painful?", a: "You'll feel slight pressure with each new set - a sign that your teeth are moving." },
       { q: "Can I eat anything?", a: "Yes! Since you remove them to eat, there are no food restrictions." }
     ]
   },
@@ -56,7 +56,7 @@ const treatments = [
     icon: Zap,
     duration: "20–60 min",
     sessions: "1 visit",
-    heroLine: "The future of dentistry — faster, safer, and completely pain-free.",
+    heroLine: "The future of dentistry - faster, safer, and completely pain-free.",
     fullDescription: "Laser dentistry utilizes concentrated beams of light energy to treat various dental conditions. At Plexus Dental, we use the Waterlase iPlus system, which allows us to perform many procedures without the need for traditional drills or even local anaesthesia. Lasers provide unmatched precision, minimal bleeding, and significantly faster healing times.",
     indications: [
       "Gummy smile or uneven gum line",
@@ -148,8 +148,8 @@ const treatments = [
     icon: Target,
     duration: "30–60 min",
     sessions: "1 visit + follow-up",
-    heroLine: "Quick, precise extraction — so you heal faster and hurt less.",
-    fullDescription: "Wisdom teeth often stay hidden below the gumline (impacted) or grow at awkward angles, pushing against your other teeth. This causes chronic pain, jaw stiffness, and even cysts. Our surgical approach utilizes Piezo-Bone surgery—which uses ultrasonic vibrations rather than traditional drills—leading to significantly less swelling and a much faster healing time.",
+    heroLine: "Quick, precise extraction - so you heal faster and hurt less.",
+    fullDescription: "Wisdom teeth often stay hidden below the gumline (impacted) or grow at awkward angles, pushing against your other teeth. This causes chronic pain, jaw stiffness, and even cysts. Our surgical approach utilizes Piezo-Bone surgery-which uses ultrasonic vibrations rather than traditional drills-leading to significantly less swelling and a much faster healing time.",
     indications: [
       "Persistent pain or pressure at the back of the jaw",
       "Stiffness or difficulty opening your mouth",
@@ -302,7 +302,7 @@ const treatments = [
     icon: ShieldCheck,
     duration: "60–90 min (surgery)",
     sessions: "3–4 visits over 3 months",
-    heroLine: "The gold standard for replacing missing teeth — for life.",
+    heroLine: "The gold standard for replacing missing teeth - for life.",
     fullDescription: "A dental implant is a surgical-grade titanium post that acts as an artificial tooth root. Over 3-4 months, it fuses with your jawbone in a process called osseointegration. This creates a foundation that is often stronger than a natural root, allowing for a custom crown that restores your smile's aesthetics and 100% of your bite force.",
     indications: [
       "Loss of one or more natural teeth",
@@ -368,7 +368,7 @@ const treatments = [
     icon: Brush,
     duration: "1–2 weeks",
     sessions: "3–4 visits",
-    heroLine: "Restore your smile and function — tailored for comfort.",
+    heroLine: "Restore your smile and function - tailored for comfort.",
     fullDescription: "Modern dentures are far from the 'false teeth' of the past. We offer lightweight, high-impact resins and flexible materials that mimic the look of natural gums and teeth. Whether you need partial dentures to fill a few gaps or full dentures for an entire arch, we ensure a precise fit that provides stability and confidence.",
     indications: [
       "Loss of multiple teeth in different areas",
@@ -563,12 +563,12 @@ const treatments = [
   {
     id: "smile-makeover",
     title: "Smile Makeover",
-    shortDesc: "Veneers, bonding, whitening, and gum contouring — combined into one comprehensive plan that delivers a red-carpet smile.",
+    shortDesc: "Veneers, bonding, whitening, and gum contouring - combined into one comprehensive plan that delivers a red-carpet smile.",
     tag: "Cosmetic",
     icon: Sparkles,
     duration: "1–3 weeks",
     sessions: "2–5 visits",
-    heroLine: "A complete transformation — designed for your face, your personality, your confidence.",
+    heroLine: "A complete transformation - designed for your face, your personality, your confidence.",
     fullDescription: "A smile makeover is the ultimate blend of art and science. It's not just about 'white teeth'; it's about facial harmony. We analyse your lip line, skin tone, gum symmetry, and facial proportions to design a smile that looks naturally beautiful. We use a combination of ultra-thin veneers, laser gum contouring, and advanced bonding to create your masterpiece.",
     indications: [
       "Stained or discoloured teeth that don't respond to whitening",
@@ -615,9 +615,9 @@ const treatments = [
     ],
     faqs: [
       { q: "How long do veneers last?", a: "High-quality porcelain veneers typically last 15–20 years or more with routine dental care and good hygiene." },
-      { q: "Will they stain from coffee or wine?", a: "No. High-grade dental porcelain is non-porous and highly resistant to stains — even better than natural enamel." },
+      { q: "Will they stain from coffee or wine?", a: "No. High-grade dental porcelain is non-porous and highly resistant to stains - even better than natural enamel." },
       { q: "Is the procedure painful?", a: "No. We utilize local anaesthesia for preparation, and the post-op period involves very little to no discomfort." },
-      { q: "How many veneers will I need?", a: "It depends on your 'smile width' — usually between 6 to 10 veneers per arch to create a full, harmonious transformation." },
+      { q: "How many veneers will I need?", a: "It depends on your 'smile width' - usually between 6 to 10 veneers per arch to create a full, harmonious transformation." },
       { q: "Can I choose how white they are?", a: "Yes, but we recommend shades that look natural. We guide you using shade tabs and your 'test drive' results." },
       { q: "What if one veneer chips or breaks?", a: "It's rare, but if it happens, a single veneer can be replaced independently without affecting the others." }
     ]
@@ -631,7 +631,7 @@ const treatments = [
     duration: "45–60 min per quadrant",
     sessions: "2–4 visits",
     heroLine: "Healthy gums are the foundation of every beautiful smile.",
-    fullDescription: "Gum disease (periodontal disease) is the leading cause of tooth loss in adults — and most people don't even know they have it. Our comprehensive gum treatment programme uses ultrasonic scaling, laser therapy, and targeted antibiotics to stop disease progression and regenerate healthy gum tissue.",
+    fullDescription: "Gum disease (periodontal disease) is the leading cause of tooth loss in adults - and most people don't even know they have it. Our comprehensive gum treatment programme uses ultrasonic scaling, laser therapy, and targeted antibiotics to stop disease progression and regenerate healthy gum tissue.",
     indications: [
       "Bleeding gums when brushing or flossing",
       "Persistent bad breath (halitosis) that won't go away",
@@ -754,7 +754,7 @@ const treatments = [
     icon: ScanLine,
     duration: "30–45 min",
     sessions: "Every 6 months",
-    heroLine: "Prevention costs less than cure — in money, time, and pain.",
+    heroLine: "Prevention costs less than cure - in money, time, and pain.",
     fullDescription: "A dental check-up is more than just a quick 'look'. It is a comprehensive safety screen. We screen for early signs of decay, gum disease, and mouth cancer. Our professional cleaning (Scaling and Polishing) removes hard tartar that acts like a 'magnet' for bacteria, which your toothbrush simply cannot remove at home.",
     indications: [
       "It has been more than 6 months since your last visit",
@@ -816,7 +816,7 @@ const treatments = [
     icon: Zap,
     duration: "45–90 min",
     sessions: "1–2 visits",
-    heroLine: "The world's most feared dental procedure — made completely painless.",
+    heroLine: "The world's most feared dental procedure - made completely painless.",
     fullDescription: "A root canal saves a badly infected or damaged tooth by removing the infected nerve tissue, cleaning the inner canal, and sealing it permanently. At Plexus Dental, we use microscopic magnification and advanced rotary instruments so the entire process is faster, more precise, and genuinely painless. Our goal is to save your natural teeth and prevent the need for extractions.",
     indications: [
       "Severe toothache that wakes you up at night",
@@ -842,7 +842,7 @@ const treatments = [
       },
       {
         step: "Microscopic Isolation",
-        detail: "The tooth is isolated using a rubber dam to keep the area sterile and prevent saliva from interfering with the treatment — a gold standard at Plexus."
+        detail: "The tooth is isolated using a rubber dam to keep the area sterile and prevent saliva from interfering with the treatment - a gold standard at Plexus."
       },
       {
         step: "Micro-Precision Canal Access",

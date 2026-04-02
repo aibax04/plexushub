@@ -42,9 +42,9 @@ function Services() {
         <div className="container mx-auto px-6 max-w-5xl text-center">
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-text tracking-tight leading-tight max-w-4xl mx-auto mb-4">
-            &ldquo;I walked in terrified of dentists. I walked out wondering why I ever waited. The most comfortable medical experience of my life &mdash; and my teeth look incredible.&rdquo;
+            &ldquo;I walked in terrified of dentists. I walked out wondering why I ever waited. The most comfortable medical experience of my life - and my teeth look incredible.&rdquo;
           </h2>
-          <p className="text-text-muted text-sm mb-6">&mdash; Priya M., Gomti Nagar</p>
+          <p className="text-text-muted text-sm mb-6">- Priya M., Gomti Nagar</p>
           
           <a href="#reviews" className="inline-flex items-center gap-2 text-sm font-medium text-text hover:text-primary transition-colors mb-16">
             See 200+ reviews on Google <ArrowRight className="w-4 h-4" />

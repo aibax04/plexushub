@@ -235,7 +235,7 @@ function TreatmentsPage() {
         });
       }
     } else {
-      // No query param — handled by PageWrapper/ScrollToHash usually, 
+      // No query param - handled by PageWrapper/ScrollToHash usually, 
       // but keeping local top scroll for safety if needed
     }
   }, [searchParams]);
@@ -266,7 +266,7 @@ function TreatmentsPage() {
           </h1>
 
           <p className="text-text-muted text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
-            From routine check-ups to complete smile transformations — all under one roof
+            From routine check-ups to complete smile transformations - all under one roof
             in Ashiyana, Lucknow. Click any treatment to explore the full process, timeline, and answers to your questions.
           </p>
 
@@ -309,7 +309,7 @@ function TreatmentsPage() {
           </h2>
           <p className="text-dark-text-muted text-[15px] leading-relaxed mb-10 max-w-xl mx-auto">
             Book a detailed consultation and we'll examine, diagnose, and recommend
-            the best course of action — with transparent pricing and zero pressure.
+            the best course of action - with transparent pricing and zero pressure.
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
             <button

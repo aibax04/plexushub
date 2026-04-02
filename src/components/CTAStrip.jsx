@@ -50,7 +50,7 @@ function CTAStrip() {
           ))}
         </div>
 
-        {/* md+: one grid row per band — headings share a row so body copy aligns */}
+        {/* md+: one grid row per band - headings share a row so body copy aligns */}
         <div className="mb-32 hidden md:grid md:grid-cols-3 md:gap-x-10 lg:gap-x-12 md:gap-y-8 md:items-start">
           {journeySteps.map(({ Icon, title }) => (
             <div key={`icon-${title}`} className={iconBoxClass}>
@@ -79,7 +79,7 @@ function CTAStrip() {
               Stop putting it off. <br className="hidden sm:block" />Your smile is worth it.
             </h3>
             <p className="text-dark-text-muted mb-10 max-w-xl mx-auto text-[15px] leading-relaxed">
-              The longer you wait, the more complex (and expensive) dental problems become. Book a detailed consultation today and get peace of mind — it takes less than 30 seconds.
+              The longer you wait, the more complex (and expensive) dental problems become. Book a detailed consultation today and get peace of mind - it takes less than 30 seconds.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button

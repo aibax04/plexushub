@@ -20,7 +20,7 @@ const TestimonialCard = ({ item, priority }) => (
       {/* Image / Thumbnail */}
       <img
         src={item.thumbnail}
-        alt={`${item.name} — patient story at Plexus Dental`}
+        alt={`${item.name} - patient story at Plexus Dental`}
         width={800}
         height={1200}
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

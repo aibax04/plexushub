@@ -1,8 +1,8 @@
 /**
  * Sends consultation data to Make.com (or any) webhook.
- * Set VITE_MAKE_WEBHOOK_URL in .env / Vercel — falls back to the project webhook if unset.
+ * Set VITE_MAKE_WEBHOOK_URL in .env / Vercel - falls back to the project webhook if unset.
  *
- * Payload shape matches common Make tutorials: name, email, message — plus phone & extras for automation.
+ * Payload shape matches common Make tutorials: name, email, message - plus phone & extras for automation.
  */
 const DEFAULT_WEBHOOK_URL =
   'https://hook.eu2.make.com/ohwn1mbcqwx87k3phu7fybsvyqo6whig'
@@ -34,7 +34,7 @@ export async function submitConsultationToWebhook(data) {
     // Core fields (same names as typical Make / Zapier form tutorials)
     name: data.fullName,
     email: data.email,
-    message: extraMessage || '—',
+    message: extraMessage || '-',
     // Extra fields for Gmail / WhatsApp / SMS in Make
     phone: data.phone,
     preferredDateTime:

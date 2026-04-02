@@ -113,7 +113,7 @@ function ConsultationModal({ isOpen, onClose }) {
               Book your consultation
             </h2>
             <p className="text-dark-text-muted mt-1.5 text-sm leading-relaxed sm:mt-2">
-              Detailed consultation & personalized treatment planning. Tell us how to reach you — we’ll follow up shortly.
+              Detailed consultation & personalized treatment planning. Tell us how to reach you - we’ll follow up shortly.
             </p>
           </div>
           <button

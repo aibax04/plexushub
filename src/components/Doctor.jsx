@@ -80,7 +80,7 @@ function Doctor() {
           <div className="flex items-center justify-center gap-8 mt-10 opacity-60">
             <div className="flex flex-col items-center gap-2">
               <GraduationCap className="w-6 h-6 text-primary" />
-              <span className="text-[10px] uppercase font-bold tracking-widest">Post-Graduate MDs</span>
+              <span className="text-[10px] uppercase font-bold tracking-widest">Post-Graduate BDS</span>
             </div>
             <div className="flex flex-col items-center gap-2">
               <Award className="w-6 h-6 text-primary" />

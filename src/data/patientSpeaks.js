@@ -1,5 +1,5 @@
 /**
- * Remote thumbnails (Unsplash) — avoids 404s from missing /public/assets files.
+ * Remote thumbnails (Unsplash) - avoids 404s from missing /public/assets files.
  * Replace with your own /public/... assets when ready.
  */
 const U = 'https://images.unsplash.com'
