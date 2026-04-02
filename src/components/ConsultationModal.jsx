@@ -104,7 +104,7 @@ function ConsultationModal({ isOpen, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative flex max-h-[min(100dvh-1.5rem,720px)] w-full max-w-md min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-surface text-dark-text shadow-2xl shadow-black/50 sm:rounded-[1.5rem]"
+        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-md min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-surface text-dark-text shadow-2xl shadow-black/50 sm:max-h-[min(100dvh-3rem,720px)] sm:rounded-[1.5rem]"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex shrink-0 items-start justify-between gap-3 border-b border-white/5 px-4 pt-4 pb-3 sm:px-8 sm:pt-6 sm:pb-4">
