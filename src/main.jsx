@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { ConsultationBookingProvider } from './context/ConsultationBookingContext'
 import App from './App'
+import './firebase'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -105,6 +105,7 @@ function Footer() {
             <NavAnchor to="#reviews" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-2">Reviews</NavAnchor>
             <NavAnchor to="#how-it-works" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-2">Patient Journey</NavAnchor>
             <NavAnchor to="/visit" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-2">Visit Clinic</NavAnchor>
+            <NavAnchor to="/blog" className="text-dark-text-muted hover:text-dark-text transition-colors text-sm font-medium px-4 py-2">Blog</NavAnchor>
           </div>
         </div>
 

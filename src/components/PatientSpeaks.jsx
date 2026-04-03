@@ -2,7 +2,7 @@ import React from 'react'
 import { Play, ChevronRight } from 'lucide-react'
 import { patientSpeaksStories as testimonials } from '../data/patientSpeaks'
 
-const TestimonialCard = ({ item, priority }) => (
+const TestimonialCard = React.memo(({ item, priority }) => (
   <div className="group relative flex flex-col transition-all duration-500 ease-out hover:-translate-y-2">
     {/* Vertical Terminal Card */}
     <div className="relative aspect-[3/4.5] rounded-[3rem] overflow-hidden bg-white border border-border/60 shadow-sm group-hover:shadow-2xl group-hover:border-primary/30 transition-all duration-500">
@@ -61,7 +61,7 @@ const TestimonialCard = ({ item, priority }) => (
       </div>
     </div>
   </div>
-)
+))
 
 function PatientSpeaks() {
   return (

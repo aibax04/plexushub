@@ -43,6 +43,8 @@ function TeamDropdown() {
               <img
                 src={img.src}
                 alt="Plexus Dental Team"
+                loading="lazy"
+                decoding="async"
                 className={`w-full h-full object-cover ${img.pos} transition-transform duration-500 hover:scale-105`}
               />
             </div>

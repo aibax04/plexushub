@@ -1,4 +1,4 @@
-import { ChevronRight, Phone, CalendarClock, Stethoscope, Smile } from 'lucide-react'
+import { ChevronRight, Phone, CalendarClock, Stethoscope, Smile, Play } from 'lucide-react'
 import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 const journeySteps = [
@@ -37,65 +37,54 @@ function CTAStrip() {
             </h2>
           </div>
           
-          {/* Horizontal Reel Slider with Deep Masking */}
+          {/* Horizontal Reel Slider */}
           <div className="relative">
-            <div className="flex overflow-x-auto pb-12 gap-6 snap-x scrollbar-hide no-scrollbar -mx-6 px-6 md:justify-center md:mx-0 md:px-0">
+            <div className="flex overflow-x-auto pb-12 gap-6 sm:gap-8 snap-x scrollbar-hide no-scrollbar -mx-6 px-6 md:justify-center md:mx-0 md:px-0">
               {[
                 { id: "DWTIix-DmTb", title: "Patient Success Story", tag: "Treatment" },
                 { id: "DWTNkstDhHj", title: "Oral Health Guide", tag: "Health Tips" },
                 { id: "DWYvyscEt-T", title: "Behind the Scenes", tag: "Facility" }
               ].map((reel) => (
-                <div 
-                  key={reel.id} 
-                  className="flex-none w-[280px] sm:w-[320px] snap-center"
+                <a
+                  key={reel.id}
+                  href={`https://www.instagram.com/reel/${reel.id}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-none w-[260px] sm:w-[300px] snap-center group"
                 >
-                  <div className="relative h-[580px] bg-dark-bg rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/5 ring-1 ring-white/10 group">
-                    {/* Aggressive Masking Container */}
-                    <div className="absolute inset-0 pointer-events-none">
-                      {/* 
-                         Hiding the Instagram UI:
-                         We shift the 750px tall iframe up by 55px (header) and since the container
-                         is only 580px tall, the 110px footer gets cut off at the bottom.
-                      */}
-                      <iframe 
-                        src={`https://www.instagram.com/p/${reel.id}/embed`}
-                        className="absolute w-[calc(100%+4px)] h-[740px] -top-[52px] -left-[2px] border-0"
-                        scrolling="no"
-                        allowTransparency="true"
-                        allow="encrypted-media"
-                      ></iframe>
-                    </div>
+                  <div className="relative aspect-[9/16] bg-dark-surface rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/10 group-hover:border-primary/30 transition-colors duration-300">
+                    {/* Thumbnail from Instagram CDN */}
+                    <img
+                      src={`https://www.instagram.com/p/${reel.id}/media/?size=l`}
+                      alt={reel.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
 
-                    {/* Gradient to darken the bottom and keep it consistent with the UI */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-60 pointer-events-none" />
+                    {/* Top gradient */}
+                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent z-10" />
+                    {/* Bottom gradient */}
+                    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
 
-                    {/* Bottom Label Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                      <div className="bg-white/5 backdrop-blur-xl rounded-[2rem] p-5 border border-white/10 flex items-center gap-4 transition-all duration-500 group-hover:bg-white/10 group-hover:translate-y-[-4px]">
-                        <div className="w-11 h-11 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0">
-                           <Smile className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="flex flex-col min-w-0">
-                          <span className="text-[15px] font-semibold text-white tracking-wide truncate">{reel.title}</span>
-                          <span className="text-[11px] text-white/40 uppercase tracking-[0.2em] font-bold">{reel.tag}</span>
-                        </div>
+                    {/* Play button */}
+                    <div className="absolute inset-0 flex items-center justify-center z-20">
+                      <div className="w-14 h-14 bg-white/15 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-primary/80 group-hover:border-primary/50 transition-all duration-300 shadow-xl">
+                        <Play className="w-6 h-6 text-white fill-current translate-x-0.5" />
                       </div>
                     </div>
 
-                    {/* Floating Quality Badge */}
-                    <div className="absolute top-6 left-6 bg-primary/90 text-white px-3.5 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-tighter backdrop-blur-sm z-30 shadow-lg">
-                      NEW
+                    {/* Bottom label */}
+                    <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
+                      <h3 className="text-white text-base font-semibold tracking-tight mb-1">{reel.title}</h3>
+                      <span className="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em]">{reel.tag}</span>
                     </div>
-
-                    {/* Click Shield: Ensures user doesn't accidentally click IG UI through the mask, 
-                        but we can't fully block if we want them to play... 
-                        Actually, Instagram embeds usually need a click to play. */}
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
-            {/* Subtle Gradient Fades for Scroll Indication */}
+            {/* Scroll fade indicators */}
             <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-dark-bg to-transparent md:hidden"></div>
             <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-dark-bg to-transparent md:hidden"></div>
           </div>

@@ -136,6 +136,10 @@ function Header() {
                 Patient Journey
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </NavAnchor>
+              <Link to="/blog" className="relative text-[14px] font-medium text-white/70 hover:text-white transition-all duration-300 group pb-1">
+                Blog
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </Link>
 
             </nav>
             
@@ -231,6 +235,10 @@ function Header() {
               Patient Journey
               <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </NavAnchor>
+            <Link to="/blog" onClick={closeMenu} className="relative w-fit text-white hover:text-primary transition-all duration-300 group">
+              Blog
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </Link>
 
           </nav>
           

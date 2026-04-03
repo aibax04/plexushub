@@ -11,4 +11,14 @@ export default defineConfig({
       targets: ['defaults', 'not IE 11']
     })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          firebase: ['firebase/app', 'firebase/firestore', 'firebase/analytics'],
+        },
+      },
+    },
+  },
 })

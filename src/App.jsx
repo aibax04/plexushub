@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { Header, ScrollToTop, Footer, PageWrapper, WhatsAppButton, ScrollToHash } from './components'
-import HomePage from './pages/HomePage'
-import TreatmentsPage from './pages/TreatmentsPage'
-import VisitClinicPage from './pages/VisitClinicPage'
-import WhyChooseUsPage from './pages/WhyChooseUsPage'
+
+const HomePage = lazy(() => import('./pages/HomePage'))
+const TreatmentsPage = lazy(() => import('./pages/TreatmentsPage'))
+const VisitClinicPage = lazy(() => import('./pages/VisitClinicPage'))
+const WhyChooseUsPage = lazy(() => import('./pages/WhyChooseUsPage'))
+const BlogPage = lazy(() => import('./pages/BlogPage'))
 
 function App() {
   const location = useLocation()
@@ -13,12 +15,15 @@ function App() {
       <Header />
       <PageWrapper>
         <ScrollToHash />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/treatments" element={<TreatmentsPage />} />
-          <Route path="/visit" element={<VisitClinicPage />} />
-          <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/treatments" element={<TreatmentsPage />} />
+            <Route path="/visit" element={<VisitClinicPage />} />
+            <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+          </Routes>
+        </Suspense>
         
         {/* Global Footer for all pages EXCEPT Home (which handles its own for the shadow effect) */}
         {location.pathname !== '/' && <Footer />}

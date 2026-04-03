@@ -45,10 +45,14 @@ function Hero() {
 
       {/* Background Image with Premium Blending */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-dark-bg">
-        <img 
-          src="/hero-model-teeth.jpg" 
-          alt="Precision Dental Care" 
-          className="w-full h-full object-cover opacity-50 animate-slow-zoom"
+        <img
+          src="/hero-model-teeth.jpg"
+          alt="Precision Dental Care"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          decoding="async"
+          className="w-full h-full object-cover opacity-50 animate-slow-zoom will-change-transform"
         />
         
         {/* Advanced Gradient Overlays for Perfect Blending */}
@@ -58,8 +62,8 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-dark-bg/50 via-transparent to-dark-bg/50 pointer-events-none"></div>
         
         {/* Dynamic Light Blobs for Depth (Premium glassmorphism touch) */}
-        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/30 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
-        <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/30 rounded-full blur-[140px] pointer-events-none animate-pulse-slow will-change-[opacity]"></div>
+        <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none will-change-[opacity]"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 pt-20 animate-page-entry">
