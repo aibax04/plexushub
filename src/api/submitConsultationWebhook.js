@@ -45,6 +45,7 @@ export async function submitConsultationToWebhook(data) {
     source: 'plexus-dental-website',
   }
 
+  console.log('[Consultation] Sending payload:', JSON.stringify(body))
   const res = await fetch(url, {
     method: 'POST',
     headers: {
