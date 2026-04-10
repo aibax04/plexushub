@@ -56,8 +56,8 @@ function ConsultationModal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setErrorMsg('')
-    if (!form.fullName.trim() || !form.email.trim() || !form.phone.trim()) {
-      setErrorMsg('Please fill in your name, email, and phone.')
+    if (!form.fullName.trim() || !form.phone.trim() || !form.preferredDateTime || !form.treatment) {
+      setErrorMsg('Please fill in your name, phone, preferred date & time, and treatment.')
       return
     }
     setStatus('submitting')
@@ -65,7 +65,7 @@ function ConsultationModal({ isOpen, onClose }) {
       fullName: form.fullName.trim(),
       email: form.email.trim(),
       phone: form.phone.trim(),
-      treatment: form.treatment || null,
+      treatment: form.treatment || 'Not specified',
       preferredDateTime: form.preferredDateTime || null,
       message: form.message.trim() || null,
     }
@@ -154,7 +154,7 @@ function ConsultationModal({ isOpen, onClose }) {
               </div>
               <div>
                 <label htmlFor="consult-email" className="mb-1.5 block text-xs font-medium text-white/70">
-                  Email <span className="text-red-400">*</span>
+                  Email <span className="font-normal text-white/40">(optional)</span>
                 </label>
                 <input
                   id="consult-email"
@@ -187,7 +187,7 @@ function ConsultationModal({ isOpen, onClose }) {
               </div>
               <div>
                 <label htmlFor="consult-when" className="mb-1.5 block text-xs font-medium text-white/70">
-                  Preferred date & time <span className="font-normal text-white/40">(optional)</span>
+                  Preferred date & time <span className="text-red-400">*</span>
                 </label>
                 <input
                   id="consult-when"
@@ -200,7 +200,7 @@ function ConsultationModal({ isOpen, onClose }) {
               </div>
               <div>
                 <label htmlFor="consult-treatment" className="mb-1.5 block text-xs font-medium text-white/70">
-                  Treatment Interest <span className="font-normal text-white/40">(optional)</span>
+                  Treatment Interest <span className="text-red-400">*</span>
                 </label>
                 <select
                   id="consult-treatment"
@@ -211,11 +211,21 @@ function ConsultationModal({ isOpen, onClose }) {
                 >
                   <option value="">Select a treatment</option>
                   <option value="General Consultation">General Consultation</option>
-                  <option value="RCT (Root Canal Treatment)">RCT (Root Canal Treatment)</option>
+                  <option value="Root Canal Treatment">Root Canal Treatment (RCT)</option>
                   <option value="Teeth Whitening">Teeth Whitening</option>
-                  <option value="Orthodontics">Orthodontics (Braces/Aligners)</option>
+                  <option value="Braces / Orthodontics">Braces / Orthodontics</option>
+                  <option value="Invisalign / Clear Aligners">Invisalign / Clear Aligners</option>
                   <option value="Dental Implants">Dental Implants</option>
-                  <option value="Crowns & Bridges">Crowns & Bridges</option>
+                  <option value="Cosmetic Dentistry / Smile Makeover">Cosmetic Dentistry / Smile Makeover</option>
+                  <option value="Dental Crowns">Dental Crowns</option>
+                  <option value="Dental Bridges">Dental Bridges</option>
+                  <option value="Dentures">Dentures</option>
+                  <option value="Wisdom Teeth Removal">Wisdom Teeth Removal</option>
+                  <option value="Dental Fillings">Dental Fillings</option>
+                  <option value="Gum Disease Treatment">Gum Disease Treatment</option>
+                  <option value="Kids Dentistry">Kids Dentistry</option>
+                  <option value="Laser Dentistry">Laser Dentistry</option>
+                  <option value="Routine Check-up & Cleaning">Routine Check-up & Cleaning</option>
                   <option value="Other">Other</option>
                 </select>
               </div>

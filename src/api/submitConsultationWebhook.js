@@ -20,6 +20,7 @@ export function getConsultationWebhookUrl() {
  * @param {string} data.fullName
  * @param {string} data.email
  * @param {string} data.phone
+ * @param {string} data.treatment
  * @param {string|null} [data.preferredDateTime]
  * @param {string|null} [data.message]
  */
@@ -37,6 +38,7 @@ export async function submitConsultationToWebhook(data) {
     message: extraMessage || '-',
     // Extra fields for Gmail / WhatsApp / SMS in Make
     phone: data.phone,
+    treatment: data.treatment || 'Not specified',
     preferredDateTime:
       data.preferredDateTime && data.preferredDateTime.trim() ? data.preferredDateTime.trim() : null,
     submittedAt: new Date().toISOString(),
