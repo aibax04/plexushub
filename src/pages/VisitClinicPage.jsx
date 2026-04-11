@@ -16,27 +16,28 @@ import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 const clinicInfo = {
   name: 'Plexus Dental Hub',
-  address: 'Shop no 9, SJS Pratham Complex, Chungi-Parag Rd, Opp. Shivalik School, Ashiyana, Lucknow 226012',
-  addressShort: 'SJS Pratham Complex, Ashiyana, Lucknow',
+  address: 'UGF-5, SJS Pratham Complex, Sector-F, Parag Road, Opposite Gyan International School, Lucknow - 226012',
+  addressShort: 'SJS Pratham Complex, Sector-F, Lucknow',
   phone: '+91 63071 14437',
   phoneRaw: '+916307114437',
   email: 'plexusdentalhub@gmail.com',
   hours: [
-    { day: 'Monday', time: '10:00 AM – 8:00 PM' },
-    { day: 'Tuesday', time: '10:00 AM – 8:00 PM' },
-    { day: 'Wednesday', time: '10:00 AM – 8:00 PM' },
-    { day: 'Thursday', time: '10:00 AM – 8:00 PM' },
-    { day: 'Friday', time: '10:00 AM – 8:00 PM' },
-    { day: 'Saturday', time: '10:00 AM – 8:00 PM' },
-    { day: 'Sunday', time: 'By Appointment Only' },
+    { day: 'Monday', sessions: ['10:00 AM – 2:30 PM', '5:00 PM – 9:00 PM'] },
+    { day: 'Tuesday', sessions: ['10:00 AM – 2:30 PM', '5:00 PM – 9:00 PM'] },
+    { day: 'Wednesday', sessions: ['10:00 AM – 2:30 PM', '5:00 PM – 9:00 PM'] },
+    { day: 'Thursday', sessions: ['10:00 AM – 2:30 PM', '5:00 PM – 9:00 PM'] },
+    { day: 'Friday', sessions: ['10:00 AM – 2:30 PM', '5:00 PM – 9:00 PM'] },
+    { day: 'Saturday', sessions: ['10:00 AM – 2:30 PM', '5:00 PM – 9:00 PM'] },
+    { day: 'Sunday', sessions: ['10:00 AM – 2:30 PM'], note: 'or Special Appointment' },
   ],
   googleMapsEmbed:
     'https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Plexus+Dental+Hub+Lucknow&zoom=16',
   googleMapsLink:
     'https://www.google.com/maps/search/Plexus+Dental+Hub+Lucknow',
   landmarks: [
-    { icon: Building2, label: 'Opposite Shivalik School' },
-    { icon: Landmark, label: 'Near Chungi-Parag Road' },
+    { icon: Building2, label: 'Opposite Gyan International School' },
+    { icon: Landmark, label: 'Near Shani Dev Mandir' },
+    { icon: Landmark, label: 'Near Parag Road' },
     { icon: Car, label: 'Easy roadside parking available' },
   ],
 }
@@ -62,7 +63,7 @@ function VisitClinicPage() {
         </h1>
         <p className="text-text-muted text-[15px] sm:text-base leading-relaxed max-w-2xl">
           We're conveniently located at SJS Pratham Complex, right opposite
-          Shivalik School. Walk-ins welcome during clinic hours, or book ahead
+          Gyan International School. Walk-ins welcome during clinic hours, or book ahead
           for a confirmed slot.
         </p>
       </section>
@@ -218,13 +219,21 @@ function VisitClinicPage() {
                     </span>
                   )}
                 </div>
-                <span
-                  className={`text-[13px] ${
-                    isSunday ? 'text-amber-600' : 'text-text-muted'
-                  }`}
-                >
-                  {slot.time}
-                </span>
+                <div className="flex flex-col gap-0.5">
+                  {slot.sessions.map((session, idx) => (
+                    <span 
+                      key={idx} 
+                      className={`text-[13px] ${isSunday && idx === 0 ? 'text-amber-600' : 'text-text-muted'}`}
+                    >
+                      {session}
+                    </span>
+                  ))}
+                  {slot.note && (
+                    <span className="text-[11px] font-medium text-amber-600 mt-1">
+                      {slot.note}
+                    </span>
+                  )}
+                </div>
               </div>
             )
           })}

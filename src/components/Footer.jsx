@@ -38,7 +38,7 @@ function Footer() {
             <div>
               <p className="text-dark-text text-sm font-semibold mb-1 group-hover:text-primary transition-colors">Visit Our Clinic</p>
               <p className="text-dark-text-muted text-xs leading-relaxed">
-                Shop no 9, SJS Pratham Complex, Chungi-Parag Rd, Lucknow 226012
+                UGF-5, SJS Pratham Complex, Sector-F, Parag Road, Lucknow 226012
               </p>
             </div>
           </a>
@@ -69,7 +69,22 @@ function Footer() {
             </div>
             <div>
               <p className="text-dark-text text-sm font-semibold mb-1">Clinic Hours</p>
-              <p className="text-dark-text-muted text-xs leading-relaxed">Mon–Sat: 10am – 8pm<br />Sun: By Appointment</p>
+              <div className="space-y-3 mt-1">
+                <div>
+                  <p className="text-dark-text-muted text-[10px] uppercase tracking-wider font-semibold opacity-50 mb-1">Monday – Saturday</p>
+                  <div className="flex flex-col gap-0.5 mt-0.5">
+                    <span className="text-primary text-[11px] font-medium whitespace-nowrap">Morning: 10:00 AM – 02:30 PM</span>
+                    <span className="text-primary text-[11px] font-medium whitespace-nowrap">Evening: 05:00 PM – 09:00 PM</span>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-white/5">
+                  <p className="text-dark-text-muted text-[10px] uppercase tracking-wider font-semibold opacity-50 mb-1">Sunday</p>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-amber-500/90 text-xs font-medium whitespace-nowrap">10:00 AM – 02:30 PM</span>
+                    <span className="text-dark-text-muted text-[10px] whitespace-nowrap">or Special Appointment</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
