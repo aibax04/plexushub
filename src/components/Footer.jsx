@@ -132,7 +132,7 @@ function Footer() {
             <span>Developed by human hands at <a href="https://www.uptrail.io" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">uptrail.io</a></span>
           </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-dark-text transition-colors">Privacy Policy</a>
+            <Link to="/privacy-policy" className="hover:text-dark-text transition-colors">Privacy Policy</Link>
             <a href="#" className="hover:text-dark-text transition-colors">Terms of Service</a>
           </div>
         </div>

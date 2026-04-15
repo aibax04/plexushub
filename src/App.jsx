@@ -7,6 +7,7 @@ const TreatmentsPage = lazy(() => import('./pages/TreatmentsPage'))
 const VisitClinicPage = lazy(() => import('./pages/VisitClinicPage'))
 const WhyChooseUsPage = lazy(() => import('./pages/WhyChooseUsPage'))
 const BlogPage = lazy(() => import('./pages/BlogPage'))
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'))
 
 function App() {
   const location = useLocation()
@@ -22,6 +23,7 @@ function App() {
             <Route path="/visit" element={<VisitClinicPage />} />
             <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           </Routes>
         </Suspense>
         
