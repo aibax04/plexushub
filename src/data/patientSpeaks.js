@@ -9,7 +9,7 @@ export const patientSpeaksStories = [
     role: 'PATIENT STORY',
     treatment: 'Root Canal',
     location: 'Plexus Dental Hub',
-    thumbnail: '/assets/ps-root-canal.jpg',
+    thumbnail: '/assets/ps-root-canal.webp',
     reelUrl: IG_REEL('DXJzOeVEtAf'),
   },
   {
@@ -20,7 +20,7 @@ export const patientSpeaksStories = [
     role: 'FACILITY',
     treatment: 'Clinic Tour',
     location: 'Plexus Dental Hub',
-    thumbnail: '/assets/ps-clinic-tour.jpg',
+    thumbnail: '/assets/ps-clinic-tour.webp',
     reelUrl: IG_REEL('DWTNkstDhHj'),
   },
   {
@@ -31,7 +31,7 @@ export const patientSpeaksStories = [
     role: 'SAFETY',
     treatment: 'Sterilization',
     location: 'Plexus Dental Hub',
-    thumbnail: '/assets/ps-sterilization.jpg',
+    thumbnail: '/assets/ps-sterilization.webp',
     reelUrl: IG_REEL('DWYvyscEt-T'),
   },
   {
@@ -42,7 +42,7 @@ export const patientSpeaksStories = [
     role: 'IMPLANTOLOGIST',
     treatment: 'Dental Implants',
     location: 'Plexus Dental Hub',
-    thumbnail: '/assets/ps-dr-ashish.jpg',
+    thumbnail: '/assets/ps-dr-ashish.webp',
     reelUrl: IG_REEL('DWTIix-DmTb'),
   },
   {
@@ -53,7 +53,7 @@ export const patientSpeaksStories = [
     role: 'CONSULTATION',
     treatment: 'Dental Consultation',
     location: 'Plexus Dental Hub',
-    thumbnail: '/assets/ps-story-5.jpg',
+    thumbnail: '/assets/ps-story-5.webp',
     reelUrl: IG_REEL('DSpQ1-8kfS-'),
   },
   {
@@ -64,7 +64,7 @@ export const patientSpeaksStories = [
     role: 'IMPLANTOLOGIST',
     treatment: 'Dental Implants',
     location: 'Plexus Dental Hub',
-    thumbnail: '/assets/ps-story-6.jpg',
+    thumbnail: '/assets/ps-story-6.webp',
     reelUrl: IG_REEL('C24IDjAseMS'),
   },
 ]

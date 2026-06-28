@@ -6,14 +6,14 @@ const doctors = [
   {
     name: "Dr. Ashish Kumar",
     role: "BDS, Implantologist, Specialized in Aesthetic Dentistry",
-    image: "/assets/Untitled design (99).png",
+    image: "/assets/doctor-credentials.webp",
     stats: "10+ Years · 10,000+ Procedures",
     specialties: ["Implantology", "Aesthetic Dentistry"]
   },
   {
     name: "Dr. Deepika Rajoria",
     role: "BDS, Specialized in Aesthetic Dentistry",
-    image: "/Untitled design (97).png",
+    image: "/assets/doctor-portrait.webp",
     stats: "10+ Years · 8,000+ Procedures",
     specialties: ["Aesthetic Dentistry", "Smile Design"]
   }
@@ -34,10 +34,10 @@ function TeamDropdown() {
       <div className={`overflow-hidden transition-all duration-700 ${open ? 'max-h-[2000px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
         <div className="grid grid-cols-2 gap-2 md:gap-4 px-1 md:px-2 pb-2 md:pb-4">
           {[
-            { src: "/assets/WhatsApp Image 2026-04-02 at 14.12.19.jpeg", pos: "object-center" },
-            { src: "/assets/image.png", pos: "object-center" },
-            { src: "/assets/image copy.png", pos: "object-top" },
-            { src: "/assets/IMG_7642.jpg", pos: "object-bottom" }
+            { src: "/assets/doctor-photo-1.webp", pos: "object-center" },
+            { src: "/assets/doctor-photo-2.webp", pos: "object-center" },
+            { src: "/assets/doctor-photo-4.webp", pos: "object-top" },
+            { src: "/assets/doctor-photo-3.webp", pos: "object-bottom" }
           ].map((img, i) => (
             <div key={i} className="relative aspect-square rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-border/50 shadow-sm">
               <img
@@ -75,9 +75,12 @@ function Doctor() {
             <div key={idx} className="group relative flex flex-col">
               {/* Image Container */}
               <div className="relative aspect-[4/5] bg-[#f4f4f5] rounded-[2rem] overflow-hidden border border-border shadow-md mb-8">
-                <img 
-                  src={doc.image} 
-                  alt={`${doc.name} - ${doc.role} at Plexus Dental`} 
+                <img
+                  src={doc.image}
+                  alt={`${doc.name} - ${doc.role} at Plexus Dental`}
+                  loading={idx === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={idx === 0 ? 'high' : 'low'}
+                  decoding="async"
                   className="w-full h-full object-cover filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-8 flex flex-col justify-end">
