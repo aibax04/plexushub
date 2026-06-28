@@ -1,4 +1,4 @@
-import { ChevronRight, Phone, CalendarClock, Stethoscope, Smile, Play } from 'lucide-react'
+import { ChevronRight, Phone, CalendarClock, Stethoscope, Smile } from 'lucide-react'
 import { useConsultationBooking } from '../context/ConsultationBookingContext'
 
 const journeySteps = [
@@ -26,71 +26,6 @@ function CTAStrip() {
   const { openConsultationModal } = useConsultationBooking()
   return (
     <>
-      <section id="socials" className="py-24 bg-dark-bg text-dark-text relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-widest mb-6">
-              Social Media
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.1]">
-              Explore our socials
-            </h2>
-          </div>
-          
-          {/* Horizontal Reel Slider */}
-          <div className="relative">
-            <div className="flex overflow-x-auto pb-12 gap-6 sm:gap-8 snap-x scrollbar-hide no-scrollbar -mx-6 px-6 md:justify-center md:mx-0 md:px-0">
-              {[
-                { id: "DWTIix-DmTb", title: "Patient Success Story", tag: "Treatment" },
-                { id: "DWTNkstDhHj", title: "Oral Health Guide", tag: "Health Tips" },
-                { id: "DWYvyscEt-T", title: "Behind the Scenes", tag: "Facility" }
-              ].map((reel) => (
-                <a
-                  key={reel.id}
-                  href={`https://www.instagram.com/reel/${reel.id}/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-none w-[260px] sm:w-[300px] snap-center group"
-                >
-                  <div className="relative aspect-[9/16] bg-dark-surface rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/10 group-hover:border-primary/30 transition-colors duration-300">
-                    {/* Thumbnail from Instagram CDN */}
-                    <img
-                      src={`https://www.instagram.com/p/${reel.id}/media/?size=l`}
-                      alt={reel.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-
-                    {/* Top gradient */}
-                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent z-10" />
-                    {/* Bottom gradient */}
-                    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
-
-                    {/* Play button */}
-                    <div className="absolute inset-0 flex items-center justify-center z-20">
-                      <div className="w-14 h-14 bg-white/15 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-primary/80 group-hover:border-primary/50 transition-all duration-300 shadow-xl">
-                        <Play className="w-6 h-6 text-white fill-current translate-x-0.5" />
-                      </div>
-                    </div>
-
-                    {/* Bottom label */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
-                      <h3 className="text-white text-base font-semibold tracking-tight mb-1">{reel.title}</h3>
-                      <span className="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em]">{reel.tag}</span>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            {/* Scroll fade indicators */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-dark-bg to-transparent md:hidden"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-dark-bg to-transparent md:hidden"></div>
-          </div>
-        </div>
-      </section>
-
       <section id="how-it-works" className="pb-32 pt-12 bg-dark-bg text-dark-text relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-20">
