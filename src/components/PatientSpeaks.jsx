@@ -61,12 +61,12 @@ const TestimonialCard = React.memo(({ item, priority }) => (
     </div>
 
     {/* Info Box */}
-    <div className="mt-8 px-6 flex justify-between items-center">
-      <div className="flex flex-col gap-1.5">
-        <span className="text-lg font-medium text-text tracking-tight leading-none group-hover:text-primary transition-colors">{item.name}</span>
+    <div className="mt-8 px-6 flex items-center gap-4">
+      <div className="flex flex-col gap-1.5 min-w-0 flex-1">
+        <span className="text-base font-medium text-text tracking-tight leading-none group-hover:text-primary transition-colors truncate">{item.name}</span>
         <span className="text-[10px] text-text-muted/70 font-bold uppercase tracking-widest">{item.location}</span>
       </div>
-      <div className="text-right">
+      <div className="shrink-0">
         <div className="px-3 py-1 rounded-full bg-primary/5 border border-primary/10 whitespace-nowrap">
           <span className="text-[10px] font-bold uppercase tracking-widest text-primary">{item.treatment}</span>
         </div>
