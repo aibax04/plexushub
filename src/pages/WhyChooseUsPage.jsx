@@ -62,7 +62,7 @@ const stats = [
   { label: 'Patient Retention', value: '98%' }
 ]
 
-const TerminalWindow = ({ title, tag, image, className = "" }) => (
+const TerminalWindow = ({ title, tag, image, className = "", priority = false }) => (
   <div className={`group relative overflow-hidden rounded-[2.5rem] bg-white border border-border/80 shadow-sm flex flex-col ${className}`}>
     {/* Terminal Header */}
     <div className="flex relative z-20 items-center justify-between px-6 py-4 border-b border-border bg-white/60 backdrop-blur-md">
@@ -73,12 +73,19 @@ const TerminalWindow = ({ title, tag, image, className = "" }) => (
       </div>
       <div className="text-[10px] font-bold text-text-muted/70 uppercase tracking-widest">{tag}</div>
     </div>
-    
+
     {/* Terminal Content Space */}
     <div className="flex-1 p-10 flex flex-col justify-end relative overflow-hidden">
       {image && (
         <>
-          <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <img
+            src={image}
+            alt={title}
+            decoding="async"
+            loading={priority ? 'eager' : 'lazy'}
+            fetchPriority={priority ? 'high' : 'low'}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
         </>
       )}
@@ -152,53 +159,54 @@ function WhyChooseUsPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Main Feature - Top Left */}
-            <TerminalWindow 
-              title="Ashiyana Main Suite" 
-              tag="Facility" 
-              image="/assets/image copy 6.png"
-              className="lg:col-span-2 lg:row-span-2 min-h-[400px] lg:min-h-[600px]" 
+            <TerminalWindow
+              title="Ashiyana Main Suite"
+              tag="Facility"
+              image="/assets/clinic-6.webp"
+              className="lg:col-span-2 lg:row-span-2 min-h-[400px] lg:min-h-[600px]"
+              priority
             />
-            
+
             {/* Safety - Top Right */}
-            <TerminalWindow 
-              title="B-Class Sterilization" 
-              tag="Safety" 
-              image="/assets/image copy 4.png"
-              className="min-h-[280px]" 
+            <TerminalWindow
+              title="B-Class Sterilization"
+              tag="Safety"
+              image="/assets/clinic-4.webp"
+              className="min-h-[280px]"
             />
 
             {/* Row 2 - Full Span Items */}
-            <TerminalWindow 
-              title="Digital Diagnostic Center" 
-              tag="Technology" 
-              image="/assets/image copy 3.png"
-              className="min-h-[320px]" 
+            <TerminalWindow
+              title="Digital Diagnostic Center"
+              tag="Technology"
+              image="/assets/clinic-3.webp"
+              className="min-h-[320px]"
             />
-            <TerminalWindow 
-              title="Sitting Area" 
-              tag="Comfort" 
-              image="/assets/image copy 8.png"
-              className="min-h-[320px]" 
+            <TerminalWindow
+              title="Sitting Area"
+              tag="Comfort"
+              image="/assets/clinic-8.webp"
+              className="min-h-[320px]"
             />
-            <TerminalWindow 
-              title="Patient Comfort Lounge" 
-              tag="Comfort" 
-              image="/assets/image copy 7.png"
-              className="min-h-[320px]" 
+            <TerminalWindow
+              title="Patient Comfort Lounge"
+              tag="Comfort"
+              image="/assets/clinic-7.webp"
+              className="min-h-[320px]"
             />
-            <TerminalWindow 
-              title="Instrumental Sealing Machine" 
-              tag="Safety" 
-              image="/assets/image copy 5.png"
-              className="min-h-[320px]" 
+            <TerminalWindow
+              title="Instrumental Sealing Machine"
+              tag="Safety"
+              image="/assets/clinic-5.webp"
+              className="min-h-[320px]"
             />
 
             {/* Row 3 - Extended Feature */}
-            <TerminalWindow 
-              title="Ultrasonic Cleaner" 
-              tag="Technology" 
-              image="/assets/image copy 2.png"
-              className="lg:col-span-3 min-h-[300px] lg:min-h-[400px]" 
+            <TerminalWindow
+              title="Ultrasonic Cleaner"
+              tag="Technology"
+              image="/assets/clinic-2.webp"
+              className="lg:col-span-3 min-h-[300px] lg:min-h-[400px]"
             />
           </div>
         </div>
