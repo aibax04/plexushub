@@ -67,7 +67,7 @@ const TestimonialCard = React.memo(({ item, priority }) => (
         <span className="text-[10px] text-text-muted/70 font-bold uppercase tracking-widest">{item.location}</span>
       </div>
       <div className="text-right">
-        <div className="px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
+        <div className="px-3 py-1 rounded-full bg-primary/5 border border-primary/10 whitespace-nowrap">
           <span className="text-[10px] font-bold uppercase tracking-widest text-primary">{item.treatment}</span>
         </div>
       </div>
