@@ -9,6 +9,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [navOpacity, setNavOpacity] = useState(1)
   const location = useLocation()
   const isHome = location.pathname === '/'
 
@@ -17,10 +18,13 @@ function Header() {
 
   useEffect(() => {
     let ticking = false;
+    const FADE_END = 260;
     const onScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20);
+          const y = window.scrollY;
+          setIsScrolled(y > 20);
+          setNavOpacity(Math.max(0, 1 - y / FADE_END));
           ticking = false;
         });
         ticking = true;
@@ -76,7 +80,13 @@ function Header() {
 
   return (
     <>
-      <div className="fixed top-4 md:top-6 left-0 right-0 z-50 px-4 flex justify-center w-full">
+      <div
+        className="fixed top-4 md:top-6 left-0 right-0 z-50 px-4 flex justify-center w-full transition-opacity duration-150"
+        style={{
+          opacity: isOpen ? 1 : navOpacity,
+          pointerEvents: !isOpen && navOpacity < 0.05 ? 'none' : 'auto',
+        }}
+      >
         <header className={`w-full max-w-6xl backdrop-blur-md text-white rounded-full shadow-2xl border transition-all duration-500 ${
           isScrolled
             ? 'bg-[#2a2a2a]/98 border-white/15'

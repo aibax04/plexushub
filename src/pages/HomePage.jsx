@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Hero, Services, Doctor, Membership, PatientSpeaks, Reviews, CTAStrip, Footer } from '../components'
+import { Hero, TreatmentScroll, Services, Doctor, Membership, PatientSpeaks, Reviews, CTAStrip, Footer } from '../components'
 import { patientSpeaksPreloadUrls } from '../data/patientSpeaks'
 
 function HomePage() {
@@ -20,7 +20,9 @@ function HomePage() {
   return (
     <main className="relative">
       <Hero />
-      
+
+      <TreatmentScroll />
+
       <div className="relative z-10 bg-bg shadow-2xl rounded-t-[3rem]">
         <Services />
         <Doctor />
