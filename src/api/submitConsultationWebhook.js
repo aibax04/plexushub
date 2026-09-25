@@ -17,6 +17,16 @@ export function getConsultationWebhookUrl() {
   return DEFAULT_WEBHOOK_URL
 }
 
+const READABLE_DATE_OPTIONS = {
+  weekday: 'short',
+  day: '2-digit',
+  month: 'short',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+  hour12: true,
+}
+
 /**
  * Turns the raw `datetime-local` value ("2026-09-24T14:30") into something
  * readable in the Gmail / WhatsApp message Make sends out.
@@ -26,17 +36,24 @@ export function formatPreferredDateTime(value) {
   const date = new Date(value)
   if (Number.isNaN(date.getTime())) return value
   try {
-    return new Intl.DateTimeFormat('en-IN', {
-      weekday: 'short',
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric',
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true,
-    }).format(date)
+    return new Intl.DateTimeFormat('en-IN', READABLE_DATE_OPTIONS).format(date)
   } catch {
     return value
+  }
+}
+
+/**
+ * The raw `submittedAt` is a UTC ISO string, which reads as the wrong day in
+ * the evening IST - send a clinic-local version for the email to print.
+ */
+export function formatSubmittedAt(date) {
+  try {
+    return new Intl.DateTimeFormat('en-IN', {
+      ...READABLE_DATE_OPTIONS,
+      timeZone: 'Asia/Kolkata',
+    }).format(date)
+  } catch {
+    return date.toISOString()
   }
 }
 
@@ -63,6 +80,7 @@ export async function submitConsultationToWebhook(data) {
   const preferred =
     data.preferredDateTime && data.preferredDateTime.trim() ? data.preferredDateTime.trim() : null
   const preferredText = formatPreferredDateTime(preferred)
+  const submittedAt = new Date()
   const body = {
     // Core fields (same names as typical Make / Zapier form tutorials)
     name: fullName,
@@ -79,9 +97,22 @@ export async function submitConsultationToWebhook(data) {
     preferredDateTimeText: preferredText,
     preferredSlot: preferred,
     preferredSlotText: preferredText,
-    submittedAt: new Date().toISOString(),
+    submittedAt: submittedAt.toISOString(),
+    submittedAtText: formatSubmittedAt(submittedAt),
     source: 'plexus-dental-website',
   }
+
+  // A ready-made subject and body, so the Gmail module in Make only has to map
+  // two fields and can't silently drop the treatment by mapping a wrong key.
+  body.subject = `New consultation request - ${fullName || 'Website enquiry'} (${treatment})`
+  body.summary = [
+    `Name: ${fullName || '-'}`,
+    `Phone: ${phone || '-'}`,
+    `Email: ${email || '-'}`,
+    `Treatment Interest: ${treatment}`,
+    `Preferred date & time: ${preferredText || '-'}`,
+    `Message: ${extraMessage || '-'}`,
+  ].join('\n')
 
   // Without a timeout a stalled network leaves the button spinning forever.
   const controller = typeof AbortController !== 'undefined' ? new AbortController() : null
