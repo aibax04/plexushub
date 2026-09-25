@@ -1,6 +1,6 @@
 # Plexus Dental — Landing Page
 
-A simple static landing page for a dentist website, built with **React** and **JavaScript** (no TypeScript), ready to deploy on **Vercel**.
+A simple static landing page for a dentist website, built with **React** and **JavaScript** (no TypeScript), ready to deploy on **Vercel**..
 
 ## Project structure
 
