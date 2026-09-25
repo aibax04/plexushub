@@ -200,10 +200,10 @@ function ConsultationModal({ isOpen, onClose }) {
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-md min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-surface text-dark-text shadow-2xl shadow-black/50 focus:outline-none sm:max-h-[min(100dvh-3rem,720px)] sm:rounded-[1.5rem]"
+        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-md min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-surface text-dark-text shadow-2xl shadow-black/50 focus:outline-none sm:max-h-[min(100dvh-3rem,720px)] sm:rounded-[1.5rem] lg:w-[min(1080px,calc(100vw-3rem))] lg:max-w-none lg:max-h-[min(100dvh-3rem,680px)]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex shrink-0 items-start justify-between gap-3 border-b border-white/5 px-4 pt-4 pb-3 sm:px-8 sm:pt-6 sm:pb-4">
+        <div className="flex shrink-0 items-start justify-between gap-3 border-b border-white/5 px-4 pt-4 pb-3 sm:px-8 sm:pt-6 sm:pb-4 lg:px-10">
           <div className="min-w-0 pr-2">
             <h2 id={titleId} className="text-lg font-medium tracking-tight text-white sm:text-xl md:text-2xl">
               Book your consultation
@@ -223,7 +223,7 @@ function ConsultationModal({ isOpen, onClose }) {
           </button>
         </div>
 
-        <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-y-contain px-4 py-4 sm:px-8 sm:py-6">
+        <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-y-contain px-4 py-4 sm:px-8 sm:py-6 lg:px-10">
           {status === 'success' ? (
             <div className="py-4 text-center sm:py-6" role="status">
               <p className="mb-2 text-base font-medium text-green-400 sm:text-[15px]">Thank you!</p>
@@ -231,8 +231,8 @@ function ConsultationModal({ isOpen, onClose }) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate className="space-y-4 pb-2">
-              <fieldset disabled={isSubmitting} className="min-w-0 space-y-4 border-0 p-0">
-              <div>
+              <fieldset disabled={isSubmitting} className="grid min-w-0 grid-cols-1 gap-4 border-0 p-0 lg:grid-cols-2">
+              <div className="min-w-0">
                 <label htmlFor="consult-name" className="mb-1.5 block text-xs font-medium text-white/70">
                   Full name <span className="text-red-400">*</span>
                 </label>
@@ -248,7 +248,7 @@ function ConsultationModal({ isOpen, onClose }) {
                   placeholder="Your name"
                 />
               </div>
-              <div>
+              <div className="min-w-0">
                 <label htmlFor="consult-email" className="mb-1.5 block text-xs font-medium text-white/70">
                   Email <span className="font-normal text-white/40">(optional)</span>
                 </label>
@@ -264,7 +264,7 @@ function ConsultationModal({ isOpen, onClose }) {
                   placeholder="you@example.com"
                 />
               </div>
-              <div>
+              <div className="min-w-0">
                 <label htmlFor="consult-phone" className="mb-1.5 block text-xs font-medium text-white/70">
                   Phone <span className="text-red-400">*</span>
                 </label>
@@ -281,7 +281,7 @@ function ConsultationModal({ isOpen, onClose }) {
                   placeholder="+91 …"
                 />
               </div>
-              <div>
+              <div className="min-w-0">
                 <label htmlFor="consult-when" className="mb-1.5 block text-xs font-medium text-white/70">
                   Preferred date & time <span className="text-red-400">*</span>
                 </label>
@@ -295,7 +295,7 @@ function ConsultationModal({ isOpen, onClose }) {
                   className={`${inputClass} [color-scheme:dark]`}
                 />
               </div>
-              <div>
+              <div className="min-w-0">
                 <label htmlFor="consult-treatment" className="mb-1.5 block text-xs font-medium text-white/70">
                   Treatment Interest <span className="text-red-400">*</span>
                 </label>
@@ -326,7 +326,7 @@ function ConsultationModal({ isOpen, onClose }) {
                   <option value="Other">Other</option>
                 </select>
               </div>
-              <div>
+              <div className="min-w-0">
                 <label htmlFor="consult-msg" className="mb-1.5 block text-xs font-medium text-white/70">
                   Message <span className="font-normal text-white/40">(optional)</span>
                 </label>

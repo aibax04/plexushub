@@ -55,19 +55,30 @@ export async function submitConsultationToWebhook(data) {
     throw new Error('Webhook URL is not configured.')
   }
 
+  const fullName = data.fullName && data.fullName.trim() ? data.fullName.trim() : ''
+  const email = data.email && data.email.trim() ? data.email.trim() : ''
+  const phone = data.phone && data.phone.trim() ? data.phone.trim() : ''
+  const treatment = data.treatment && data.treatment.trim() ? data.treatment.trim() : 'Not specified'
   const extraMessage = data.message && data.message.trim() ? data.message.trim() : ''
   const preferred =
     data.preferredDateTime && data.preferredDateTime.trim() ? data.preferredDateTime.trim() : null
+  const preferredText = formatPreferredDateTime(preferred)
   const body = {
     // Core fields (same names as typical Make / Zapier form tutorials)
-    name: data.fullName,
-    email: data.email,
+    name: fullName,
+    fullName,
+    email,
     message: extraMessage || '-',
     // Extra fields for Gmail / WhatsApp / SMS in Make
-    phone: data.phone,
-    treatment: data.treatment || 'Not specified',
+    phone,
+    treatment,
+    treatmentInterest: treatment,
+    treatment_interest: treatment,
+    'Treatment Interest': treatment,
     preferredDateTime: preferred,
-    preferredDateTimeText: formatPreferredDateTime(preferred),
+    preferredDateTimeText: preferredText,
+    preferredSlot: preferred,
+    preferredSlotText: preferredText,
     submittedAt: new Date().toISOString(),
     source: 'plexus-dental-website',
   }
