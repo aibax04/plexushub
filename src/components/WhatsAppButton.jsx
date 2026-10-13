@@ -34,6 +34,13 @@ const WhatsAppButton = () => {
     if (!message.trim()) return;
     const finalMessage = `Hello Dr Ashish, I would like to book an appointment and discuss my dental case.\n\n${message}`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18464916628/GOMbCJDV3ZsdEJSJ4eRE',
+        value: 1.0,
+        currency: 'INR',
+      });
+    }
     window.open(url, '_blank');
     setIsOpen(false);
     setMessage('');
