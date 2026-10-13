@@ -6,7 +6,14 @@ const ConsultationBookingContext = createContext(null)
 export function ConsultationBookingProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const openConsultationModal = useCallback(() => setIsOpen(true), [])
+  const openConsultationModal = useCallback(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-18464916628/oVZiCN-dypodEJSJ4eRE',
+      })
+    }
+    setIsOpen(true)
+  }, [])
   const closeConsultationModal = useCallback(() => setIsOpen(false), [])
 
   const value = useMemo(
