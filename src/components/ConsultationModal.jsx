@@ -44,7 +44,7 @@ function validate(form) {
     return 'Please choose the treatment you are interested in.'
   }
   if (!form.message.trim()) {
-    return 'Please let us know what you are looking for.'
+    return 'Please tell us more about your treatment.'
   }
   return ''
 }
@@ -308,7 +308,7 @@ function ConsultationModal({ isOpen, onClose }) {
               </div>
               <div className="min-w-0 lg:col-span-2">
                 <label htmlFor="consult-msg" className="mb-1.5 block text-xs font-medium text-text-muted">
-                  What are you looking for? <span className="text-red-600">*</span>
+                  Tell us more about your treatment <span className="text-red-600">*</span>
                 </label>
                 <textarea
                   id="consult-msg"
